@@ -1,0 +1,171 @@
+create table amministratore(
+	id int auto_increment primary key,
+	cod_admin int(5) not null
+);
+
+create table cliente(
+	id int auto_increment primary key,
+	nazione varchar(45) not null,
+	citta varchar(45) not null,
+	via varchar(45) not null,
+	n_civico int not null,
+	cap int(5) not null
+);
+
+create table utente(
+	id int auto_increment primary key,
+	nome varchar(45) not null,
+	cognome varchar(45) not null,
+	mail varchar(255) not null unique,
+	psw varchar(255) not null,
+	id_cliente int,
+	id_amministratore int,
+	foreign key (id_cliente) references cliente(id),
+	foreign key (id_amministratore) references amministratore(id)
+);
+
+create table ordine(
+	id int auto_increment primary key,
+	qty int not null,
+	stato varchar(45) not null,
+	id_utente int not null,
+	id_prodotto int not null,
+	foreign key (id_utente) references utente(id),
+	foreign key (id_prodotto) references prodotti(id)
+);
+
+create table prodotti(
+	id int auto_increment primary key,
+	qty int not null,
+	sesso varchar(45) not null,
+	id_colore int not null,
+	id_marca int not null,
+	id_materiale int not null,
+	id_fantasia int not null,
+	id_magliette int,
+	id_pantaloni int,
+	id_vestiti int,
+	id_scarpe int,
+	id_camicie int,
+	foreign key (id_magliette) references magliette(id),
+	foreign key (id_pantaloni) references pantaloni(id),
+	foreign key (id_vestiti) references vestiti(id),
+	foreign key (id_scarpe) references scarpe(id),
+	foreign key (id_camicie) references camicie(id),
+	foreign key (id_colore) references colore(id),
+	foreign key (id_marca) references marca(id),
+	foreign key (id_materiale) references materiale(id),
+	foreign key (id_fantasia) references fantasia(id)
+);
+
+create table magliette(
+	id int auto_increment primary key,
+	id_taglia int not null,
+	id_vestibilita int not null,
+	id_lunghezza_manica int not null,
+	id_tipo_colletto int not null,
+	foreign key (id_taglia) references taglia(id),
+	foreign key (id_vestibilita) references vestibilita(id),
+	foreign key (id_lunghezza_manica) references lunghezza_manica(id),
+	foreign key (id_tipo_colletto) references tipo_colletto(id)
+);
+
+create table pantaloni(
+	id int auto_increment primary key,
+	id_taglia int not null,
+	id_vestibilita int not null,
+	id_lunghezza int not null,
+	foreign key (id_taglia) references taglia(id),
+	foreign key (id_vestibilita) references vestibilita(id),
+	foreign key (id_lunghezza) references lunghezza(id)
+);
+
+create table vestiti(
+	id int auto_increment primary key,
+	id_taglia int not null,
+	id_vestibilita int not null,
+	id_lunghezza int not null,
+	id_lunghezza_manica int not null,
+	foreign key (id_taglia) references taglia(id),
+	foreign key (id_vestibilita) references vestibilita(id),
+	foreign key (id_lunghezza) references lunghezza(id),
+	foreign key (id_lunghezza_manica) references lunghezza_manica(id)
+);
+
+create table scarpe(
+	id int auto_increment primary key,
+	taglia_scarpe int(2) not null,
+	id_chiusura int not null,
+	id_tipo_scarpa int not null,
+	foreign key (id_chiusura) references chiusura(id),
+	foreign key (id_tipo_scarpa) references tipo_scarpa(id),
+	check(taglia_scarpe >= 35 and taglia_scarpe <= 55)
+);
+
+create table camicie(
+	id int auto_increment primary key,
+	id_taglia int not null,
+	id_vestibilita int not null,
+	id_lunghezza_manica int not null,
+	id_tipo_colletto int not null,
+	foreign key (id_taglia) references taglia(id),
+	foreign key (id_vestibilita) references vestibilita(id),
+	foreign key (id_lunghezza_manica) references lunghezza_manica(id),
+	foreign key (id_tipo_colletto) references tipo_colletto(id)
+);
+
+create table colore(
+	id int auto_increment primary key,
+	descrizione varchar(45) not null
+);
+
+create table marca(
+	id int auto_increment primary key,
+	descrizione varchar(45) not null
+);
+
+create table taglia(
+	id int auto_increment primary key,
+	descrizione varchar(45) not null
+);
+
+create table materiale(
+	id int auto_increment primary key,
+	descrizione varchar(45) not null
+);
+
+create table fantasia( 
+	id int auto_increment primary key,
+	descrizione varchar(45) not null
+);
+
+create table vestibilita( 
+	id int auto_increment primary key,
+	descrizione varchar(45) not null
+);
+
+create table tipo_colletto( 
+	id int auto_increment primary key,
+	descrizione varchar(45) not null
+);
+
+create table lunghezza_manica( 
+	id int auto_increment primary key,
+	descrizione varchar(45) not null
+);
+
+
+create table lunghezza( 
+	id int auto_increment primary key,
+	descrizione varchar(45) not null
+);
+
+create table tipo_scarpa( 
+	id int auto_increment primary key,
+	descrizione varchar(45) not null
+);
+
+create table chiusura( 
+	id int auto_increment primary key,
+	descrizione varchar(45) not null
+);
