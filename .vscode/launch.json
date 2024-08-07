@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "BackendApplication",
+            "request": "launch",
+            "mainClass": "com.betacom.backend.BackendApplication",
+            "projectName": "backend",
+            "env": {
+                "URL": "jdbc:mysql://localhost:3306/dbfinal",
+                "USERNAME": "root",
+                "PASSWORD": "myPassword12!"
+            }
+        }
+    ]
+}
