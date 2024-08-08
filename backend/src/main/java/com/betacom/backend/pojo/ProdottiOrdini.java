@@ -27,4 +27,48 @@ public class ProdottiOrdini {
     @ManyToOne
     @JoinColumn(name = "id_prodotto")
     private Prodotto prodotto;
+    
+    public ProdottiOrdini() {
+    }
+
+    public ProdottiOrdini(Integer id, Integer qty, Ordine ordine, Prodotto prodotto) {
+        this.id = id;
+        this.qty = qty;
+        this.ordine = ordine;
+        this.prodotto = prodotto;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getQty() {
+        return qty;
+    }
+
+    public void setQty(Integer qty) {
+        this.qty = qty;
+    }
+
+    public Ordine getOrdine() {
+        return ordine;
+    }
+
+    public void setOrdine(Ordine ordine) {
+        this.ordine = ordine;
+    }
+
+    public Prodotto getProdotto() {
+        return prodotto;
+    }
+
+    public void setProdotto(Prodotto prodotto) {
+        this.prodotto = prodotto;
+    }
+
+    
 }
