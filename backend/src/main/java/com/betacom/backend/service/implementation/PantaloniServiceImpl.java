@@ -1,5 +1,14 @@
 package com.betacom.backend.service.implementation;
 
-public class PantaloniServiceImpl implements IP{
+import com.betacom.backend.service.interfaces.IPantaloneService;
+import com.betacom.backend.service.interfaces.PantaloneReq;
+
+public class PantaloniServiceImpl implements IPantaloneService{
+
+	@Override
+	public void create(PantaloneReq req) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
