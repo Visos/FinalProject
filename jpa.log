@@ -94,3 +94,520 @@ Caused by: org.hibernate.AnnotationException: Collection 'com.betacom.backend.po
 2024-08-08T09:22:33.975+02:00  INFO 6668 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2024-08-08T09:22:34.113+02:00  INFO 6668 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
 2024-08-08T09:22:34.173+02:00  INFO 6668 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Started BackendApplication in 15.365 seconds (process running for 16.681)
+2024-08-08T09:25:48.079+02:00  INFO 17124 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Starting BackendApplication using Java 17.0.11 with PID 17124 (C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject\backend\target\classes started by root in C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject)
+2024-08-08T09:25:48.084+02:00 DEBUG 17124 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-08T09:25:48.087+02:00  INFO 17124 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T09:25:48.293+02:00  INFO 17124 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-08T09:25:48.295+02:00  INFO 17124 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-08T09:25:49.948+02:00  INFO 17124 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-08T09:25:50.086+02:00  INFO 17124 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 0 JPA repository interfaces.
+2024-08-08T09:25:51.813+02:00  INFO 17124 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-08T09:25:51.834+02:00  INFO 17124 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T09:25:51.835+02:00  INFO 17124 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T09:25:51.993+02:00  INFO 17124 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-08T09:25:51.996+02:00  INFO 17124 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3695 ms
+2024-08-08T09:25:52.351+02:00  INFO 17124 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-08T09:25:53.190+02:00  INFO 17124 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@575d798b
+2024-08-08T09:25:53.194+02:00  INFO 17124 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-08T09:25:53.296+02:00  INFO 17124 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-08T09:25:53.450+02:00  INFO 17124 --- [backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.9.Final
+2024-08-08T09:25:53.581+02:00  INFO 17124 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-08T09:25:54.073+02:00  INFO 17124 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-08T09:25:56.757+02:00  INFO 17124 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-08T09:25:56.831+02:00  INFO 17124 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-08T09:25:56.959+02:00  WARN 17124 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-08T09:25:58.284+02:00  INFO 17124 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-08T09:25:58.596+02:00  INFO 17124 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-08-08T09:25:58.718+02:00  INFO 17124 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Started BackendApplication in 11.579 seconds (process running for 12.407)
+2024-08-08T12:03:50.955+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Starting BackendApplication using Java 17.0.11 with PID 2276 (C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject\backend\target\classes started by root in C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject)
+2024-08-08T12:03:50.965+02:00 DEBUG 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-08T12:03:50.983+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T12:03:51.262+02:00  INFO 2276 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-08T12:03:51.269+02:00  INFO 2276 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-08T12:03:53.835+02:00  INFO 2276 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-08T12:03:53.904+02:00  INFO 2276 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 0 JPA repository interfaces.
+2024-08-08T12:03:55.775+02:00  INFO 2276 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-08T12:03:55.822+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T12:03:55.826+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T12:03:56.111+02:00  INFO 2276 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-08T12:03:56.117+02:00  INFO 2276 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4826 ms
+2024-08-08T12:03:56.824+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-08T12:03:57.676+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@575d798b
+2024-08-08T12:03:57.691+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-08T12:03:57.837+02:00  INFO 2276 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-08T12:03:58.101+02:00  INFO 2276 --- [backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.9.Final
+2024-08-08T12:03:58.290+02:00  INFO 2276 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-08T12:03:58.941+02:00  INFO 2276 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-08T12:04:02.267+02:00  INFO 2276 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-08T12:04:02.355+02:00  INFO 2276 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-08T12:04:02.524+02:00  WARN 2276 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-08T12:04:03.841+02:00  INFO 2276 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-08T12:04:04.000+02:00  INFO 2276 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-08-08T12:04:04.058+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Started BackendApplication in 14.686 seconds (process running for 16.155)
+2024-08-08T12:26:39.679+02:00  INFO 2276 --- [backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-08T12:26:40.884+02:00  INFO 2276 --- [backend] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-08T12:26:40.904+02:00  INFO 2276 --- [backend] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-08T12:26:40.922+02:00  INFO 2276 --- [backend] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-08T12:26:41.240+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Starting BackendApplication using Java 17.0.11 with PID 2276 (C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject\backend\target\classes started by root in C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject)
+2024-08-08T12:26:41.244+02:00 DEBUG 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-08T12:26:41.245+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T12:26:42.006+02:00  INFO 2276 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-08T12:26:42.022+02:00  INFO 2276 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JPA repository interfaces.
+2024-08-08T12:26:42.428+02:00  INFO 2276 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-08T12:26:42.439+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T12:26:42.440+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T12:26:42.489+02:00  INFO 2276 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-08T12:26:42.492+02:00  INFO 2276 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1240 ms
+2024-08-08T12:26:42.721+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-08-08T12:26:42.823+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5bc5ba65
+2024-08-08T12:26:42.871+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-08-08T12:26:42.875+02:00  INFO 2276 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-08T12:26:42.888+02:00  INFO 2276 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-08T12:26:42.951+02:00  INFO 2276 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-08T12:26:44.799+02:00  INFO 2276 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-08T12:26:44.818+02:00  INFO 2276 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-08T12:26:44.953+02:00  WARN 2276 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-08T12:26:45.377+02:00  INFO 2276 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-08T12:26:45.402+02:00  INFO 2276 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-08-08T12:26:45.410+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Started BackendApplication in 4.291 seconds (process running for 1377.507)
+2024-08-08T12:26:45.415+02:00  INFO 2276 --- [backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-08T12:30:42.221+02:00  INFO 2276 --- [backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-08T12:30:42.797+02:00  INFO 2276 --- [backend] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-08T12:30:42.800+02:00  INFO 2276 --- [backend] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-08-08T12:30:42.815+02:00  INFO 2276 --- [backend] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-08-08T12:30:43.036+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Starting BackendApplication using Java 17.0.11 with PID 2276 (C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject\backend\target\classes started by root in C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject)
+2024-08-08T12:30:43.045+02:00 DEBUG 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-08T12:30:43.046+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T12:30:45.015+02:00  INFO 2276 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-08T12:30:45.046+02:00  INFO 2276 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 JPA repository interfaces.
+2024-08-08T12:30:45.778+02:00  INFO 2276 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-08T12:30:45.785+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T12:30:45.788+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T12:30:45.880+02:00  INFO 2276 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-08T12:30:45.886+02:00  INFO 2276 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2825 ms
+2024-08-08T12:30:46.148+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-08-08T12:30:46.203+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@70087ded
+2024-08-08T12:30:46.204+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-08-08T12:30:46.213+02:00  INFO 2276 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-08T12:30:46.241+02:00  INFO 2276 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-08T12:30:46.276+02:00  INFO 2276 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-08T12:30:48.178+02:00  INFO 2276 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-08T12:30:48.252+02:00  INFO 2276 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-08T12:30:48.506+02:00  WARN 2276 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-08T12:30:49.532+02:00  INFO 2276 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-08T12:30:49.645+02:00  INFO 2276 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-08-08T12:30:49.736+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Started BackendApplication in 6.811 seconds (process running for 1621.833)
+2024-08-08T12:30:49.776+02:00  INFO 2276 --- [backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-08T12:30:51.096+02:00  INFO 2276 --- [backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-08T12:30:51.446+02:00  INFO 2276 --- [backend] [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-08T12:30:51.447+02:00  INFO 2276 --- [backend] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-08-08T12:30:51.452+02:00  INFO 2276 --- [backend] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-08-08T12:30:51.578+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Starting BackendApplication using Java 17.0.11 with PID 2276 (C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject\backend\target\classes started by root in C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject)
+2024-08-08T12:30:51.580+02:00 DEBUG 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-08T12:30:51.581+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T12:30:52.036+02:00  INFO 2276 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-08T12:30:52.042+02:00  INFO 2276 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2024-08-08T12:30:52.229+02:00  INFO 2276 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-08T12:30:52.230+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T12:30:52.231+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T12:30:52.270+02:00  INFO 2276 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-08T12:30:52.273+02:00  INFO 2276 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 689 ms
+2024-08-08T12:30:52.346+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-08-08T12:30:52.376+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b53247
+2024-08-08T12:30:52.377+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-08-08T12:30:52.380+02:00  INFO 2276 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-08T12:30:52.384+02:00  INFO 2276 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-08T12:30:52.399+02:00  INFO 2276 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-08T12:30:52.984+02:00  INFO 2276 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-08T12:30:53.018+02:00  INFO 2276 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-08T12:30:53.118+02:00  WARN 2276 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-08T12:30:53.465+02:00  INFO 2276 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-08T12:30:53.486+02:00  INFO 2276 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-08-08T12:30:53.499+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Started BackendApplication in 1.978 seconds (process running for 1625.596)
+2024-08-08T12:30:53.510+02:00  INFO 2276 --- [backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-08T12:31:28.038+02:00  INFO 2276 --- [backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-08T12:31:28.770+02:00  INFO 2276 --- [backend] [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-08T12:31:28.778+02:00  INFO 2276 --- [backend] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2024-08-08T12:31:28.795+02:00  INFO 2276 --- [backend] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2024-08-08T12:31:28.964+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Starting BackendApplication using Java 17.0.11 with PID 2276 (C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject\backend\target\classes started by root in C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject)
+2024-08-08T12:31:28.966+02:00 DEBUG 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-08T12:31:28.967+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T12:31:29.236+02:00  INFO 2276 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-08T12:31:29.240+02:00  INFO 2276 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2024-08-08T12:31:29.482+02:00  INFO 2276 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-08T12:31:29.489+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T12:31:29.489+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T12:31:29.541+02:00  INFO 2276 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-08T12:31:29.542+02:00  INFO 2276 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 573 ms
+2024-08-08T12:31:29.644+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2024-08-08T12:31:29.702+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1ae9371c
+2024-08-08T12:31:29.704+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2024-08-08T12:31:29.707+02:00  INFO 2276 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-08T12:31:29.716+02:00  INFO 2276 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-08T12:31:29.782+02:00  INFO 2276 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-08T12:31:29.979+02:00 ERROR 2276 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Property 'com.betacom.backend.pojo.Ordine.prodOrdini' is not a collection and may not be a '@OneToMany', '@ManyToMany', or '@ElementCollection'
+2024-08-08T12:31:29.989+02:00  WARN 2276 --- [backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Property 'com.betacom.backend.pojo.Ordine.prodOrdini' is not a collection and may not be a '@OneToMany', '@ManyToMany', or '@ElementCollection'
+2024-08-08T12:31:29.994+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2024-08-08T12:31:30.014+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2024-08-08T12:31:30.018+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-08T12:31:30.035+02:00  INFO 2276 --- [backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-08T12:31:30.095+02:00 ERROR 2276 --- [backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Property 'com.betacom.backend.pojo.Ordine.prodOrdini' is not a collection and may not be a '@OneToMany', '@ManyToMany', or '@ElementCollection'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.2.8.jar:3.2.8]
+	at com.betacom.backend.BackendApplication.main(BackendApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+Caused by: org.hibernate.AnnotationException: Property 'com.betacom.backend.pojo.Ordine.prodOrdini' is not a collection and may not be a '@OneToMany', '@ManyToMany', or '@ElementCollection'
+	at org.hibernate.boot.model.internal.CollectionBinder.determineSemanticJavaType(CollectionBinder.java:1118) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.determineCollectionClassification(CollectionBinder.java:1010) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.createBinderAutomatically(CollectionBinder.java:852) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.getCollectionBinder(CollectionBinder.java:845) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.bindCollection(CollectionBinder.java:280) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.bindProperty(PropertyBinder.java:874) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.buildProperty(PropertyBinder.java:788) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.processElementAnnotations(PropertyBinder.java:709) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.processIdPropertiesIfNotAlready(EntityBinder.java:1041) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:357) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:237) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:423) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:256) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:279) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:322) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.11.jar:6.1.11]
+	... 20 common frames omitted
+
+2024-08-08T12:33:31.606+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Starting BackendApplication using Java 17.0.11 with PID 2276 (C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject\backend\target\classes started by root in C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject)
+2024-08-08T12:33:31.612+02:00 DEBUG 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-08T12:33:31.613+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T12:33:32.652+02:00  INFO 2276 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-08T12:33:32.681+02:00  INFO 2276 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JPA repository interfaces.
+2024-08-08T12:33:33.650+02:00  INFO 2276 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-08T12:33:33.668+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T12:33:33.685+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T12:33:33.888+02:00  INFO 2276 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-08-08T12:33:33.900+02:00  INFO 2276 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2280 ms
+2024-08-08T12:33:35.069+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2024-08-08T12:33:35.114+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@a70537c
+2024-08-08T12:33:35.126+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2024-08-08T12:33:35.133+02:00  INFO 2276 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-08T12:33:35.146+02:00  INFO 2276 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-08T12:33:35.162+02:00  INFO 2276 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-08T12:33:35.370+02:00 ERROR 2276 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Property 'com.betacom.backend.pojo.Ordine.prodOrdini' is not a collection and may not be a '@OneToMany', '@ManyToMany', or '@ElementCollection'
+2024-08-08T12:33:35.386+02:00  WARN 2276 --- [backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Property 'com.betacom.backend.pojo.Ordine.prodOrdini' is not a collection and may not be a '@OneToMany', '@ManyToMany', or '@ElementCollection'
+2024-08-08T12:33:35.389+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2024-08-08T12:33:35.571+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2024-08-08T12:33:35.675+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-08T12:33:35.715+02:00  INFO 2276 --- [backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-08T12:33:35.835+02:00 ERROR 2276 --- [backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Property 'com.betacom.backend.pojo.Ordine.prodOrdini' is not a collection and may not be a '@OneToMany', '@ManyToMany', or '@ElementCollection'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.2.8.jar:3.2.8]
+	at com.betacom.backend.BackendApplication.main(BackendApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+Caused by: org.hibernate.AnnotationException: Property 'com.betacom.backend.pojo.Ordine.prodOrdini' is not a collection and may not be a '@OneToMany', '@ManyToMany', or '@ElementCollection'
+	at org.hibernate.boot.model.internal.CollectionBinder.determineSemanticJavaType(CollectionBinder.java:1118) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.determineCollectionClassification(CollectionBinder.java:1010) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.createBinderAutomatically(CollectionBinder.java:852) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.getCollectionBinder(CollectionBinder.java:845) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.bindCollection(CollectionBinder.java:280) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.bindProperty(PropertyBinder.java:874) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.buildProperty(PropertyBinder.java:788) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.processElementAnnotations(PropertyBinder.java:709) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.processIdPropertiesIfNotAlready(EntityBinder.java:1041) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:357) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:237) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:423) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:256) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:279) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:322) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.11.jar:6.1.11]
+	... 20 common frames omitted
+
+2024-08-08T12:33:47.751+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Starting BackendApplication using Java 17.0.11 with PID 2276 (C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject\backend\target\classes started by root in C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject)
+2024-08-08T12:33:47.752+02:00 DEBUG 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-08T12:33:47.754+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T12:33:47.999+02:00  INFO 2276 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-08T12:33:48.007+02:00  INFO 2276 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2024-08-08T12:33:48.219+02:00  INFO 2276 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-08T12:33:48.223+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T12:33:48.229+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T12:33:48.309+02:00  INFO 2276 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-08-08T12:33:48.311+02:00  INFO 2276 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 555 ms
+2024-08-08T12:33:48.480+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2024-08-08T12:33:48.529+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@74371aa5
+2024-08-08T12:33:48.537+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2024-08-08T12:33:48.540+02:00  INFO 2276 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-08T12:33:48.548+02:00  INFO 2276 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-08T12:33:48.569+02:00  INFO 2276 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-08T12:33:48.940+02:00 ERROR 2276 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Collection 'com.betacom.backend.pojo.Ordine.prodOrdini' is 'mappedBy' a property named 'ordine' which does not exist in the target entity 'com.betacom.backend.pojo.ProdottiOrdini'
+2024-08-08T12:33:48.957+02:00  WARN 2276 --- [backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Collection 'com.betacom.backend.pojo.Ordine.prodOrdini' is 'mappedBy' a property named 'ordine' which does not exist in the target entity 'com.betacom.backend.pojo.ProdottiOrdini'
+2024-08-08T12:33:48.969+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2024-08-08T12:33:49.036+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2024-08-08T12:33:49.038+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-08T12:33:49.053+02:00  INFO 2276 --- [backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-08T12:33:49.066+02:00 ERROR 2276 --- [backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Collection 'com.betacom.backend.pojo.Ordine.prodOrdini' is 'mappedBy' a property named 'ordine' which does not exist in the target entity 'com.betacom.backend.pojo.ProdottiOrdini'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.2.8.jar:3.2.8]
+	at com.betacom.backend.BackendApplication.main(BackendApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+Caused by: org.hibernate.AnnotationException: Collection 'com.betacom.backend.pojo.Ordine.prodOrdini' is 'mappedBy' a property named 'ordine' which does not exist in the target entity 'com.betacom.backend.pojo.ProdottiOrdini'
+	at org.hibernate.boot.model.internal.CollectionBinder.isReversePropertyInJoin(CollectionBinder.java:1622) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.noAssociationTable(CollectionBinder.java:1636) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:1597) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder$1.secondPass(CollectionBinder.java:1588) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:45) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1815) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1774) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:332) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.11.jar:6.1.11]
+	... 20 common frames omitted
+
+2024-08-08T12:34:27.500+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Starting BackendApplication using Java 17.0.11 with PID 2276 (C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject\backend\target\classes started by root in C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject)
+2024-08-08T12:34:27.501+02:00 DEBUG 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-08T12:34:27.502+02:00  INFO 2276 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T12:34:27.749+02:00  INFO 2276 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-08T12:34:27.753+02:00  INFO 2276 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2024-08-08T12:34:27.915+02:00  INFO 2276 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-08T12:34:27.917+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T12:34:27.919+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T12:34:27.969+02:00  INFO 2276 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-08-08T12:34:27.970+02:00  INFO 2276 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 461 ms
+2024-08-08T12:34:28.040+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2024-08-08T12:34:28.071+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ed74c1e
+2024-08-08T12:34:28.072+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2024-08-08T12:34:28.076+02:00  INFO 2276 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-08T12:34:28.082+02:00  INFO 2276 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-08T12:34:28.090+02:00  INFO 2276 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-08T12:34:28.234+02:00 ERROR 2276 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Collection 'com.betacom.backend.pojo.Ordine.prodOrdini' is 'mappedBy' a property named 'ordine' which does not exist in the target entity 'com.betacom.backend.pojo.ProdottiOrdini'
+2024-08-08T12:34:28.235+02:00  WARN 2276 --- [backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Collection 'com.betacom.backend.pojo.Ordine.prodOrdini' is 'mappedBy' a property named 'ordine' which does not exist in the target entity 'com.betacom.backend.pojo.ProdottiOrdini'
+2024-08-08T12:34:28.236+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2024-08-08T12:34:28.245+02:00  INFO 2276 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2024-08-08T12:34:28.247+02:00  INFO 2276 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-08T12:34:28.297+02:00  INFO 2276 --- [backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-08T12:34:28.330+02:00 ERROR 2276 --- [backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Collection 'com.betacom.backend.pojo.Ordine.prodOrdini' is 'mappedBy' a property named 'ordine' which does not exist in the target entity 'com.betacom.backend.pojo.ProdottiOrdini'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.2.8.jar:3.2.8]
+	at com.betacom.backend.BackendApplication.main(BackendApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+Caused by: org.hibernate.AnnotationException: Collection 'com.betacom.backend.pojo.Ordine.prodOrdini' is 'mappedBy' a property named 'ordine' which does not exist in the target entity 'com.betacom.backend.pojo.ProdottiOrdini'
+	at org.hibernate.boot.model.internal.CollectionBinder.isReversePropertyInJoin(CollectionBinder.java:1622) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.noAssociationTable(CollectionBinder.java:1636) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:1597) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder$1.secondPass(CollectionBinder.java:1588) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:45) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1815) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1774) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:332) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.11.jar:6.1.11]
+	... 20 common frames omitted
+
+2024-08-08T12:34:56.777+02:00  INFO 15040 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Starting BackendApplication using Java 17.0.11 with PID 15040 (C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject\backend\target\classes started by root in C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject)
+2024-08-08T12:34:56.782+02:00 DEBUG 15040 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-08T12:34:56.788+02:00  INFO 15040 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T12:34:56.919+02:00  INFO 15040 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-08T12:34:56.921+02:00  INFO 15040 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-08T12:34:59.728+02:00  INFO 15040 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-08T12:34:59.807+02:00  INFO 15040 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 0 JPA repository interfaces.
+2024-08-08T12:35:01.619+02:00  INFO 15040 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-08T12:35:01.644+02:00  INFO 15040 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T12:35:01.644+02:00  INFO 15040 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T12:35:01.801+02:00  INFO 15040 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-08T12:35:01.802+02:00  INFO 15040 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4877 ms
+2024-08-08T12:35:02.169+02:00  INFO 15040 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-08T12:35:03.074+02:00  INFO 15040 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5af85acd
+2024-08-08T12:35:03.080+02:00  INFO 15040 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-08T12:35:03.299+02:00  INFO 15040 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-08T12:35:03.675+02:00  INFO 15040 --- [backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.9.Final
+2024-08-08T12:35:03.904+02:00  INFO 15040 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-08T12:35:04.637+02:00  INFO 15040 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-08T12:35:05.481+02:00 ERROR 15040 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Collection 'com.betacom.backend.pojo.Ordine.prodOrdini' is 'mappedBy' a property named 'ordine' which does not exist in the target entity 'com.betacom.backend.pojo.ProdottiOrdini'
+2024-08-08T12:35:05.486+02:00  WARN 15040 --- [backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Collection 'com.betacom.backend.pojo.Ordine.prodOrdini' is 'mappedBy' a property named 'ordine' which does not exist in the target entity 'com.betacom.backend.pojo.ProdottiOrdini'
+2024-08-08T12:35:05.492+02:00  INFO 15040 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-08T12:35:05.520+02:00  INFO 15040 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-08T12:35:05.531+02:00  INFO 15040 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-08T12:35:05.570+02:00  INFO 15040 --- [backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-08T12:35:05.640+02:00 ERROR 15040 --- [backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Collection 'com.betacom.backend.pojo.Ordine.prodOrdini' is 'mappedBy' a property named 'ordine' which does not exist in the target entity 'com.betacom.backend.pojo.ProdottiOrdini'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.2.8.jar:3.2.8]
+	at com.betacom.backend.BackendApplication.main(BackendApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+Caused by: org.hibernate.AnnotationException: Collection 'com.betacom.backend.pojo.Ordine.prodOrdini' is 'mappedBy' a property named 'ordine' which does not exist in the target entity 'com.betacom.backend.pojo.ProdottiOrdini'
+	at org.hibernate.boot.model.internal.CollectionBinder.isReversePropertyInJoin(CollectionBinder.java:1622) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.noAssociationTable(CollectionBinder.java:1636) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:1597) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder$1.secondPass(CollectionBinder.java:1588) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.internal.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:45) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1815) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1774) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:332) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503) ~[hibernate-core-6.4.9.Final.jar:6.4.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.11.jar:6.1.11]
+	... 20 common frames omitted
+
+2024-08-08T12:35:59.634+02:00  INFO 19400 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Starting BackendApplication using Java 17.0.11 with PID 19400 (C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject\backend\target\classes started by root in C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject)
+2024-08-08T12:35:59.652+02:00 DEBUG 19400 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-08T12:35:59.658+02:00  INFO 19400 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T12:35:59.908+02:00  INFO 19400 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-08T12:35:59.911+02:00  INFO 19400 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-08T12:36:02.257+02:00  INFO 19400 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-08T12:36:02.318+02:00  INFO 19400 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 0 JPA repository interfaces.
+2024-08-08T12:36:04.064+02:00  INFO 19400 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-08T12:36:04.130+02:00  INFO 19400 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T12:36:04.136+02:00  INFO 19400 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T12:36:04.339+02:00  INFO 19400 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-08T12:36:04.341+02:00  INFO 19400 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4423 ms
+2024-08-08T12:36:04.739+02:00  INFO 19400 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-08T12:36:05.519+02:00  INFO 19400 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@771ebfa2
+2024-08-08T12:36:05.523+02:00  INFO 19400 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-08T12:36:05.680+02:00  INFO 19400 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-08T12:36:05.931+02:00  INFO 19400 --- [backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.9.Final
+2024-08-08T12:36:06.085+02:00  INFO 19400 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-08T12:36:06.714+02:00  INFO 19400 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-08T12:36:09.965+02:00  INFO 19400 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-08T12:36:10.056+02:00  INFO 19400 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-08T12:36:10.194+02:00  WARN 19400 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-08T12:36:11.181+02:00  INFO 19400 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-08T12:36:11.339+02:00  INFO 19400 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-08-08T12:36:11.406+02:00  INFO 19400 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Started BackendApplication in 13.065 seconds (process running for 13.843)

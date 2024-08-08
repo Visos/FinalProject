@@ -1,5 +1,7 @@
 package com.betacom.backend.pojo;
 
+import java.util.List;
+
 import com.betacom.backend.util.Sesso;
 
 import jakarta.persistence.Column;
@@ -9,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -61,12 +64,15 @@ public class Prodotto {
     @JoinColumn(name = "id_camicia")
     private Camicia camicia;
 
+    @OneToMany(mappedBy = "prodotto")
+    private List<ProdottiOrdini>  prodOrdini;
+
     public Prodotto() {
     }
 
     public Prodotto(Integer id, Integer qty, Sesso sesso, Colore colore, Marca marca, Materiale materiale,
             Fantasia fantasia, Maglietta maglietta, Pantalone pantalone, Vestito vestito, Scarpa scarpa,
-            Camicia camicia) {
+            Camicia camicia, List<ProdottiOrdini> prodOrdini) {
         this.id = id;
         this.qty = qty;
         this.sesso = sesso;
@@ -79,6 +85,7 @@ public class Prodotto {
         this.vestito = vestito;
         this.scarpa = scarpa;
         this.camicia = camicia;
+        this.prodOrdini = prodOrdini;
     }
 
     public Integer getId() {
@@ -176,4 +183,13 @@ public class Prodotto {
     public void setCamicia(Camicia camicia) {
         this.camicia = camicia;
     }
+
+    public List<ProdottiOrdini> getProdOrdini() {
+        return prodOrdini;
+    }
+
+    public void setProdOrdini(List<ProdottiOrdini> prodOrdini) {
+        this.prodOrdini = prodOrdini;
+    }
+    
 }
