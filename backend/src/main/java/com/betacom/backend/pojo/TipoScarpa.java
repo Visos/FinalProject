@@ -26,7 +26,7 @@ public class TipoScarpa {
     private String desc;
 
     @OneToMany(
-        mappedBy = "chiusura",
+        mappedBy = "tipoScarpa",
         fetch = FetchType.EAGER)
     private List<Scarpa> scarpe;
 

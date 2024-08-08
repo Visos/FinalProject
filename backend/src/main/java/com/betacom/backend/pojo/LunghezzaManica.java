@@ -12,7 +12,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "lunghezza_manica")
+@Table(name = "lunghezzaManica")
 public class LunghezzaManica {
 
     @Id
@@ -26,17 +26,17 @@ public class LunghezzaManica {
     private String desc;
 
     @OneToMany(
-        mappedBy = "lunghezza_manica",
+        mappedBy = "lunghezzaManica",
         fetch = FetchType.EAGER)
     private List<Camicia> camicie;
 
     @OneToMany(
-        mappedBy = "lunghezza_manica",
+        mappedBy = "lunghezzaManica",
         fetch = FetchType.EAGER)
     private List<Vestito> vestiti;
 
     @OneToMany(
-        mappedBy = "lunghezza_manica",
+        mappedBy = "lunghezzaManica",
         fetch = FetchType.EAGER)
     private List<Maglietta> magliette;
     

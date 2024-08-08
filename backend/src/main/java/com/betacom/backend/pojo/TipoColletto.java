@@ -26,12 +26,12 @@ public class TipoColletto {
     private String desc;
 
     @OneToMany(
-        mappedBy = "taglia",
+        mappedBy = "tipoColletto",
         fetch = FetchType.EAGER)
     private List<Camicia> camicie;
 
     @OneToMany(
-        mappedBy = "taglia",
+        mappedBy = "tipoColletto",
         fetch = FetchType.EAGER)
     private List<Maglietta> magliette;
 
