@@ -2,6 +2,8 @@ package com.betacom.backend.pojo;
 
 import java.util.List;
 
+import com.betacom.backend.util.Stato;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,10 +25,10 @@ public class Ordine {
     private String data;
 
     @Column(nullable = false)
-    private String stato;
+    private Stato stato;
 
-    @Column(nullable = false)
-    private Integer qty;
+    @Column(nullable = false, name = "prezzo_totale")
+    private Integer prezzoTotale;
 
     @OneToMany(mappedBy = "ordine")
     private List<ProdottiOrdini> prodOrdini;
@@ -38,11 +40,11 @@ public class Ordine {
     public Ordine() {
     }
 
-    public Ordine(Integer id, String data, String stato, Integer qty, List<ProdottiOrdini> prodOrdini, Utente utente) {
+    public Ordine(Integer id, String data, Stato stato, Integer prezzoTotale, List<ProdottiOrdini> prodOrdini, Utente utente) {
         this.id = id;
         this.data = data;
         this.stato = stato;
-        this.qty = qty;
+        this.prezzoTotale = prezzoTotale;
         this.prodOrdini = prodOrdini;
         this.utente = utente;
     }
@@ -63,20 +65,20 @@ public class Ordine {
         this.data = data;
     }
 
-    public String getStato() {
+    public Stato getStato() {
         return stato;
     }
 
-    public void setStato(String stato) {
+    public void setStato(Stato stato) {
         this.stato = stato;
     }
 
     public Integer getQty() {
-        return qty;
+        return prezzoTotale;
     }
 
-    public void setQty(Integer qty) {
-        this.qty = qty;
+    public void setQty(Integer prezzoTotale) {
+        this.prezzoTotale = prezzoTotale;
     }
 
     public Utente getUtente() {

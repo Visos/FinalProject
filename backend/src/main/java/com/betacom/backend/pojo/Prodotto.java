@@ -66,29 +66,38 @@ public class Prodotto {
 
     @OneToMany(mappedBy = "prodotto")
     private List<ProdottiOrdini>  prodOrdini;
+    
+    @Column(nullable = false)
+    private Integer prezzo;
 
     public Prodotto() {
     }
 
-    public Prodotto(Integer id, Integer qty, Sesso sesso, Colore colore, Marca marca, Materiale materiale,
-            Fantasia fantasia, Maglietta maglietta, Pantalone pantalone, Vestito vestito, Scarpa scarpa,
-            Camicia camicia, List<ProdottiOrdini> prodOrdini) {
-        this.id = id;
-        this.qty = qty;
-        this.sesso = sesso;
-        this.colore = colore;
-        this.marca = marca;
-        this.materiale = materiale;
-        this.fantasia = fantasia;
-        this.maglietta = maglietta;
-        this.pantalone = pantalone;
-        this.vestito = vestito;
-        this.scarpa = scarpa;
-        this.camicia = camicia;
-        this.prodOrdini = prodOrdini;
-    }
 
-    public Integer getId() {
+
+    public Prodotto(Integer id, Integer qty, Sesso sesso, Colore colore, Marca marca, Materiale materiale,
+			Fantasia fantasia, Maglietta maglietta, Pantalone pantalone, Vestito vestito, Scarpa scarpa,
+			Camicia camicia, List<ProdottiOrdini> prodOrdini, Integer prezzo) {
+		super();
+		this.id = id;
+		this.qty = qty;
+		this.sesso = sesso;
+		this.colore = colore;
+		this.marca = marca;
+		this.materiale = materiale;
+		this.fantasia = fantasia;
+		this.maglietta = maglietta;
+		this.pantalone = pantalone;
+		this.vestito = vestito;
+		this.scarpa = scarpa;
+		this.camicia = camicia;
+		this.prodOrdini = prodOrdini;
+		this.prezzo = prezzo;
+	}
+
+
+
+	public Integer getId() {
         return id;
     }
 
@@ -191,5 +200,17 @@ public class Prodotto {
     public void setProdOrdini(List<ProdottiOrdini> prodOrdini) {
         this.prodOrdini = prodOrdini;
     }
+
+
+
+	public Integer getPrezzo() {
+		return prezzo;
+	}
+
+
+
+	public void setPrezzo(Integer prezzo) {
+		this.prezzo = prezzo;
+	}
     
 }
