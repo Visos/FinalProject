@@ -611,3 +611,53 @@ Caused by: org.hibernate.AnnotationException: Collection 'com.betacom.backend.po
 2024-08-08T12:36:11.181+02:00  INFO 19400 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2024-08-08T12:36:11.339+02:00  INFO 19400 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
 2024-08-08T12:36:11.406+02:00  INFO 19400 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Started BackendApplication in 13.065 seconds (process running for 13.843)
+2024-08-08T17:45:42.738+02:00  INFO 6256 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Starting BackendApplication using Java 17.0.11 with PID 6256 (C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject\backend\target\classes started by root in C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject)
+2024-08-08T17:45:42.742+02:00 DEBUG 6256 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-08T17:45:42.744+02:00  INFO 6256 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T17:45:42.833+02:00  INFO 6256 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-08T17:45:42.834+02:00  INFO 6256 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-08T17:45:44.247+02:00  INFO 6256 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-08T17:45:44.470+02:00  INFO 6256 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 208 ms. Found 10 JPA repository interfaces.
+2024-08-08T17:45:46.189+02:00  INFO 6256 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-08T17:45:46.239+02:00  INFO 6256 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T17:45:46.240+02:00  INFO 6256 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T17:45:46.372+02:00  INFO 6256 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-08T17:45:46.373+02:00  INFO 6256 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3537 ms
+2024-08-08T17:45:46.630+02:00  INFO 6256 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-08T17:45:47.298+02:00  INFO 6256 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4899b7dd
+2024-08-08T17:45:47.302+02:00  INFO 6256 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-08T17:45:47.371+02:00  INFO 6256 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-08T17:45:47.509+02:00  INFO 6256 --- [backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.9.Final
+2024-08-08T17:45:47.615+02:00  INFO 6256 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-08T17:45:48.061+02:00  INFO 6256 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-08T17:45:50.683+02:00  INFO 6256 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-08T17:45:50.745+02:00  INFO 6256 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-08T17:45:51.945+02:00  WARN 6256 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-08T17:45:52.918+02:00  INFO 6256 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-08T17:45:52.977+02:00  INFO 6256 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-08-08T17:45:53.000+02:00  INFO 6256 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Started BackendApplication in 11.073 seconds (process running for 12.036)
+2024-08-08T17:49:30.556+02:00  INFO 10928 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Starting BackendApplication using Java 17.0.11 with PID 10928 (C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject\backend\target\classes started by root in C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject)
+2024-08-08T17:49:30.560+02:00 DEBUG 10928 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-08T17:49:30.566+02:00  INFO 10928 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T17:49:30.690+02:00  INFO 10928 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-08T17:49:30.693+02:00  INFO 10928 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-08T17:49:32.362+02:00  INFO 10928 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-08T17:49:32.598+02:00  INFO 10928 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 215 ms. Found 10 JPA repository interfaces.
+2024-08-08T17:49:34.190+02:00  INFO 10928 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-08T17:49:34.219+02:00  INFO 10928 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T17:49:34.220+02:00  INFO 10928 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T17:49:34.365+02:00  INFO 10928 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-08T17:49:34.368+02:00  INFO 10928 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3673 ms
+2024-08-08T17:49:34.643+02:00  INFO 10928 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-08T17:49:35.231+02:00  INFO 10928 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d8c141c
+2024-08-08T17:49:35.236+02:00  INFO 10928 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-08T17:49:35.340+02:00  INFO 10928 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-08T17:49:35.469+02:00  INFO 10928 --- [backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.9.Final
+2024-08-08T17:49:35.549+02:00  INFO 10928 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-08T17:49:36.107+02:00  INFO 10928 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-08T17:49:38.589+02:00  INFO 10928 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-08T17:49:38.675+02:00  INFO 10928 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-08T17:49:39.656+02:00  WARN 10928 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-08T17:49:40.407+02:00  INFO 10928 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-08T17:49:40.477+02:00  INFO 10928 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-08-08T17:49:40.492+02:00  INFO 10928 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Started BackendApplication in 10.765 seconds (process running for 11.549)

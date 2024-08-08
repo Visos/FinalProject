@@ -133,6 +133,8 @@
 
     drop table if exists materiale;
 
+    drop table if exists messaggi;
+
     drop table if exists ordine;
 
     drop table if exists pantalone;

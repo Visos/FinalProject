@@ -26,7 +26,9 @@ public class Utente {
     @Column(nullable = false)
     private String cognome;
 
-    @Column(nullable = false)
+    @Column(
+        unique = true,
+        nullable = false)
     private String mail;
 
     @Column(nullable = false)
