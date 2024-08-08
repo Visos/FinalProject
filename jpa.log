@@ -69,3 +69,28 @@ Caused by: org.hibernate.AnnotationException: Collection 'com.betacom.backend.po
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.11.jar:6.1.11]
 	... 20 common frames omitted
 
+2024-08-08T09:22:20.097+02:00  INFO 6668 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Starting BackendApplication using Java 17.0.11 with PID 6668 (C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject\backend\target\classes started by root in C:\Users\raimo\OneDrive\Betacom\Git-hub\FinalProject)
+2024-08-08T09:22:20.107+02:00 DEBUG 6668 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-08T09:22:20.160+02:00  INFO 6668 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T09:22:20.389+02:00  INFO 6668 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-08T09:22:20.392+02:00  INFO 6668 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-08T09:22:23.805+02:00  INFO 6668 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-08T09:22:23.878+02:00  INFO 6668 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 0 JPA repository interfaces.
+2024-08-08T09:22:26.111+02:00  INFO 6668 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-08T09:22:26.161+02:00  INFO 6668 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T09:22:26.164+02:00  INFO 6668 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T09:22:26.346+02:00  INFO 6668 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-08T09:22:26.347+02:00  INFO 6668 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5953 ms
+2024-08-08T09:22:26.757+02:00  INFO 6668 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-08T09:22:27.727+02:00  INFO 6668 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4193c621
+2024-08-08T09:22:27.733+02:00  INFO 6668 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-08T09:22:27.999+02:00  INFO 6668 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-08T09:22:28.349+02:00  INFO 6668 --- [backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.9.Final
+2024-08-08T09:22:28.496+02:00  INFO 6668 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-08T09:22:29.247+02:00  INFO 6668 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-08T09:22:32.336+02:00  INFO 6668 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-08T09:22:32.344+02:00  INFO 6668 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-08T09:22:32.501+02:00  WARN 6668 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-08T09:22:33.975+02:00  INFO 6668 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-08T09:22:34.113+02:00  INFO 6668 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-08-08T09:22:34.173+02:00  INFO 6668 --- [backend] [restartedMain] com.betacom.backend.BackendApplication   : Started BackendApplication in 15.365 seconds (process running for 16.681)
