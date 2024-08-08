@@ -1,8 +1,5 @@
 package com.betacom.backend.request;
 
-import com.betacom.backend.pojo.Ordine;
-import com.betacom.backend.pojo.Prodotto;
-
 public class ProdottiOrdiniReq {
 
     private Integer id;
