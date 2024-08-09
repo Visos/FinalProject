@@ -59,6 +59,12 @@
         primary key (id)
     ) engine=InnoDB;
 
+    create table messaggi (
+        codice varchar(255) not null,
+        messaggio varchar(255),
+        primary key (codice)
+    ) engine=InnoDB;
+
     create table ordine (
         id integer not null auto_increment,
         id_utente integer,
@@ -155,6 +161,9 @@
         id_vestibilita integer,
         primary key (id)
     ) engine=InnoDB;
+
+    alter table utente 
+       add constraint UK_p72xb2utk1ksr1ymf57y37w04 unique (mail);
 
     alter table camicia 
        add constraint FKp9yyo4ecr31xd79hiycxts3g2 
