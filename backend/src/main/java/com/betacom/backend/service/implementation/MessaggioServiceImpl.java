@@ -11,7 +11,7 @@ import com.betacom.backend.repository.IMessaggioRepository;
 import com.betacom.backend.service.interfaces.IMessaggioService;
 
 @Service
-public class IMessaggioServiceImpl implements IMessaggioService{
+public class MessaggioServiceImpl implements IMessaggioService{
 
 	@Autowired
 	IMessaggioRepository msgR;
