@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.betacom.backend.service.interfaces.IMagliettaService;
+import com.betacom.backend.service.interfaces.IMessaggioService;
 import com.betacom.backend.repository.IMagliettaRepository;
 import com.betacom.backend.request.MagliettaReq;
 
@@ -12,6 +13,9 @@ public class MagliettaServiceImpl implements IMagliettaService{
 
 	@Autowired
 	IMagliettaRepository magliaR;
+	
+	@Autowired
+	IMessaggioService msgS;
 	
 	@Override
 	public void create(MagliettaReq req) {

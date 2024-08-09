@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.betacom.backend.repository.IPantaloneRepository;
 import com.betacom.backend.request.PantaloneReq;
+import com.betacom.backend.service.interfaces.IMessaggioService;
 import com.betacom.backend.service.interfaces.IPantaloneService;
 
 @Service
@@ -12,6 +13,9 @@ public class PantaloniServiceImpl implements IPantaloneService{
 
 	@Autowired
 	IPantaloneRepository pantR;
+	
+	@Autowired
+	IMessaggioService msgS;
 
 	@Override
 	public void create(PantaloneReq req) {
