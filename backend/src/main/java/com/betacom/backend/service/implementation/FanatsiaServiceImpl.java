@@ -1,6 +1,7 @@
 package com.betacom.backend.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.betacom.backend.exception.AcademyException;
 import com.betacom.backend.repository.IFantasiaRepository;
@@ -8,6 +9,7 @@ import com.betacom.backend.request.FantasiaReq;
 import com.betacom.backend.service.interfaces.IFantasiaService;
 import com.betacom.backend.service.interfaces.IMessaggioService;
 
+@Service
 public class FanatsiaServiceImpl implements IFantasiaService{
 	
 	@Autowired
