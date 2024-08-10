@@ -56,7 +56,7 @@ public class ColoreServiceImpl implements IColoreService{
         try {
             colR.save(colore);
         } catch (Exception e) {
-            throw new AcademyException(msgS.getMessaggio("lunghezza-generic") + e.getMessage());
+            throw new AcademyException(msgS.getMessaggio("colore-generic") + e.getMessage());
         }
 
 	}

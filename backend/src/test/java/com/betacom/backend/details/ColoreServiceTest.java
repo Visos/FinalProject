@@ -140,21 +140,20 @@ public class ColoreServiceTest {
         lc.forEach(s-> System.out.println(s.getDesc() + "  "));
         		
 	}
-	
 
 	
-	
-	
-	
 	@Test
-	@Order(100)
-	public void serachDescColore() {
-		ColoreReq c = new ColoreReq();
-		
+	@Order(8)
+	public void serachDescColore() {		
 
 		assertDoesNotThrow(() -> {
             ColoreReq r =  colS.searchByDesc("rosso");
         });
+	}
+	
+	@Test
+	@Order(9)
+	public void serachDescColoreNotExist() {		
 		
 		
 		AcademyException exception = assertThrows(AcademyException.class, () -> {
@@ -166,15 +165,18 @@ public class ColoreServiceTest {
 	}
 	
 	@Test
-	@Order(101)
+	@Order(10)
 	public void serachIdColore() {
-		ColoreReq c = new ColoreReq();
-		
-
 		assertDoesNotThrow(() -> {
             ColoreReq r =  colS.searchById(1);
         });
-		
+
+	}
+	
+	@Test
+	@Order(11)
+	public void serachIdColoreNotExist() {
+
 		
 		AcademyException exception = assertThrows(AcademyException.class, () -> {
             colS.searchById(90);
