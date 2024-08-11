@@ -147,7 +147,7 @@ public class ColoreServiceTest {
 	public void serachDescColore() {		
 
 		assertDoesNotThrow(() -> {
-            ColoreReq r =  colS.searchByDesc("rosso");
+            colS.searchByDesc("rosso");
         });
 	}
 	
@@ -168,7 +168,7 @@ public class ColoreServiceTest {
 	@Order(10)
 	public void serachIdColore() {
 		assertDoesNotThrow(() -> {
-            ColoreReq r =  colS.searchById(1);
+            colS.searchById(1);
         });
 
 	}

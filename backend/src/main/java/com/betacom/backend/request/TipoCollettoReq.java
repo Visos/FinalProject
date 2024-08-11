@@ -6,11 +6,9 @@ public class TipoCollettoReq {
 	String descrizione;
 	
 	public TipoCollettoReq() {
-		super();
 	}
 	
 	public TipoCollettoReq(Integer id, String descrizione) {
-		super();
 		this.id = id;
 		this.descrizione = descrizione;
 	}
@@ -27,5 +25,4 @@ public class TipoCollettoReq {
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-
 }

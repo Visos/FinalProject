@@ -148,7 +148,7 @@ public class FantasiaServiceTest {
 	public void serachDescFantasia() {		
 
 		assertDoesNotThrow(() -> {
-            FantasiaReq r =  fantasiaS.searchByDesc("a righe");
+            fantasiaS.searchByDesc("a righe");
         });
 	}
 	
@@ -169,7 +169,7 @@ public class FantasiaServiceTest {
 	@Order(10)
 	public void serachIdFantasia() {
 		assertDoesNotThrow(() -> {
-            FantasiaReq r =  fantasiaS.searchById(1);
+            fantasiaS.searchById(1);
         });
 
 	}

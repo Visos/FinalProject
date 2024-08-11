@@ -148,7 +148,7 @@ public class ChiusuraServiceTest {
 	public void serachDescChiusura() {		
 
 		assertDoesNotThrow(() -> {
-            ChiusuraReq r =  chiusuraS.searchByDesc("aperto");
+            chiusuraS.searchByDesc("aperto");
         });
 	}
 	
@@ -169,7 +169,7 @@ public class ChiusuraServiceTest {
 	@Order(10)
 	public void serachIdChiusura() {
 		assertDoesNotThrow(() -> {
-            ChiusuraReq r =  chiusuraS.searchById(1);
+            chiusuraS.searchById(1);
         });
 
 	}

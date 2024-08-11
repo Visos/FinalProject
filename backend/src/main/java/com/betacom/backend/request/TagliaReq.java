@@ -6,11 +6,9 @@ public class TagliaReq {
 	String descrizione;
 	
 	public TagliaReq() {
-		super();
 	}
 	
 	public TagliaReq(Integer id, String descrizione) {
-		super();
 		this.id = id;
 		this.descrizione = descrizione;
 	}
@@ -18,12 +16,15 @@ public class TagliaReq {
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getDescrizione() {
 		return descrizione;
 	}
+	
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}

@@ -21,14 +21,11 @@ public class ProdottoReq {
 
 
 	public ProdottoReq() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public ProdottoReq(Integer id, Integer qty, String sesso, String colore, String marca, String materiale,
 			String fantasia, MagliettaReq magliettaReq, PantaloneReq pantaloneReq, VestitoReq vestitoReq,
 			ScarpaReq scarpaReq, CamiciaReq camiciaReq, Integer prezzo) {
-		super();
 		this.id = id;
 		this.qty = qty;
 		this.sesso = sesso;

@@ -6,11 +6,9 @@ public class FantasiaReq {
 	private String descrizione;
 	
 	public FantasiaReq() {
-		super();
 	}
 	
 	public FantasiaReq(Integer id, String descrizione) {
-		super();
 		this.id = id;
 		this.descrizione = descrizione;
 	}
@@ -26,5 +24,4 @@ public class FantasiaReq {
 	public String getDescrizione() {
 		return descrizione;
 	}
-	
 }

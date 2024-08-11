@@ -10,8 +10,6 @@ public class CamiciaReq {
     public CamiciaReq() {
     }
     
-    
-
 	public CamiciaReq(Integer id, String taglia, String vestibilita, Integer lunghezzaManica, String tipoColletto) {
 		super();
 		this.id = id;
@@ -20,8 +18,6 @@ public class CamiciaReq {
 		this.lunghezzaManica = lunghezzaManica;
 		this.tipoColletto = tipoColletto;
 	}
-
-
 
 	public Integer getId() {
 		return id;
