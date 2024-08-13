@@ -35,7 +35,7 @@ public class LunghezzaManicaServiceTest {
     }
 
     @Test
-    @Order(2)
+    @Order(2) 
     public void testUpdateWithoutException() {
 
         LunghezzaManicaReq req = new LunghezzaManicaReq();

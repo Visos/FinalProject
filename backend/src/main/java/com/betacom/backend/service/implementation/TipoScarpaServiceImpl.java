@@ -2,6 +2,7 @@ package com.betacom.backend.service.implementation;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -83,6 +84,20 @@ public class TipoScarpaServiceImpl implements ITipoScarpaService {
 				opt.get().getDesc());
 	}
 
+	@Override
+	public List<TipoScarpaReq> listAll() {
+		 return trasformInReq(tipoScarpaR.findAll());
+	}
+
+	 private List<TipoScarpaReq> trasformInReq(List<TipoScarpa> resp){
+			return resp.stream()
+					.map(a -> new TipoScarpaReq(
+							a.getId(),
+	                        a.getDesc()
+							)
+						)
+					.collect(Collectors.toList());
+		}
 
 	
 	

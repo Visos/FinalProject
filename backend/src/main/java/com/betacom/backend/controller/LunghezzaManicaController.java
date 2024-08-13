@@ -51,7 +51,7 @@ public class LunghezzaManicaController {
         }
 
         return resp;
-    }
+    } 
 
     @GetMapping("searchById")
     public ResponseObject<LunghezzaManicaReq> searchById(@RequestParam Integer id) {

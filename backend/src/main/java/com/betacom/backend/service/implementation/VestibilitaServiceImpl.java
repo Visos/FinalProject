@@ -3,6 +3,7 @@ package com.betacom.backend.service.implementation;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +27,7 @@ public class VestibilitaServiceImpl implements IVestibilitaService{
 	@Override
 	public void createOrUpdate(VestibilitaReq req) throws AcademyException {
 		Vestibilita vestibilita = null;
-		
+		 
 		if(req.getId()!=null) {
 			Optional<Vestibilita> opt = vestibilitaR.findById(req.getId());
 			if(opt.isPresent())
@@ -39,7 +40,7 @@ public class VestibilitaServiceImpl implements IVestibilitaService{
 		if(req.getDescrizione()!=null) {
 			List<Vestibilita> listVest = vestibilitaR.findAll();
 			for(Vestibilita v:listVest) {
-				if(req.getDescrizione().equalsIgnoreCase(v.getDesc()))
+				if(req.getDescrizione().equalsIgnoreCase(v.getDesc())) 
 					throw new AcademyException(msgS.getMessaggio("vestibilita-exist"));
 				}
 		} else 
@@ -78,6 +79,21 @@ public class VestibilitaServiceImpl implements IVestibilitaService{
 		return new VestibilitaReq(
 				opt.get().getId(),
 				opt.get().getDesc());
+	}
+
+	@Override
+	public List<VestibilitaReq> listAll() {
+		   return trasformInReq(vestibilitaR.findAll());		
+	}
+	
+	private List<VestibilitaReq> trasformInReq(List<Vestibilita> resp){
+		return resp.stream()
+				.map(a -> new VestibilitaReq(
+						a.getId(),
+                        a.getDesc()
+						)
+					)
+				.collect(Collectors.toList());
 	}
 
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.betacom.backend.exception.AcademyException;
 import com.betacom.backend.request.TipoCollettoReq;
+import com.betacom.backend.response.Response;
 import com.betacom.backend.response.ResponseBase;
 import com.betacom.backend.response.ResponseObject;
 import com.betacom.backend.service.interfaces.ITipoCollettoService;
@@ -66,5 +67,16 @@ public class TipoCollettoController {
 
 	        return resp;
 	    }
+	    
+	    @GetMapping("listAll")
+	    public Response<TipoCollettoReq> listAll() {
 
-}
+	        Response<TipoCollettoReq> resp = new Response<TipoCollettoReq>();
+	        resp.setRc(true);
+	        resp.setDati(tipoCollettoS.listAll());
+
+	        return resp;
+	    }
+	}
+
+

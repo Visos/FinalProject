@@ -50,7 +50,7 @@ public class LunghezzaServiceImpl implements ILunghezzaService  {
             
         lunghezza.setDesc(req.getDescrizione());
 
-        try {
+        try { 
             lunghezzaR.save(lunghezza);
         } catch (Exception e) {
             throw new AcademyException(msgS.getMessaggio("lunghezza-generic") + e.getMessage());

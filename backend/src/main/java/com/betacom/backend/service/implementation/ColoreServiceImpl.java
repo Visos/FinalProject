@@ -37,7 +37,7 @@ public class ColoreServiceImpl implements IColoreService{
             }
         } else {
         	colore = new Colore();
-        }
+        } 
 
         
         if(req.getDescrizione() != null) {

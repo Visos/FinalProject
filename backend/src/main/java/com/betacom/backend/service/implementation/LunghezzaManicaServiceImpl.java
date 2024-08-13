@@ -51,7 +51,7 @@ public class LunghezzaManicaServiceImpl implements ILunghezzaManicaService{
         lManica.setDesc(req.getDescrizione());
 
         try {
-            lManicaR.save(lManica);
+            lManicaR.save(lManica); 
         } catch (Exception e) {
             throw new AcademyException(msgS.getMessaggio("lManica-generic") + e.getMessage());
         }

@@ -2,6 +2,7 @@ package com.betacom.backend.service.implementation;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,10 +20,10 @@ public class TipoCollettoServiceImpl implements ITipoCollettoService {
 	IMessaggioService msgS;
 
 	@Autowired
-	ITipoCollettoRepository tipoCollettoR;
+	ITipoCollettoRepository tipoCollettoR; 
 
 	@Override
-	public void createOrUpdate(TipoCollettoReq req) throws AcademyException {
+	public void createOrUpdate(TipoCollettoReq req) throws AcademyException { 
 		TipoColletto tipoColletto = null;
 		
 		if(req.getId()!=null) {
@@ -75,6 +76,21 @@ public class TipoCollettoServiceImpl implements ITipoCollettoService {
 		return new TipoCollettoReq(
 				opt.get().getId(),
 				opt.get().getDesc());
+	}
+
+	@Override
+	public List<TipoCollettoReq> listAll() {
+		return trasformInReq(tipoCollettoR.findAll());
+	}
+	
+	private List<TipoCollettoReq> trasformInReq(List<TipoColletto> resp){
+		return resp.stream()
+				.map(a -> new TipoCollettoReq(
+						a.getId(),
+                        a.getDesc()
+						)
+					)
+				.collect(Collectors.toList());
 	}
 
 }

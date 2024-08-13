@@ -2,6 +2,7 @@ package com.betacom.backend.service.implementation;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,9 +23,9 @@ public class TagliaServiceImpl implements ITagliaService {
 	@Autowired
 	ITagliaRepository tagliaR;
 
-	@Override
+	@Override 
 	public void createOrUpdate(TagliaReq req) throws AcademyException {
-		Taglia taglia = null;
+		Taglia taglia = null; 
 		
 		if(req.getId()!=null) {
 			Optional<Taglia> opt = tagliaR.findById(req.getId());
@@ -77,6 +78,22 @@ public class TagliaServiceImpl implements ITagliaService {
 		return new TagliaReq(
 				opt.get().getId(),
 				opt.get().getDesc());
+	}
+
+	@Override
+	public List<TagliaReq> listAll() {
+	
+		return trasformInReq(tagliaR.findAll());
+	}
+	
+	private List<TagliaReq> trasformInReq(List<Taglia> resp) {
+		return resp.stream()
+				.map(a -> new TagliaReq(
+						a.getId(),
+                        a.getDesc()
+						)
+					)
+				.collect(Collectors.toList());
 	}
 
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.betacom.backend.exception.AcademyException;
 import com.betacom.backend.request.TagliaReq;
+import com.betacom.backend.response.Response;
 import com.betacom.backend.response.ResponseBase;
 import com.betacom.backend.response.ResponseObject;
 import com.betacom.backend.service.interfaces.ITagliaService;
@@ -63,6 +64,16 @@ public class TagliaController {
             resp.setRc(false);
             resp.setMsg(e.getMessage());
         }
+
+        return resp;
+    }
+    
+    @GetMapping("listAll")
+    public Response<TagliaReq> listAll() {
+
+        Response<TagliaReq> resp = new Response<TagliaReq>();
+        resp.setRc(true);
+        resp.setDati(tagliaS.listAll());
 
         return resp;
     }

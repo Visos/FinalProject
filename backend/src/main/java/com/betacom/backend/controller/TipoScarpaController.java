@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.betacom.backend.exception.AcademyException;
 import com.betacom.backend.request.TipoScarpaReq;
+import com.betacom.backend.response.Response;
 import com.betacom.backend.response.ResponseBase;
 import com.betacom.backend.response.ResponseObject;
 import com.betacom.backend.service.interfaces.ITipoScarpaService;
@@ -63,6 +64,16 @@ public class TipoScarpaController {
 	            resp.setRc(false);
 	            resp.setMsg(e.getMessage());
 	        }
+
+	        return resp;
+	    }
+	    
+	    @GetMapping("listAll")
+	    public Response<TipoScarpaReq> listAll() {
+
+	        Response<TipoScarpaReq> resp = new Response<TipoScarpaReq>();
+	        resp.setRc(true);
+	        resp.setDati(tipoScarpaS.listAll());
 
 	        return resp;
 	    }

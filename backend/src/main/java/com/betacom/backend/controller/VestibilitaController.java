@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.betacom.backend.exception.AcademyException;
 import com.betacom.backend.request.VestibilitaReq;
+import com.betacom.backend.response.Response;
 import com.betacom.backend.response.ResponseBase;
 import com.betacom.backend.response.ResponseObject;
 import com.betacom.backend.service.interfaces.IVestibilitaService;
@@ -63,6 +64,16 @@ public class VestibilitaController {
 	            resp.setRc(false);
 	            resp.setMsg(e.getMessage());
 	        }
+
+	        return resp;
+	    }
+	    
+	    @GetMapping("listAll")
+	    public Response<VestibilitaReq> listAll() {
+
+	        Response<VestibilitaReq> resp = new Response<VestibilitaReq>();
+	        resp.setRc(true);
+	        resp.setDati(vestibilitaS.listAll());
 
 	        return resp;
 	    }
