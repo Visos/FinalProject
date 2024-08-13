@@ -14,7 +14,7 @@ import com.betacom.backend.service.interfaces.IFantasiaService;
 import com.betacom.backend.service.interfaces.IMessaggioService;
 
 @Service
-public class FanatsiaServiceImpl implements IFantasiaService {
+public class FantasiaServiceImpl implements IFantasiaService {
 
     @Autowired
     IFantasiaRepository fantasiaR;

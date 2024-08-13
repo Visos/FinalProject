@@ -12,141 +12,140 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.betacom.backend.exception.AcademyException;
-import com.betacom.backend.request.VestibilitaReq;
-import com.betacom.backend.service.interfaces.IVestibilitaService;
-
+import com.betacom.backend.request.TipoScarpaReq;
+import com.betacom.backend.service.interfaces.ITipoScarpaService;
 
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class VestibilitaServiceImplTest {
+public class TipoScarpaImplTest {
 	
 	@Autowired
-	IVestibilitaService vestibilitaS;
-	
+	ITipoScarpaService tipoScarpaS;
+
 	@Test
 	@Order(1)
 	public void createTest() {
-		VestibilitaReq req = new VestibilitaReq();
-		req.setDescrizione("Slim");
-	
+		TipoScarpaReq req = new TipoScarpaReq();
+		req.setDescrizione("Sneakers");
+		
 		assertDoesNotThrow(() -> {
-			vestibilitaS.createOrUpdate(req);
-	        });
-	}
+			tipoScarpaS.createOrUpdate(req); 
+			});
+		}
 	
 	@Test
 	@Order(2)
 	public void updateTest() {
-		VestibilitaReq req = new VestibilitaReq();
+		TipoScarpaReq req = new TipoScarpaReq();
 		req.setId(1);
-		req.setDescrizione("Normal");
-	
+		req.setDescrizione("Mocassini");
+		
 		assertDoesNotThrow(() -> {
-			vestibilitaS.createOrUpdate(req);
-	        });
-	}
+			tipoScarpaS.createOrUpdate(req); 
+			});
+		}
 	
 	@Test
 	@Order(3)
 	public void updateTestExceptionNotFound() {
-		VestibilitaReq req = new VestibilitaReq();
+		TipoScarpaReq req = new TipoScarpaReq();
 		req.setId(100);
-		req.setDescrizione("Normal");
-		AcademyException exception = assertThrows(AcademyException.class, () -> {
-			vestibilitaS.createOrUpdate(req);
-        });
+		req.setDescrizione("Mocassini");
 		
-		assertEquals("vestibilita-ntexist", exception.getMessage());
+		AcademyException exception = assertThrows(AcademyException.class, () -> {
+			tipoScarpaS.createOrUpdate(req);
+		 });
+		
+		assertEquals("tipoScarpa-ntexist", exception.getMessage());
 	}
 	
 	@Test
 	@Order(4)
 	public void createTestExceptionDuplicate() {
-		VestibilitaReq req = new VestibilitaReq();
-		req.setDescrizione("Normal");
+		TipoScarpaReq req = new TipoScarpaReq();
+		req.setDescrizione("Mocassini");
 		
 		AcademyException exception = assertThrows(AcademyException.class, () -> {
-			vestibilitaS.createOrUpdate(req);
-        });
+			tipoScarpaS.createOrUpdate(req);
+		 });
 		
-		assertEquals("vestibilita-exist", exception.getMessage());
+		assertEquals("tipoScarpa-exist", exception.getMessage());
 	}
 	
 	@Test
 	@Order(5)
 	public void updateTestExceptionDuplicate() {
-		VestibilitaReq req = new VestibilitaReq();
+		TipoScarpaReq req = new TipoScarpaReq();
 		req.setId(1);
-		req.setDescrizione("Normal");
+		req.setDescrizione("Mocassini");
 		
 		AcademyException exception = assertThrows(AcademyException.class, () -> {
-			vestibilitaS.createOrUpdate(req);
-        });
+			tipoScarpaS.createOrUpdate(req);
+		 });
 		
-		assertEquals("vestibilita-exist", exception.getMessage());
-		
+		assertEquals("tipoScarpa-exist", exception.getMessage());
 	}
-	
 	@Test
 	@Order(6)
 	public void createTestExceptionNoDesc() {
-		VestibilitaReq req = new VestibilitaReq();
+		TipoScarpaReq req = new TipoScarpaReq();
+		
 		AcademyException exception = assertThrows(AcademyException.class, () -> {
-			vestibilitaS.createOrUpdate(req);
-        });
+			tipoScarpaS.createOrUpdate(req);
+		 });
 		
-		assertEquals("vestibilita-desc-null", exception.getMessage());
-		
+		assertEquals("tipoScarpa-desc-null", exception.getMessage());
 	}
 	
 	@Test
 	@Order(7)
 	public void updateTestExceptionNoDesc() {
-		VestibilitaReq req = new VestibilitaReq();
+		TipoScarpaReq req = new TipoScarpaReq();
 		req.setId(1);
+		
 		AcademyException exception = assertThrows(AcademyException.class, () -> {
-			vestibilitaS.createOrUpdate(req);
-        });
+			tipoScarpaS.createOrUpdate(req);
+		 });
 		
-		assertEquals("vestibilita-desc-null", exception.getMessage());
-		
+		assertEquals("tipoScarpa-desc-null", exception.getMessage());
 	}
 	
 	@Test
 	@Order(8)
 	public void searchByIdTest() {
 		assertDoesNotThrow(() -> {
-			vestibilitaS.searchById(1);
-			});
-		}
+			tipoScarpaS.searchById(1);
+		});
+	}
 	
 	@Test
 	@Order(9)
 	public void searchByDescTest() {
 		assertDoesNotThrow(() -> {
-			vestibilitaS.searchByDesc("Normal");
-		});
-	}
+			tipoScarpaS.searchByDesc("Mocassini");
+			});
+		}
 	
 	@Test
 	@Order(10)
 	public void searchByIdTestException() {
 		AcademyException exception = assertThrows(AcademyException.class, () -> {
-			vestibilitaS.searchById(100);}
-		);
+			tipoScarpaS.searchById(100);
+		});
 		
-		assertEquals("vestibilita-ntexist", exception.getMessage());
+		assertEquals("tipoScarpa-ntexist", exception.getMessage());
+
 	}
 	
 	@Test
 	@Order(11)
 	public void searchByDescTestException() {
 		AcademyException exception = assertThrows(AcademyException.class, () -> {
-			vestibilitaS.searchByDesc("Yooo");}
-		);
+			tipoScarpaS.searchByDesc("Stivali");
+		});
 		
-		assertEquals("vestibilita-ntexist", exception.getMessage());
+		assertEquals("tipoScarpa-ntexist", exception.getMessage());
 	}
-
-
 }
+
+

@@ -1,6 +1,7 @@
 package com.betacom.backend.service.implementation;
 
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,16 @@ public class VestibilitaServiceImpl implements IVestibilitaService{
 		} else
 			vestibilita = new Vestibilita();
 		
+		if(req.getDescrizione()!=null) {
+			List<Vestibilita> listVest = vestibilitaR.findAll();
+			for(Vestibilita v:listVest) {
+				if(req.getDescrizione().equalsIgnoreCase(v.getDesc()))
+					throw new AcademyException(msgS.getMessaggio("vestibilita-exist"));
+				}
+		} else 
+			throw new AcademyException(msgS.getMessaggio("vestibilita-desc-null"));
+
+		
 		vestibilita.setDesc(req.getDescrizione());
 		
 		try {
@@ -47,14 +58,26 @@ public class VestibilitaServiceImpl implements IVestibilitaService{
 
 	@Override
 	public VestibilitaReq searchById(Integer id) throws AcademyException {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<Vestibilita> opt = vestibilitaR.findById(id);
+		
+		if (opt.isEmpty())
+			throw new AcademyException(msgS.getMessaggio("vestibilita-ntexist"));
+		
+		return new VestibilitaReq(
+				opt.get().getId(),
+				opt.get().getDesc());
 	}
 
 	@Override
 	public VestibilitaReq searchByDesc(String desc) throws AcademyException {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<Vestibilita> opt = vestibilitaR.findByDesc(desc);		
+		
+		if (opt.isEmpty())
+			throw new AcademyException(msgS.getMessaggio("vestibilita-ntexist"));
+
+		return new VestibilitaReq(
+				opt.get().getId(),
+				opt.get().getDesc());
 	}
 
 }

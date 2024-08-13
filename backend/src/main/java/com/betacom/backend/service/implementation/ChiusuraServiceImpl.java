@@ -54,7 +54,7 @@ public class ChiusuraServiceImpl implements IChiusuraService {
         try {
             chiusuraR.save(chiusura);
         } catch (Exception e) {
-            throw new AcademyException(msgS.getMessaggio("chiusura-generic") + e.getMessage());
+            throw new AcademyException(msgS.getMessaggio("chiusura-generic") + e.getMessage()); 
         }
 
     }

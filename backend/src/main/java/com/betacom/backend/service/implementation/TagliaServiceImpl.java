@@ -32,7 +32,7 @@ public class TagliaServiceImpl implements ITagliaService {
 				taglia = opt.get();
 			else 
 				throw new AcademyException(msgS.getMessaggio("taglia-ntexist"));
-		} else
+		} else 
 			taglia = new Taglia();
 		
 		if(req.getDescrizione()!=null) {
@@ -61,6 +61,7 @@ public class TagliaServiceImpl implements ITagliaService {
 		
 		if (opt.isEmpty())
 			throw new AcademyException(msgS.getMessaggio("taglia-ntexist"));
+		
 		return new TagliaReq(
 				opt.get().getId(),
 				opt.get().getDesc());

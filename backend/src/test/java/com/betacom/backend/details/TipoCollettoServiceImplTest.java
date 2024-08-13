@@ -12,141 +12,134 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.betacom.backend.exception.AcademyException;
-import com.betacom.backend.request.VestibilitaReq;
-import com.betacom.backend.service.interfaces.IVestibilitaService;
-
+import com.betacom.backend.request.TipoCollettoReq;
+import com.betacom.backend.service.interfaces.ITipoCollettoService;
 
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class VestibilitaServiceImplTest {
+public class TipoCollettoServiceImplTest {
 	
 	@Autowired
-	IVestibilitaService vestibilitaS;
-	
+	ITipoCollettoService tipoCollettoS;
+
 	@Test
 	@Order(1)
 	public void createTest() {
-		VestibilitaReq req = new VestibilitaReq();
-		req.setDescrizione("Slim");
+		TipoCollettoReq req = new TipoCollettoReq();
+		req.setDescrizione("normale");
 	
 		assertDoesNotThrow(() -> {
-			vestibilitaS.createOrUpdate(req);
+			tipoCollettoS.createOrUpdate(req);
 	        });
 	}
 	
 	@Test
 	@Order(2)
 	public void updateTest() {
-		VestibilitaReq req = new VestibilitaReq();
+		TipoCollettoReq req = new TipoCollettoReq();
 		req.setId(1);
-		req.setDescrizione("Normal");
-	
+		req.setDescrizione("coreana");
 		assertDoesNotThrow(() -> {
-			vestibilitaS.createOrUpdate(req);
+			tipoCollettoS.createOrUpdate(req);
 	        });
 	}
 	
 	@Test
 	@Order(3)
 	public void updateTestExceptionNotFound() {
-		VestibilitaReq req = new VestibilitaReq();
+		TipoCollettoReq req = new TipoCollettoReq();
 		req.setId(100);
-		req.setDescrizione("Normal");
+		req.setDescrizione("coreana");
 		AcademyException exception = assertThrows(AcademyException.class, () -> {
-			vestibilitaS.createOrUpdate(req);
+			tipoCollettoS.createOrUpdate(req);
         });
 		
-		assertEquals("vestibilita-ntexist", exception.getMessage());
+		assertEquals("tipoColletto-ntexist", exception.getMessage());
 	}
 	
 	@Test
 	@Order(4)
 	public void createTestExceptionDuplicate() {
-		VestibilitaReq req = new VestibilitaReq();
-		req.setDescrizione("Normal");
-		
+		TipoCollettoReq req = new TipoCollettoReq();
+		req.setDescrizione("coreana");
 		AcademyException exception = assertThrows(AcademyException.class, () -> {
-			vestibilitaS.createOrUpdate(req);
+			tipoCollettoS.createOrUpdate(req);
         });
 		
-		assertEquals("vestibilita-exist", exception.getMessage());
+		assertEquals("tipoColletto-exist", exception.getMessage());
 	}
 	
 	@Test
 	@Order(5)
 	public void updateTestExceptionDuplicate() {
-		VestibilitaReq req = new VestibilitaReq();
+		TipoCollettoReq req = new TipoCollettoReq();
 		req.setId(1);
-		req.setDescrizione("Normal");
-		
+		req.setDescrizione("coreana");
 		AcademyException exception = assertThrows(AcademyException.class, () -> {
-			vestibilitaS.createOrUpdate(req);
+			tipoCollettoS.createOrUpdate(req);
         });
 		
-		assertEquals("vestibilita-exist", exception.getMessage());
-		
+		assertEquals("tipoColletto-exist", exception.getMessage());
 	}
 	
 	@Test
 	@Order(6)
 	public void createTestExceptionNoDesc() {
-		VestibilitaReq req = new VestibilitaReq();
+		TipoCollettoReq req = new TipoCollettoReq();
 		AcademyException exception = assertThrows(AcademyException.class, () -> {
-			vestibilitaS.createOrUpdate(req);
+			tipoCollettoS.createOrUpdate(req);
         });
 		
-		assertEquals("vestibilita-desc-null", exception.getMessage());
-		
+		assertEquals("tipoColletto-desc-null", exception.getMessage());
 	}
 	
 	@Test
 	@Order(7)
 	public void updateTestExceptionNoDesc() {
-		VestibilitaReq req = new VestibilitaReq();
+		TipoCollettoReq req = new TipoCollettoReq();
 		req.setId(1);
 		AcademyException exception = assertThrows(AcademyException.class, () -> {
-			vestibilitaS.createOrUpdate(req);
+			tipoCollettoS.createOrUpdate(req);
         });
 		
-		assertEquals("vestibilita-desc-null", exception.getMessage());
-		
+		assertEquals("tipoColletto-desc-null", exception.getMessage());
 	}
 	
 	@Test
 	@Order(8)
 	public void searchByIdTest() {
 		assertDoesNotThrow(() -> {
-			vestibilitaS.searchById(1);
-			});
-		}
+			tipoCollettoS.searchById(1);
+	        });
+	}
 	
 	@Test
 	@Order(9)
 	public void searchByDescTest() {
 		assertDoesNotThrow(() -> {
-			vestibilitaS.searchByDesc("Normal");
-		});
+			tipoCollettoS.searchByDesc("coreana");
+	        });
 	}
 	
 	@Test
 	@Order(10)
 	public void searchByIdTestException() {
 		AcademyException exception = assertThrows(AcademyException.class, () -> {
-			vestibilitaS.searchById(100);}
-		);
+			tipoCollettoS.searchById(100);
+        });
 		
-		assertEquals("vestibilita-ntexist", exception.getMessage());
+		assertEquals("tipoColletto-ntexist", exception.getMessage());
 	}
 	
 	@Test
 	@Order(11)
 	public void searchByDescTestException() {
 		AcademyException exception = assertThrows(AcademyException.class, () -> {
-			vestibilitaS.searchByDesc("Yooo");}
-		);
+			tipoCollettoS.searchByDesc("YOO");
+        });
 		
-		assertEquals("vestibilita-ntexist", exception.getMessage());
+		assertEquals("tipoColletto-ntexist", exception.getMessage());
 	}
-
-
 }
+
+
