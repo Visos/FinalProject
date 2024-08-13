@@ -120,7 +120,7 @@ public class MaterialeServiceTest {
 
     @Test
     @Order(8)
-    public void testsearchByDescWithoutException() {
+    public void testSearchByDescWithoutException() {
 
         assertDoesNotThrow(() -> {
             materialeS.searchByDesc("lino");
@@ -129,7 +129,7 @@ public class MaterialeServiceTest {
 
     @Test
     @Order(9)
-    public void testsearchByDescWithException() {
+    public void testSearchByDescWithException() {
         
         AcademyException exception = assertThrows(AcademyException.class, () -> {
             materialeS.searchByDesc("seta");
@@ -140,7 +140,7 @@ public class MaterialeServiceTest {
 
     @Test
     @Order(10)
-    public void testsearchByIdWithoutException() {
+    public void testSearchByIdWithoutException() {
 
         assertDoesNotThrow(() -> {
             materialeS.searchById(1);
@@ -149,7 +149,7 @@ public class MaterialeServiceTest {
 
     @Test
     @Order(11)
-    public void testsearchByIdWithException() {
+    public void testSearchByIdWithException() {
         
         AcademyException exception = assertThrows(AcademyException.class, () -> {
             materialeS.searchById(4);
@@ -158,4 +158,10 @@ public class MaterialeServiceTest {
         assertEquals("materiale-ntexist", exception.getMessage());
     }
 
+    @Test
+    @Order(12)
+    public void testListAll() {
+        materialeS.listAll();
+        assertEquals(1, materialeS.listAll().size());
+    }
 }

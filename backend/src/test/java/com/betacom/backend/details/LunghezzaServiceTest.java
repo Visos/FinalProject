@@ -121,7 +121,7 @@ public class LunghezzaServiceTest {
 
     @Test
     @Order(8)
-    public void testsearchByDescWithoutException() {
+    public void testSearchByDescWithoutException() {
 
         assertDoesNotThrow(() -> {
             lunghezzaS.searchByDesc("caviglia");
@@ -130,7 +130,7 @@ public class LunghezzaServiceTest {
 
     @Test
     @Order(9)
-    public void testsearchByDescWithException() {
+    public void testSearchByDescWithException() {
         
         AcademyException exception = assertThrows(AcademyException.class, () -> {
             lunghezzaS.searchByDesc("cavallo");
@@ -141,7 +141,7 @@ public class LunghezzaServiceTest {
 
     @Test
     @Order(10)
-    public void testsearchByIdWithoutException() {
+    public void testSearchByIdWithoutException() {
 
         assertDoesNotThrow(() -> {
             lunghezzaS.searchById(1);
@@ -150,7 +150,7 @@ public class LunghezzaServiceTest {
 
     @Test
     @Order(11)
-    public void testsearchByIdWithException() {
+    public void testSearchByIdWithException() {
         
         AcademyException exception = assertThrows(AcademyException.class, () -> {
             lunghezzaS.searchById(4);
@@ -159,5 +159,11 @@ public class LunghezzaServiceTest {
         assertEquals("lunghezza-ntexist", exception.getMessage());
     }
 
+    @Test
+    @Order(12)
+    public void testListAll() {
+        lunghezzaS.listAll();
+        assertEquals(1, lunghezzaS.listAll().size());
+    }
 
 }

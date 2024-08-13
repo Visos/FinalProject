@@ -2,6 +2,7 @@ package com.betacom.backend.service.implementation;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -79,4 +80,19 @@ public class MaterialeServiceImpl implements IMaterialeService{
             optional.get().getDesc()
         );
     }
+
+    @Override
+    public List<MaterialeReq> listAll() {
+        return trasformInReq(materialeR.findAll());
+    }
+
+    private List<MaterialeReq> trasformInReq(List<Materiale> resp){
+		return resp.stream()
+				.map(a -> new MaterialeReq(
+						a.getId(),
+                        a.getDesc()
+						)
+					)
+				.collect(Collectors.toList());
+	}
 }

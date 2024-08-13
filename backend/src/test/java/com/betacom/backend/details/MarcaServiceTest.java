@@ -120,7 +120,7 @@ public class MarcaServiceTest {
 
     @Test
     @Order(8)
-    public void testsearchByDescWithoutException() {
+    public void testSearchByDescWithoutException() {
 
         assertDoesNotThrow(() -> {
             marcaS.searchByDesc("Nike");
@@ -129,7 +129,7 @@ public class MarcaServiceTest {
 
     @Test
     @Order(9)
-    public void testsearchByDescWithException() {
+    public void testSearchByDescWithException() {
         
         AcademyException exception = assertThrows(AcademyException.class, () -> {
             marcaS.searchByDesc("cavallo");
@@ -140,7 +140,7 @@ public class MarcaServiceTest {
 
     @Test
     @Order(10)
-    public void testsearchByIdWithoutException() {
+    public void testSearchByIdWithoutException() {
 
         assertDoesNotThrow(() -> {
             marcaS.searchById(1);
@@ -149,12 +149,19 @@ public class MarcaServiceTest {
 
     @Test
     @Order(11)
-    public void testsearchByIdWithException() {
+    public void testSearchByIdWithException() {
         
         AcademyException exception = assertThrows(AcademyException.class, () -> {
             marcaS.searchById(4);
         });
 
         assertEquals("marca-ntexist", exception.getMessage());
+    }
+
+    @Test
+    @Order(12)
+    public void testListAll() {
+        marcaS.listAll();
+        assertEquals(1, marcaS.listAll().size());
     }
 }

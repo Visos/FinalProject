@@ -2,6 +2,7 @@ package com.betacom.backend.service.implementation;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -80,5 +81,20 @@ public class LunghezzaManicaServiceImpl implements ILunghezzaManicaService{
             optional.get().getId(),
             optional.get().getDesc());
     }
-    
+
+    @Override
+    public List<LunghezzaManicaReq> listAll() {
+        return trasformInReq(lManicaR.findAll());
+    }
+
+    private List<LunghezzaManicaReq> trasformInReq(List<LunghezzaManica> resp){
+		return resp.stream()
+				.map(a -> new LunghezzaManicaReq(
+						a.getId(),
+                        a.getDesc()
+						)
+					)
+				.collect(Collectors.toList());
+	}
+
 }

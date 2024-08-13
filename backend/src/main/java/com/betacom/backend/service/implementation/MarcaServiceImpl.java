@@ -2,6 +2,7 @@ package com.betacom.backend.service.implementation;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -82,5 +83,19 @@ public class MarcaServiceImpl implements IMarcaService  {
         );
     }
 
+    @Override
+    public List<MarcaReq> listAll() {
+        return trasformInReq(marcaR.findAll());
+    }
+
+    private List<MarcaReq> trasformInReq(List<Marca> resp){
+		return resp.stream()
+				.map(a -> new MarcaReq(
+						a.getId(),
+                        a.getDesc()
+						)
+					)
+				.collect(Collectors.toList());
+	}
     
 }

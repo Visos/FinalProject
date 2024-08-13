@@ -119,7 +119,7 @@ public class LunghezzaManicaServiceTest {
 
     @Test
     @Order(8)
-    public void testsearchByDescWithoutException() {
+    public void testSearchByDescWithoutException() {
 
         assertDoesNotThrow(() -> {
             lManicaS.searchByDesc("polso");
@@ -128,7 +128,7 @@ public class LunghezzaManicaServiceTest {
 
     @Test
     @Order(9)
-    public void testsearchByDescWithException() {
+    public void testSearchByDescWithException() {
         
         AcademyException exception = assertThrows(AcademyException.class, () -> {
             lManicaS.searchByDesc("cavallo");
@@ -139,7 +139,7 @@ public class LunghezzaManicaServiceTest {
 
     @Test
     @Order(10)
-    public void testsearchByIdWithoutException() {
+    public void testSearchByIdWithoutException() {
 
         assertDoesNotThrow(() -> {
             lManicaS.searchById(1);
@@ -148,12 +148,19 @@ public class LunghezzaManicaServiceTest {
 
     @Test
     @Order(11)
-    public void testsearchByIdWithException() {
+    public void testSearchByIdWithException() {
         
         AcademyException exception = assertThrows(AcademyException.class, () -> {
             lManicaS.searchById(4);
         });
 
         assertEquals("lManica-ntexist", exception.getMessage());
+    }
+
+    @Test
+    @Order(12)
+    public void testListAll() {
+        lManicaS.listAll();
+        assertEquals(1, lManicaS.listAll().size());
     }
 }
