@@ -9,18 +9,16 @@ public class UtenteDTO {
     private String password;
     private String ruolo;
     private String paese;
+    private String citta;
     private String strada;
     private String civico;
     private Integer cap;
-    
-    @SuppressWarnings("unused")
-    private String indirizzo;
 
     public UtenteDTO() {
     }
 
     public UtenteDTO(Integer id, String nome, String cognome, String mail, String password, String ruolo, String paese,
-            String strada, String civico, Integer cap) {
+            String citta, String strada, String civico, Integer cap) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
@@ -28,24 +26,10 @@ public class UtenteDTO {
         this.password = password;
         this.ruolo = ruolo;
         this.paese = paese;
+        this.citta = citta;
         this.strada = strada;
         this.civico = civico;
         this.cap = cap;
-    }
-
-    public UtenteDTO(Integer id, String nome, String cognome, String mail, String password, String ruolo, String paese,
-            String strada, String civico, Integer cap, String indirizzo) {
-        this.id = id;
-        this.nome = nome;
-        this.cognome = cognome;
-        this.mail = mail;
-        this.password = password;
-        this.ruolo = ruolo;
-        this.paese = paese;
-        this.strada = strada;
-        this.civico = civico;
-        this.cap = cap;
-        this.indirizzo = indirizzo;
     }
 
     public Integer getId() {
@@ -104,6 +88,14 @@ public class UtenteDTO {
         this.paese = paese;
     }
 
+    public String getCitta() {
+        return citta;
+    }
+
+    public void setCitta(String citta) {
+        this.citta = citta;
+    }
+    
     public String getStrada() {
         return strada;
     }
@@ -126,9 +118,5 @@ public class UtenteDTO {
 
     public void setCap(Integer cap) {
         this.cap = cap;
-    }
-    
-    public String getIndirizzo() {
-        return paese + ", " + strada + " " + civico + " " + cap;
     }
 }

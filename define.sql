@@ -137,6 +137,7 @@
         cap integer,
         id integer not null auto_increment,
         ruolo tinyint not null check (ruolo between 0 and 1),
+        citta varchar(255),
         civico varchar(255),
         cognome varchar(255) not null,
         mail varchar(255) not null,

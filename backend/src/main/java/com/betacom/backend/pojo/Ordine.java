@@ -30,6 +30,9 @@ public class Ordine {
     @Column(nullable = false, name = "prezzo_totale")
     private Integer prezzoTotale;
 
+    @Column(nullable = false)
+    private Integer qty;
+
     @OneToMany(mappedBy = "ordine")
     private List<ProdottiOrdini> prodOrdini;
 
@@ -40,11 +43,12 @@ public class Ordine {
     public Ordine() {
     }
 
-    public Ordine(Integer id, String data, Stato stato, Integer prezzoTotale, List<ProdottiOrdini> prodOrdini, Utente utente) {
+    public Ordine(Integer id, String data, Stato stato, Integer prezzoTotale, Integer qty, List<ProdottiOrdini> prodOrdini, Utente utente) {
         this.id = id;
         this.data = data;
         this.stato = stato;
         this.prezzoTotale = prezzoTotale;
+        this.qty = qty;
         this.prodOrdini = prodOrdini;
         this.utente = utente;
     }
@@ -73,12 +77,20 @@ public class Ordine {
         this.stato = stato;
     }
 
-    public Integer getQty() {
+    public Integer getPrezzoTotale() {
         return prezzoTotale;
     }
 
-    public void setQty(Integer prezzoTotale) {
+    public void setPrezzoTotale(Integer prezzoTotale) {
         this.prezzoTotale = prezzoTotale;
+    }
+
+    public Integer getQty() {
+        return qty;
+    }
+
+    public void setQty(Integer qty) {
+        this.qty = qty;
     }
 
     public Utente getUtente() {

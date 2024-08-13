@@ -39,6 +39,8 @@ public class Utente {
 
     private String paese;
 
+    private String citta;
+
     private String strada;
 
     private String civico;
@@ -52,7 +54,7 @@ public class Utente {
     }
 
     public Utente(Integer id, String nome, String cognome, String mail, String password, Ruolo ruolo, String paese,
-            String strada, String civico, Integer cap, List<Ordine> ordini) {
+            String citta, String strada, String civico, Integer cap, List<Ordine> ordini) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
@@ -60,6 +62,7 @@ public class Utente {
         this.password = password;
         this.ruolo = ruolo;
         this.paese = paese;
+        this.citta = citta;
         this.strada = strada;
         this.civico = civico;
         this.cap = cap;
@@ -122,6 +125,14 @@ public class Utente {
         this.paese = paese;
     }
 
+    public String getCitta() {
+        return citta;
+    }
+
+    public void setCitta(String citta) {
+        this.citta = citta;
+    }
+    
     public String getStrada() {
         return strada;
     }
@@ -153,4 +164,5 @@ public class Utente {
     public void setOrdini(List<Ordine> ordini) {
         this.ordini = ordini;
     }
+
 }

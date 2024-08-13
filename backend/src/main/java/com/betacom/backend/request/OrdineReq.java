@@ -8,18 +8,20 @@ public class OrdineReq {
     private String data;
     private String stato;
     private Integer prezzoTotale;
+    private Integer qty;
     private List<ProdottiOrdiniReq> prodOrdiniReq;
     private UtenteReq utenteReq;
     
     public OrdineReq() {
     }
 
-    public OrdineReq(Integer id, String data, String stato, Integer prezzoTotale, List<ProdottiOrdiniReq> prodOrdiniReq,
-            UtenteReq utenteReq) {
+    public OrdineReq(Integer id, String data, String stato, Integer prezzoTotale, Integer qty,
+        List<ProdottiOrdiniReq> prodOrdiniReq, UtenteReq utenteReq) {
         this.id = id;
         this.data = data;
         this.stato = stato;
         this.prezzoTotale = prezzoTotale;
+        this.qty = qty;
         this.prodOrdiniReq = prodOrdiniReq;
         this.utenteReq = utenteReq;
     }
@@ -56,6 +58,14 @@ public class OrdineReq {
         this.prezzoTotale = prezzoTotale;
     }
 
+    public Integer getQty() {
+        return qty;
+    }
+
+    public void setQty(Integer qty) {
+        this.qty = qty;
+    }
+    
     public List<ProdottiOrdiniReq> getProdOrdiniReq() {
         return prodOrdiniReq;
     }
@@ -71,4 +81,6 @@ public class OrdineReq {
     public void setUtenteReq(UtenteReq utenteReq) {
         this.utenteReq = utenteReq;
     }
+
+    
 }

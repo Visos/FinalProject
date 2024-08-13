@@ -62,6 +62,7 @@ public class UtenteServiceImpl implements IUtenteService {
         utente.setPassword(req.getPassword());
         utente.setRuolo(Ruolo.valueOf(req.getRuolo()));
         utente.setPaese(req.getPaese());
+        utente.setCitta(req.getCitta());
         utente.setStrada(req.getStrada());
         utente.setCivico(req.getCivico());
         utente.setCap(req.getCap());
@@ -87,6 +88,7 @@ public class UtenteServiceImpl implements IUtenteService {
             optional.get().getPassword(),
             optional.get().getRuolo().name(),
             optional.get().getPaese(),
+            optional.get().getCitta(),
             optional.get().getStrada(),
             optional.get().getCivico(),
             optional.get().getCap()
@@ -108,6 +110,7 @@ public class UtenteServiceImpl implements IUtenteService {
             optional.get().getPassword(),
             optional.get().getRuolo().name(),
             optional.get().getPaese(),
+            optional.get().getCitta(),
             optional.get().getStrada(),
             optional.get().getCivico(),
             optional.get().getCap()
@@ -129,6 +132,7 @@ public class UtenteServiceImpl implements IUtenteService {
                         a.getPassword(),
                         a.getRuolo().name(),
                         a.getPaese(),
+                        a.getCitta(),
                         a.getStrada(),
                         a.getCivico(),
                         a.getCap()
