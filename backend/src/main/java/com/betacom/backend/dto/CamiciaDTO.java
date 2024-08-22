@@ -6,7 +6,7 @@ public class CamiciaDTO {
     private Integer id;
     private String taglia;
     private String vestibilita;
-    private Integer lunghezzaManica;
+    private String lunghezzaManica;
     private String tipoColletto;
 
     public CamiciaDTO() {
@@ -14,7 +14,7 @@ public class CamiciaDTO {
     
     
 
-	public CamiciaDTO(Integer id, String taglia, String vestibilita, Integer lunghezzaManica, String tipoColletto) {
+	public CamiciaDTO(Integer id, String taglia, String vestibilita, String lunghezzaManica, String tipoColletto) {
 		super();
 		this.id = id;
 		this.taglia = taglia;
@@ -49,11 +49,11 @@ public class CamiciaDTO {
 		this.vestibilita = vestibilita;
 	}
 
-	public Integer getLunghezzaManica() {
+	public String getLunghezzaManica() {
 		return lunghezzaManica;
 	}
 
-	public void setLunghezzaManica(Integer lunghezzaManica) {
+	public void setLunghezzaManica(String lunghezzaManica) {
 		this.lunghezzaManica = lunghezzaManica;
 	}
 
