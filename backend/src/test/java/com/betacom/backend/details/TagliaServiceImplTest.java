@@ -31,6 +31,11 @@ public class TagliaServiceImplTest {
 		assertDoesNotThrow(() -> {
 			 tagliaS.createOrUpdate(req);
 	        });
+		
+		req.setDescrizione("S");
+		assertDoesNotThrow(() -> {
+			 tagliaS.createOrUpdate(req);
+	        });
 	}
 	
 	@Test
