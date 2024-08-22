@@ -8,20 +8,23 @@ public class OrdineDTO {
     private String data;
     private String stato;
     private Integer prezzoTotale;
-    private List<ProdottiOrdiniDTO> prodOrdini;
+    private Integer qty;
     private Integer idUtente;
+    private List<ProdottiOrdiniDTO> prodOrdini;
+
 
     public OrdineDTO() {
     }
 
-    public OrdineDTO(Integer id, String data, String stato, Integer prezzoTotale, List<ProdottiOrdiniDTO> prodOrdini,
-            Integer idUtente) {
+    public OrdineDTO(Integer id, String data, String stato, Integer prezzoTotale, Integer qty, Integer idUtente,
+            List<ProdottiOrdiniDTO> prodOrdini) {
         this.id = id;
         this.data = data;
         this.stato = stato;
         this.prezzoTotale = prezzoTotale;
-        this.prodOrdini = prodOrdini;
+        this.qty = qty;
         this.idUtente = idUtente;
+        this.prodOrdini = prodOrdini;
     }
 
     public Integer getId() {
@@ -56,12 +59,12 @@ public class OrdineDTO {
         this.prezzoTotale = prezzoTotale;
     }
 
-    public List<ProdottiOrdiniDTO> getProdOrdini() {
-        return prodOrdini;
+    public Integer getQty() {
+        return qty;
     }
 
-    public void setProdOrdini(List<ProdottiOrdiniDTO> prodOrdini) {
-        this.prodOrdini = prodOrdini;
+    public void setQty(Integer qty) {
+        this.qty = qty;
     }
 
     public Integer getIdUtente() {
@@ -70,5 +73,13 @@ public class OrdineDTO {
 
     public void setIdUtente(Integer idUtente) {
         this.idUtente = idUtente;
+    }
+
+    public List<ProdottiOrdiniDTO> getProdOrdini() {
+        return prodOrdini;
+    }
+
+    public void setProdOrdini(List<ProdottiOrdiniDTO> prodOrdini) {
+        this.prodOrdini = prodOrdini;
     }
 }

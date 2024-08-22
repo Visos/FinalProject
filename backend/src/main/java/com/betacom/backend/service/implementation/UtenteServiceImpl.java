@@ -141,4 +141,14 @@ public class UtenteServiceImpl implements IUtenteService {
 				.collect(Collectors.toList());
 	}
 
+    @Override
+    public Utente getUtente(Integer id) throws AcademyException {
+        Optional<Utente> optional = utenteR.findById(id);
+        
+        if (optional.isEmpty()) {
+            throw new AcademyException(msgS.getMessaggio("utente-ntexist"));
+        } else
+            return optional.get();
+    }
+
 }

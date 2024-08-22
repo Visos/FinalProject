@@ -6,5 +6,6 @@ import com.betacom.backend.request.ProdottiOrdiniReq;
 public interface IProdottiOrdiniService {
 
     void create(ProdottiOrdiniReq req) throws AcademyException;
-
+    ProdottiOrdiniReq searchById(Integer id) throws AcademyException;
+    void remove(Integer id) throws AcademyException;
 }

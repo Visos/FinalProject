@@ -1,22 +1,33 @@
 package com.betacom.backend.service.implementation;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.betacom.backend.dto.OrdineDTO;
+import com.betacom.backend.dto.ProdottiOrdiniDTO;
 import com.betacom.backend.exception.AcademyException;
 import com.betacom.backend.pojo.Ordine;
+import com.betacom.backend.pojo.ProdottiOrdini;
 import com.betacom.backend.repository.IOrdineRepository;
 import com.betacom.backend.request.OrdineReq;
+import com.betacom.backend.request.ProdottiOrdiniReq;
 import com.betacom.backend.service.interfaces.IMessaggioService;
 import com.betacom.backend.service.interfaces.IOrdineService;
+import com.betacom.backend.service.interfaces.IUtenteService;
+import com.betacom.backend.util.Stato;
 
 @Service
 public class OrdineServiceImpl implements IOrdineService  {
 
     @Autowired
     IOrdineRepository ordineR;
+
+    @Autowired
+    IUtenteService utenteS;
 
     @Autowired
     IMessaggioService msgS;
@@ -37,11 +48,108 @@ public class OrdineServiceImpl implements IOrdineService  {
             ordine = new Ordine();
         }
 
+        ordine.setStato(Stato.valueOf(req.getStato()));
+        if (req.getStato().equals(Stato.CARRELLO.name()) || req.getStato() == null) {
+            ordine.setData(null);
+        } else {
+            ordine.setData(req.getData());
+        }
+
+        
+        ordine.setPrezzoTotale(null);
+        
+        ordine.setQty(null);
+        
+        ordine.setUtente(utenteS.getUtente(req.getIdUtente()));
 
         try {
             ordineR.save(ordine);
         } catch (Exception e) {
             throw new AcademyException(msgS.getMessaggio("ordine-generic") + e.getMessage());
+        }
+    }
+
+    @Override
+    public OrdineReq searchById(Integer id) throws AcademyException {
+        Optional<Ordine> optional = ordineR.findById(id);
+        if (optional.isEmpty())
+            throw new AcademyException(msgS.getMessaggio("prodOrdini-ntexist"));
+        
+        return new OrdineReq(
+                optional.get().getId(),
+                optional.get().getData(),
+                optional.get().getStato().name(),
+                optional.get().getPrezzoTotale(),
+                optional.get().getQty(),
+                optional.get().getUtente().getId(),
+                transformProdottiOrdiniInReq(optional.get().getProdOrdini())
+        );
+    }
+
+    @Override
+    public List<OrdineDTO> listAll() {
+        return transformInDTO(ordineR.findAll());
+    }
+
+    private List<OrdineDTO> transformInDTO(List<Ordine> resp){
+		return resp.stream()
+				.map(a -> new OrdineDTO(
+						a.getId(),
+                        a.getData(),
+                        a.getStato().name(),
+                        a.getPrezzoTotale(),
+                        a.getQty(),
+                        a.getUtente().getId(),
+                        transformProdottiOrdiniInDTO(a.getProdOrdini())
+						)
+					)
+				.collect(Collectors.toList());
+	}
+
+    private List<ProdottiOrdiniDTO> transformProdottiOrdiniInDTO(List<ProdottiOrdini> resp){
+		return resp.stream()
+				.map(a -> new ProdottiOrdiniDTO(
+						a.getId(),
+                        a.getQty(),
+                        a.getOrdine().getId(),
+                        a.getProdotto().getId()
+						)
+					)
+				.collect(Collectors.toList());
+	}
+
+    private List<ProdottiOrdiniReq> transformProdottiOrdiniInReq(List<ProdottiOrdini> resp){
+		return resp.stream()
+				.map(a -> new ProdottiOrdiniReq(
+						a.getId(),
+                        a.getQty(),
+                        a.getOrdine().getId(),
+                        a.getProdotto().getId()
+						)
+					)
+				.collect(Collectors.toList());
+	}
+
+    @Override
+    public Ordine getOrdine(Integer id) throws AcademyException {
+       
+        Optional<Ordine> optional = ordineR.findById(id);
+        
+        if (optional.isEmpty()) {
+            throw new AcademyException(msgS.getMessaggio("ordine-ntexist"));
+        } else
+            return optional.get();
+    }
+
+    @Override
+    public void remove(Integer id) throws AcademyException {
+       Optional<Ordine> optional = ordineR.findById(id);
+        if (optional.isPresent()) {
+            optional.get().getProdOrdini().clear();
+            ordineR.save(optional.get());
+            ordineR.delete(optional.get());
+        } else {
+            throw new AcademyException(msgS.getMessaggio("ordine-ntexist"));
         }
     }
 

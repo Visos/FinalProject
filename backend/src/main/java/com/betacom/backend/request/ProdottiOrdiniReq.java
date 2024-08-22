@@ -4,17 +4,17 @@ public class ProdottiOrdiniReq {
 
     private Integer id;
     private Integer qty;
-    private OrdineReq ordineReq;
-    private ProdottoReq prodottoReq;
+    private Integer idOrdine;
+    private Integer idProdotto;
 
     public ProdottiOrdiniReq() {
     }
 
-    public ProdottiOrdiniReq(Integer id, Integer qty, OrdineReq ordineReq, ProdottoReq prodottoReq) {
+    public ProdottiOrdiniReq(Integer id, Integer qty, Integer idOrdine, Integer idProdotto) {
         this.id = id;
         this.qty = qty;
-        this.ordineReq = ordineReq;
-        this.prodottoReq = prodottoReq;
+        this.idOrdine = idOrdine;
+        this.idProdotto = idProdotto;
     }
 
     public Integer getId() {
@@ -33,21 +33,23 @@ public class ProdottiOrdiniReq {
         this.qty = qty;
     }
 
-    public OrdineReq getOrdineReq() {
-        return ordineReq;
+    public Integer getIdOrdine() {
+        return idOrdine;
     }
 
-    public void setOrdineReq(OrdineReq ordineReq) {
-        this.ordineReq = ordineReq;
+    public void setIdOrdine(Integer idOrdine) {
+        this.idOrdine = idOrdine;
     }
 
-    public ProdottoReq getProdottoReq() {
-        return prodottoReq;
+    public Integer getIdProdotto() {
+        return idProdotto;
     }
 
-    public void setProdottoReq(ProdottoReq prodottoReq) {
-        this.prodottoReq = prodottoReq;
+    public void setIdProdotto(Integer idProdotto) {
+        this.idProdotto = idProdotto;
     }
+
+    
 
 }
     

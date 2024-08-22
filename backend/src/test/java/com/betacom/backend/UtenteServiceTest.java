@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.util.List;
+
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -11,6 +14,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.betacom.backend.dto.UtenteDTO;
 import com.betacom.backend.exception.AcademyException;
 import com.betacom.backend.request.UtenteReq;
 import com.betacom.backend.service.interfaces.IUtenteService;
@@ -258,4 +262,29 @@ public class UtenteServiceTest {
         assertEquals("utente-no-mail", exception.getMessage());
     }
 
+    @Test
+    @Order(17)
+    void testListAll() {
+
+        List<UtenteDTO> utenti = utenteS.listAll();
+        Assertions.assertThat(utenti.size()).isEqualTo(1);
+    
+    }
+
+    @Test
+    @Order(18)
+    void testGetUtenteWithoutException() {
+        assertDoesNotThrow(() -> {
+            utenteS.getUtente(1);
+        });
+    }
+
+    @Test
+    @Order(19)
+    void testGetUtenteWithException() {
+        AcademyException exception = assertThrows(AcademyException.class, () -> {
+            utenteS.getUtente(3);
+        });
+        assertEquals("utente-ntexist", exception.getMessage());
+    }
 }
