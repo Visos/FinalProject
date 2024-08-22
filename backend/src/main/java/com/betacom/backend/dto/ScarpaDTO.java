@@ -7,6 +7,18 @@ public class ScarpaDTO {
 	private String chiusura;
 	private String tipoScarpa;
 	
+	public ScarpaDTO(Integer id, Integer tagliaScarpe, String chiusura, String tipoScarpa) {
+		super();
+		this.id = id;
+		this.tagliaScarpe = tagliaScarpe;
+		this.chiusura = chiusura;
+		this.tipoScarpa = tipoScarpa;
+	}
+	
+	public ScarpaDTO() {
+		super();
+	}
+	
 	public Integer getId() {
 		return id;
 	}

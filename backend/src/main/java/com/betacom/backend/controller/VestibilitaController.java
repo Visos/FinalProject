@@ -22,7 +22,7 @@ public class VestibilitaController {
 	  @Autowired
 	    IVestibilitaService vestibilitaS;
 
-	    @PostMapping("create")
+	    @PostMapping("/createOrUpdate")
 	    public ResponseBase create(@RequestBody (required = true) VestibilitaReq req) {
 	        
 	        ResponseBase resp = new ResponseBase();
@@ -38,7 +38,7 @@ public class VestibilitaController {
 	        return resp;
 	    }
 
-	    @GetMapping("searchByDesc")
+	    @GetMapping("/searchByDesc")
 	    public ResponseObject<VestibilitaReq> searchByDesc(@RequestParam String descrizione) {
 
 	        ResponseObject<VestibilitaReq> resp = new ResponseObject<VestibilitaReq>();
@@ -53,7 +53,7 @@ public class VestibilitaController {
 	        return resp;
 	    }
 
-	    @GetMapping("searchById")
+	    @GetMapping("/searchById")
 	    public ResponseObject<VestibilitaReq> searchById(@RequestParam Integer id) {
 
 	        ResponseObject<VestibilitaReq> resp = new ResponseObject<VestibilitaReq>();
@@ -68,7 +68,7 @@ public class VestibilitaController {
 	        return resp;
 	    }
 	    
-	    @GetMapping("listAll")
+	    @GetMapping("/listAll")
 	    public Response<VestibilitaReq> listAll() {
 
 	        Response<VestibilitaReq> resp = new Response<VestibilitaReq>();
