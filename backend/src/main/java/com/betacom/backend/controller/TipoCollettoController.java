@@ -22,7 +22,7 @@ public class TipoCollettoController {
 	@Autowired
 	    ITipoCollettoService tipoCollettoS;
 
-	    @PostMapping("create")
+	    @PostMapping("/createOrUpdate")
 	    public ResponseBase create(@RequestBody (required = true) TipoCollettoReq req) {
 	        
 	        ResponseBase resp = new ResponseBase();
@@ -38,7 +38,7 @@ public class TipoCollettoController {
 	        return resp;
 	    }
 
-	    @GetMapping("searchByDesc")
+	    @GetMapping("/searchByDesc")
 	    public ResponseObject<TipoCollettoReq> searchByDesc(@RequestParam String descrizione) {
 
 	        ResponseObject<TipoCollettoReq> resp = new ResponseObject<TipoCollettoReq>();
@@ -53,7 +53,7 @@ public class TipoCollettoController {
 	        return resp;
 	    }
 
-	    @GetMapping("searchById")
+	    @GetMapping("/searchById")
 	    public ResponseObject<TipoCollettoReq> searchById(@RequestParam Integer id) {
 
 	        ResponseObject<TipoCollettoReq> resp = new ResponseObject<TipoCollettoReq>();
@@ -68,7 +68,7 @@ public class TipoCollettoController {
 	        return resp;
 	    }
 	    
-	    @GetMapping("listAll")
+	    @GetMapping("/listAll")
 	    public Response<TipoCollettoReq> listAll() {
 
 	        Response<TipoCollettoReq> resp = new Response<TipoCollettoReq>();

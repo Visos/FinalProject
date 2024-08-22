@@ -32,6 +32,12 @@ public class LunghezzaManicaServiceTest {
         assertDoesNotThrow(() -> {
             lManicaS.createOrUpdate(req);
         });
+        
+        req.setDescrizione("Corta");
+        
+        assertDoesNotThrow(() -> {
+            lManicaS.createOrUpdate(req);
+        });
     }
 
     @Test

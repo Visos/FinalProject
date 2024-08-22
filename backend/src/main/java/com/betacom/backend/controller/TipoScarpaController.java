@@ -22,7 +22,7 @@ public class TipoScarpaController {
 	 @Autowired
 	 ITipoScarpaService tipoScarpaS;
 
-	    @PostMapping("create")
+	    @PostMapping("/createOrUpdate")
 	    public ResponseBase create(@RequestBody (required = true) TipoScarpaReq req) {
 	        
 	        ResponseBase resp = new ResponseBase();
@@ -38,7 +38,7 @@ public class TipoScarpaController {
 	        return resp;
 	    }
 
-	    @GetMapping("searchByDesc")
+	    @GetMapping("/searchByDesc")
 	    public ResponseObject<TipoScarpaReq> searchByDesc(@RequestParam String descrizione) {
 
 	        ResponseObject<TipoScarpaReq> resp = new ResponseObject<TipoScarpaReq>();
@@ -53,7 +53,7 @@ public class TipoScarpaController {
 	        return resp;
 	    }
 
-	    @GetMapping("searchById")
+	    @GetMapping("/searchById")
 	    public ResponseObject<TipoScarpaReq> searchById(@RequestParam Integer id) {
 
 	        ResponseObject<TipoScarpaReq> resp = new ResponseObject<TipoScarpaReq>();
@@ -68,7 +68,7 @@ public class TipoScarpaController {
 	        return resp;
 	    }
 	    
-	    @GetMapping("listAll")
+	    @GetMapping("/listAll")
 	    public Response<TipoScarpaReq> listAll() {
 
 	        Response<TipoScarpaReq> resp = new Response<TipoScarpaReq>();

@@ -5,13 +5,13 @@ public class MagliettaReq {
     private Integer id;
     private String taglia;
     private String vestibilita;
-    private Integer lunghezzaManica;
+    private String lunghezzaManica;
     private String tipoColletto;
 
     public MagliettaReq() {
     }
     
-    public MagliettaReq(Integer id, String taglia, String vestibilita, Integer lunghezzaManica, String tipoColletto) {
+    public MagliettaReq(Integer id, String taglia, String vestibilita, String lunghezzaManica, String tipoColletto) {
         this.id = id;
         this.taglia = taglia;
         this.vestibilita = vestibilita;
@@ -43,11 +43,11 @@ public class MagliettaReq {
 		this.vestibilita = vestibilita;
 	}
 
-	public Integer getLunghezzaManica() {
+	public String getLunghezzaManica() {
 		return lunghezzaManica;
 	}
 
-	public void setLunghezzaManica(Integer lunghezzaManica) {
+	public void setLunghezzaManica(String lunghezzaManica) {
 		this.lunghezzaManica = lunghezzaManica;
 	}
 

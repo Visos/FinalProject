@@ -33,6 +33,12 @@ public class LunghezzaServiceTest {
         assertDoesNotThrow(() -> {
             lunghezzaS.createOrUpdate(req);
         });
+        
+        req.setDescrizione("Lunga");
+        
+         assertDoesNotThrow(() -> {
+            lunghezzaS.createOrUpdate(req);
+        });
     }
 
     @Test

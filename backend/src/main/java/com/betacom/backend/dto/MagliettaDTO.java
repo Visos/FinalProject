@@ -6,13 +6,13 @@ public class MagliettaDTO {
     private Integer id;
     private String taglia;
     private String vestibilita;
-    private Integer lunghezzaManica;
+    private String lunghezzaManica;
     private String tipoColletto;
 
     public MagliettaDTO() {
     }
     
-    public MagliettaDTO(Integer id, String taglia, String vestibilita, Integer lunghezzaManica,
+    public MagliettaDTO(Integer id, String taglia, String vestibilita, String lunghezzaManica,
     		String tipoColletto) {
         this.id = id;
         this.taglia = taglia;
@@ -45,11 +45,11 @@ public class MagliettaDTO {
 		this.vestibilita = vestibilita;
 	}
 
-	public Integer getLunghezzaManica() {
+	public String getLunghezzaManica() {
 		return lunghezzaManica;
 	}
 
-	public void setLunghezzaManica(Integer lunghezzaManica) {
+	public void setLunghezzaManica(String lunghezzaManica) {
 		this.lunghezzaManica = lunghezzaManica;
 	}
 

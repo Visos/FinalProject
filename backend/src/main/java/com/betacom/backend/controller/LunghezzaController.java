@@ -24,7 +24,7 @@ public class LunghezzaController {
     @Autowired
     ILunghezzaService lunghezzaS;
 
-    @PostMapping("create")
+    @PostMapping("/createOrUpdate")
     public ResponseBase create(@RequestBody (required = true) LunghezzaReq req) {
         
         ResponseBase resp = new ResponseBase();
@@ -40,7 +40,7 @@ public class LunghezzaController {
         return resp;
     }
 
-    @GetMapping("searchByDesc")
+    @GetMapping("/searchByDesc")
     public ResponseObject<LunghezzaReq> searchByDesc(@RequestParam String descrizione) {
 
         ResponseObject<LunghezzaReq> resp = new ResponseObject<LunghezzaReq>();
@@ -55,7 +55,7 @@ public class LunghezzaController {
         return resp;
     }
 
-    @GetMapping("searchById")
+    @GetMapping("/searchById")
     public ResponseObject<LunghezzaReq> searchById(@RequestParam Integer id) {
 
         ResponseObject<LunghezzaReq> resp = new ResponseObject<LunghezzaReq>();
@@ -70,7 +70,7 @@ public class LunghezzaController {
         return resp;
     }
     
-    @GetMapping("listAll")
+    @GetMapping("/listAll")
     public Response<LunghezzaReq> listAll() {
 
         Response<LunghezzaReq> resp = new Response<LunghezzaReq>();

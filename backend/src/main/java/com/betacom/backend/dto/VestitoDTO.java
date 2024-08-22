@@ -7,8 +7,18 @@ public class VestitoDTO {
 	private String vestibilita;
 	private String lunghezza;
 	private String lunghezzaManica;
-	
-	
+
+	public VestitoDTO() {
+		super();
+	}
+	public VestitoDTO(Integer id, String taglia, String vestibilita, String lunghezza, String lunghezzaManica) {
+		super();
+		this.id = id;
+		this.taglia = taglia;
+		this.vestibilita = vestibilita;
+		this.lunghezza = lunghezza;
+		this.lunghezzaManica = lunghezzaManica;
+	}
 	public Integer getId() {
 		return id;
 	}

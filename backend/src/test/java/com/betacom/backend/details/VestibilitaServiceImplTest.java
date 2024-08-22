@@ -32,6 +32,12 @@ public class VestibilitaServiceImplTest {
 		assertDoesNotThrow(() -> {
 			vestibilitaS.createOrUpdate(req);
 	        });
+		
+		req.setDescrizione("Regular");
+		
+		assertDoesNotThrow(() -> {
+			vestibilitaS.createOrUpdate(req);
+	        });
 	}
 	
 	@Test

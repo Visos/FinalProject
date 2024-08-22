@@ -31,6 +31,12 @@ public class TipoScarpaImplTest {
 		assertDoesNotThrow(() -> {
 			tipoScarpaS.createOrUpdate(req); 
 			});
+		
+		req.setDescrizione("Tacchi");
+		
+		assertDoesNotThrow(() -> {
+			tipoScarpaS.createOrUpdate(req); 
+			});
 		}
 	
 	@Test
