@@ -8,13 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.betacom.backend.dto.ColoreDTO;
 import com.betacom.backend.exception.AcademyException;
 import com.betacom.backend.request.ColoreReq;
-import com.betacom.backend.response.Response;
 import com.betacom.backend.response.ResponseBase;
 import com.betacom.backend.response.ResponseObject;
 import com.betacom.backend.service.implementation.ColoreServiceImpl;
-import com.betacom.backend.dto.ColoreDTO;
 
 @RestController
 @RequestMapping(value = "/rest/colore")
