@@ -2,6 +2,7 @@ package com.betacom.backend.service.implementation;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,12 +14,16 @@ import com.betacom.backend.repository.IColoreRepository;
 import com.betacom.backend.request.ColoreReq;
 import com.betacom.backend.service.interfaces.IColoreService;
 import com.betacom.backend.service.interfaces.IMessaggioService;
+import com.betacom.backend.service.interfaces.IProdottoService;
 
 @Service
 public class ColoreServiceImpl implements IColoreService{
 
 	@Autowired
 	IColoreRepository colR;
+	
+	@Autowired
+	IProdottoService prodS;
 	
 	@Autowired
 	IMessaggioService msgS;
@@ -83,18 +88,16 @@ public class ColoreServiceImpl implements IColoreService{
 	
 	  @Override
 	    public List<ColoreDTO> listAll() {
-		  return null;
-	      //  return trasformInDTO(colR.findAll());
+	      return trasformInDTO(colR.findAll());
 	    }
 
-//	    private List<ColoreDTO> trasformInDTO(List<Colore> resp) {
-//	        return resp.stream()
-//	                .map(k -> new ColoreDTO(
-//	                        k.getId(),
-//	                        k.getDesc(),
-//	                        k.getProdotti()
-//	                ))
-//	                .collect(Collectors.toList());
-//	    }
+	    private List<ColoreDTO> trasformInDTO(List<Colore> resp) {
+	        return resp.stream()
+	                .map(k -> new ColoreDTO(
+	                        k.getId(),
+	                        k.getDesc(),
+	                        prodS.trasformInDTO(k.getProdotti())
+	                )).collect(Collectors.toList());
+	    }
 
 }

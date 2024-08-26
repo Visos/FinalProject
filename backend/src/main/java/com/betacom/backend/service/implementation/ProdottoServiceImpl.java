@@ -186,6 +186,7 @@ public class ProdottoServiceImpl implements IProdottoService {
 		return trasformInDTO(prodottoR.findAll());
 	}
 
+	@Override
 	public List<ProdottoDTO> trasformInDTO(List<Prodotto> resp) {
 		
 		return resp.stream()

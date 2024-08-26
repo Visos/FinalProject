@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.betacom.backend.dto.ColoreDTO;
 import com.betacom.backend.exception.AcademyException;
 import com.betacom.backend.request.ColoreReq;
+import com.betacom.backend.response.Response;
 import com.betacom.backend.response.ResponseBase;
 import com.betacom.backend.response.ResponseObject;
 import com.betacom.backend.service.implementation.ColoreServiceImpl;
@@ -52,15 +53,15 @@ public class ColoreController {
 	    return resp;
 	}
 
-//	@GetMapping("/listAll")
-//	public Response<ColoreDTO> listAll() {
-//
-//	    Response<ColoreDTO> resp = new Response<ColoreDTO>();
-//	    resp.setRc(true);
-//	    resp.setDati(coloreS.listAll());
-//
-//	    return resp;
-//	}
+	@GetMapping("/listAll")
+	public Response<ColoreDTO> listAll() {
+
+	    Response<ColoreDTO> resp = new Response<ColoreDTO>();
+	    resp.setRc(true);
+	    resp.setDati(coloreS.listAll());
+
+	    return resp;
+	}
 
 	
 }
