@@ -19,7 +19,29 @@ public class ProdottoDTO {
 	  private Integer prezzo;
 	  private List<ProdottiOrdiniDTO> listProdOrdiniDto;
 	
-	  public Integer getId() {
+	
+	  public ProdottoDTO() {
+		super();
+	}
+	public ProdottoDTO(Integer id, Integer qty, String sesso, String colore, String marca, String materiale,
+			String fantasia, MagliettaDTO magliettaDto, PantaloneDTO pantaloneDto, VestitoDTO vestitoDto,
+			ScarpaDTO scarpaDto, CamiciaDTO camiciaDto, Integer prezzo) {
+		super();
+		this.id = id;
+		this.qty = qty;
+		this.sesso = sesso;
+		this.colore = colore;
+		this.marca = marca;
+		this.materiale = materiale;
+		this.fantasia = fantasia;
+		this.magliettaDto = magliettaDto;
+		this.pantaloneDto = pantaloneDto;
+		this.vestitoDto = vestitoDto;
+		this.scarpaDto = scarpaDto;
+		this.camiciaDto = camiciaDto;
+		this.prezzo = prezzo;
+	}
+	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
