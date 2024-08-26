@@ -186,7 +186,7 @@ public class ProdottoServiceImpl implements IProdottoService {
 		return trasformInDTO(prodottoR.findAll());
 	}
 
-	private List<ProdottoDTO> trasformInDTO(List<Prodotto> resp) {
+	public List<ProdottoDTO> trasformInDTO(List<Prodotto> resp) {
 		
 		return resp.stream()
 				.map(k-> new ProdottoDTO(
@@ -206,7 +206,7 @@ public class ProdottoServiceImpl implements IProdottoService {
 					)).collect(Collectors.toList());
 	}
 
-	private CamiciaDTO trasformCamiciaInDTO(Camicia camicia) {
+	public CamiciaDTO trasformCamiciaInDTO(Camicia camicia) {
 		return new CamiciaDTO(
 				camicia.getId(),
 				camicia.getTaglia().getDesc(),
@@ -216,7 +216,7 @@ public class ProdottoServiceImpl implements IProdottoService {
 				);
 	}
 
-	private ScarpaDTO trasformScarpaInDTO(Scarpa scarpa) {
+	public ScarpaDTO trasformScarpaInDTO(Scarpa scarpa) {
 		return new ScarpaDTO(
 				scarpa.getId(),
 				scarpa.getTagliaScarpe(),
@@ -224,7 +224,7 @@ public class ProdottoServiceImpl implements IProdottoService {
 				scarpa.getTipoScarpa().getDesc());
 	}
 
-	private VestitoDTO trasformVestitoInDTO(Vestito vestito) {
+	public VestitoDTO trasformVestitoInDTO(Vestito vestito) {
 		return new VestitoDTO(
 				vestito.getId(),
 				vestito.getTaglia().getDesc(),
@@ -234,7 +234,7 @@ public class ProdottoServiceImpl implements IProdottoService {
 				);
 	}
 
-	private PantaloneDTO trasformPantaloneInDTO(Pantalone pantalone) {
+	public PantaloneDTO trasformPantaloneInDTO(Pantalone pantalone) {
 		
 		return new PantaloneDTO(
 				pantalone.getId(),
@@ -243,7 +243,7 @@ public class ProdottoServiceImpl implements IProdottoService {
 				pantalone.getLunghezza().getDesc());
 	}
 
-	private MagliettaDTO trasformMagliettaInDTO(Maglietta maglietta) {
+	public MagliettaDTO trasformMagliettaInDTO(Maglietta maglietta) {
 		
 		return new MagliettaDTO(
 				maglietta.getId(),
