@@ -68,7 +68,7 @@ public class Prodotto {
     private List<ProdottiOrdini>  prodOrdini;
     
     @Column(nullable = false)
-    private Integer prezzo;
+    private Double prezzo;
 
     public Prodotto() {
     }
@@ -77,7 +77,7 @@ public class Prodotto {
 
     public Prodotto(Integer id, Integer qty, Sesso sesso, Colore colore, Marca marca, Materiale materiale,
 			Fantasia fantasia, Maglietta maglietta, Pantalone pantalone, Vestito vestito, Scarpa scarpa,
-			Camicia camicia, List<ProdottiOrdini> prodOrdini, Integer prezzo) {
+			Camicia camicia, List<ProdottiOrdini> prodOrdini, Double prezzo) {
 		super();
 		this.id = id;
 		this.qty = qty;
@@ -203,13 +203,13 @@ public class Prodotto {
 
 
 
-	public Integer getPrezzo() {
+	public Double getPrezzo() {
 		return prezzo;
 	}
 
 
 
-	public void setPrezzo(Integer prezzo) {
+	public void setPrezzo(Double prezzo) {
 		this.prezzo = prezzo;
 	}
     

@@ -28,7 +28,7 @@ public class UtenteServiceImpl implements IUtenteService {
     @Override
     public void createOrUpdate(UtenteReq req) throws AcademyException {
         
-        Utente utente = new Utente();
+        Utente utente = null;
         
         if (req.getId()!= null) {
             Optional<Utente> optional = utenteR.findById(req.getId());

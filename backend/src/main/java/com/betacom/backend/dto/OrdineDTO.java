@@ -7,7 +7,7 @@ public class OrdineDTO {
     private Integer id;
     private String data;
     private String stato;
-    private Integer prezzoTotale;
+    private Double prezzoTotale;
     private Integer qty;
     private Integer idUtente;
     private List<ProdottiOrdiniDTO> prodOrdini;
@@ -16,7 +16,7 @@ public class OrdineDTO {
     public OrdineDTO() {
     }
 
-    public OrdineDTO(Integer id, String data, String stato, Integer prezzoTotale, Integer qty, Integer idUtente,
+    public OrdineDTO(Integer id, String data, String stato, Double prezzoTotale, Integer qty, Integer idUtente,
             List<ProdottiOrdiniDTO> prodOrdini) {
         this.id = id;
         this.data = data;
@@ -51,11 +51,11 @@ public class OrdineDTO {
         this.stato = stato;
     }
 
-    public Integer getPrezzoTotale() {
+    public Double getPrezzoTotale() {
         return prezzoTotale;
     }
 
-    public void setPrezzoTotale(Integer prezzoTotale) {
+    public void setPrezzoTotale(Double prezzoTotale) {
         this.prezzoTotale = prezzoTotale;
     }
 

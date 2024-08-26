@@ -28,7 +28,7 @@ public class Ordine {
     private Stato stato;
 
     @Column(nullable = false, name = "prezzo_totale")
-    private Integer prezzoTotale;
+    private Double prezzoTotale;
 
     @Column(nullable = false)
     private Integer qty;
@@ -43,7 +43,7 @@ public class Ordine {
     public Ordine() {
     }
 
-    public Ordine(Integer id, String data, Stato stato, Integer prezzoTotale, Integer qty, List<ProdottiOrdini> prodOrdini, Utente utente) {
+    public Ordine(Integer id, String data, Stato stato, Double prezzoTotale, Integer qty, List<ProdottiOrdini> prodOrdini, Utente utente) {
         this.id = id;
         this.data = data;
         this.stato = stato;
@@ -77,11 +77,11 @@ public class Ordine {
         this.stato = stato;
     }
 
-    public Integer getPrezzoTotale() {
+    public Double getPrezzoTotale() {
         return prezzoTotale;
     }
 
-    public void setPrezzoTotale(Integer prezzoTotale) {
+    public void setPrezzoTotale(Double prezzoTotale) {
         this.prezzoTotale = prezzoTotale;
     }
 

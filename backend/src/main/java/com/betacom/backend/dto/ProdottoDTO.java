@@ -16,7 +16,7 @@ public class ProdottoDTO {
 	  private VestitoDTO vestitoDto;
 	  private ScarpaDTO scarpaDto;
 	  private CamiciaDTO camiciaDto;
-	  private Integer prezzo;
+	  private Double prezzo;
 	  private List<ProdottiOrdiniDTO> listProdOrdiniDto;
 	
 	
@@ -25,7 +25,7 @@ public class ProdottoDTO {
 	}
 	public ProdottoDTO(Integer id, Integer qty, String sesso, String colore, String marca, String materiale,
 			String fantasia, MagliettaDTO magliettaDto, PantaloneDTO pantaloneDto, VestitoDTO vestitoDto,
-			ScarpaDTO scarpaDto, CamiciaDTO camiciaDto, Integer prezzo) {
+			ScarpaDTO scarpaDto, CamiciaDTO camiciaDto, Double prezzo) {
 		super();
 		this.id = id;
 		this.qty = qty;
@@ -113,10 +113,10 @@ public class ProdottoDTO {
 	public void setCamiciaDto(CamiciaDTO camiciaDto) {
 		this.camiciaDto = camiciaDto;
 	}
-	public Integer getPrezzo() {
+	public Double getPrezzo() {
 		return prezzo;
 	}
-	public void setPrezzo(Integer prezzo) {
+	public void setPrezzo(Double prezzo) {
 		this.prezzo = prezzo;
 	}
 	public List<ProdottiOrdiniDTO> getListProdOrdiniDto() {

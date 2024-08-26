@@ -45,6 +45,7 @@ public class ProdottiOrdiniServiceImpl implements IProdottiOrdiniService  {
         prodOrd.setOrdine(ordineS.getOrdine(req.getIdOrdine()));
         prodOrd.setProdotto(null);
         
+        
     }
 
     @Override

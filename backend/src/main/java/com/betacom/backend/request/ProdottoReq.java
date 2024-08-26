@@ -16,7 +16,7 @@ public class ProdottoReq {
 	private VestitoReq vestitoReq;
 	private ScarpaReq scarpaReq;
 	private CamiciaReq camiciaReq;
-	private Integer prezzo;
+	private Double prezzo;
 	private List<ProdottiOrdiniReq> listProdOrdiniReq;
 
 
@@ -25,7 +25,7 @@ public class ProdottoReq {
 
 	public ProdottoReq(Integer id, Integer qty, String sesso, String colore, String marca, String materiale,
 			String fantasia, MagliettaReq magliettaReq, PantaloneReq pantaloneReq, VestitoReq vestitoReq,
-			ScarpaReq scarpaReq, CamiciaReq camiciaReq, Integer prezzo) {
+			ScarpaReq scarpaReq, CamiciaReq camiciaReq, Double prezzo) {
 		this.id = id;
 		this.qty = qty;
 		this.sesso = sesso;
@@ -145,11 +145,11 @@ public class ProdottoReq {
 		this.camiciaReq = camiciaReq;
 	}
 
-	public Integer getPrezzo() {
+	public Double getPrezzo() {
 		return prezzo;
 	}
 
-	public void setPrezzo(Integer prezzo) {
+	public void setPrezzo(Double prezzo) {
 		this.prezzo = prezzo;
 	}
 

@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.betacom.backend.dto.OrdineDTO;
 import com.betacom.backend.dto.ProdottiOrdiniDTO;
@@ -17,6 +18,8 @@ import com.betacom.backend.request.OrdineReq;
 import com.betacom.backend.request.ProdottiOrdiniReq;
 import com.betacom.backend.service.interfaces.IMessaggioService;
 import com.betacom.backend.service.interfaces.IOrdineService;
+import com.betacom.backend.service.interfaces.IProdottiOrdiniService;
+import com.betacom.backend.service.interfaces.IProdottoService;
 import com.betacom.backend.service.interfaces.IUtenteService;
 import com.betacom.backend.util.Stato;
 
@@ -32,7 +35,14 @@ public class OrdineServiceImpl implements IOrdineService  {
     @Autowired
     IMessaggioService msgS;
 
+    @Autowired
+    IProdottoService prodottoS;
+
+    @Autowired
+    IProdottiOrdiniService prodOrdS;
+
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void createOrUpdate(OrdineReq req) throws AcademyException {
         
         Ordine ordine = null;
@@ -49,19 +59,28 @@ public class OrdineServiceImpl implements IOrdineService  {
         }
 
         ordine.setStato(Stato.valueOf(req.getStato()));
+
         if (req.getStato().equals(Stato.CARRELLO.name()) || req.getStato() == null) {
             ordine.setData(null);
         } else {
             ordine.setData(req.getData());
         }
 
-        
-        ordine.setPrezzoTotale(null);
-        
-        ordine.setQty(null);
-        
         ordine.setUtente(utenteS.getUtente(req.getIdUtente()));
+        ordine.setProdOrdini(listAllByOrdine(ordine.getId()));
 
+        Double prezzo = 0.0;
+        for (ProdottiOrdini ordini : ordine.getProdOrdini()) {
+            prezzo += ordini.getProdotto().getPrezzo() * ordini.getQty();
+        }
+        ordine.setPrezzoTotale(prezzo);
+
+        Integer quantita = 0;
+        for (ProdottiOrdini ordini : ordine.getProdOrdini()) {
+            quantita += ordini.getProdotto().getQty();
+        }
+        ordine.setQty(quantita);
+        
         try {
             ordineR.save(ordine);
         } catch (Exception e) {
@@ -152,5 +171,22 @@ public class OrdineServiceImpl implements IOrdineService  {
             throw new AcademyException(msgS.getMessaggio("ordine-ntexist"));
         }
     }
+
+    @Override
+    public List<ProdottiOrdini> listAllByOrdine(Integer id) throws AcademyException {
+        Optional<Ordine> optional = ordineR.findById(id);
+        if (optional.isPresent()) {
+            return optional.get().getProdOrdini();
+        } else {
+            throw new AcademyException(msgS.getMessaggio("ordine-ntexist"));
+        }
+    }
+
+    // private void checkProdotto(ProdottiOrdiniReq req) throws AcademyException {
+    //     Optional<Prodotto> optional = prodottoS.searchById(req.getProdotto().getId());
+    //     if (optional.isEmpty()) {
+    //         throw new AcademyException(msgS.getMessaggio("prodotto-ntexist"));
+    //     }
+    // }
 
 }
