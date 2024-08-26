@@ -13,5 +13,6 @@ public interface IProdottoService {
 	List<ProdottoDTO> listAll();
 	ProdottoDTO searchById(Integer id) throws AcademyException;
 	List<ProdottoDTO> trasformInDTO(List<Prodotto> resp);
+	Prodotto getProdotto(Integer id) throws AcademyException;
 
 }

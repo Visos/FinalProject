@@ -12,6 +12,7 @@ import com.betacom.backend.request.ProdottiOrdiniReq;
 import com.betacom.backend.service.interfaces.IMessaggioService;
 import com.betacom.backend.service.interfaces.IOrdineService;
 import com.betacom.backend.service.interfaces.IProdottiOrdiniService;
+import com.betacom.backend.service.interfaces.IProdottoService;
 
 @Service
 public class ProdottiOrdiniServiceImpl implements IProdottiOrdiniService  {
@@ -23,10 +24,13 @@ public class ProdottiOrdiniServiceImpl implements IProdottiOrdiniService  {
     IOrdineService ordineS;
 
     @Autowired
+    IProdottoService prodottoS;
+
+    @Autowired
     IMessaggioService msgS;
     
     @Override
-    public void create(ProdottiOrdiniReq req) throws AcademyException {
+    public void createOrUpdate(ProdottiOrdiniReq req) throws AcademyException {
         
         ProdottiOrdini prodOrd = null;
 
@@ -43,8 +47,13 @@ public class ProdottiOrdiniServiceImpl implements IProdottiOrdiniService  {
 
         prodOrd.setQty(req.getQty());
         prodOrd.setOrdine(ordineS.getOrdine(req.getIdOrdine()));
-        prodOrd.setProdotto(null);
+        prodOrd.setProdotto(prodottoS.getProdotto(req.getIdProdotto()));
         
+        try {
+            prodOrdR.save(prodOrd);
+        } catch (Exception e) {
+            throw new AcademyException(msgS.getMessaggio("prodOrdini-generic") + e.getMessage());
+        }
         
     }
 

@@ -14,6 +14,7 @@ import com.betacom.backend.exception.AcademyException;
 import com.betacom.backend.pojo.Ordine;
 import com.betacom.backend.pojo.ProdottiOrdini;
 import com.betacom.backend.repository.IOrdineRepository;
+import com.betacom.backend.repository.IUtenteRepository;
 import com.betacom.backend.request.OrdineReq;
 import com.betacom.backend.request.ProdottiOrdiniReq;
 import com.betacom.backend.service.interfaces.IMessaggioService;
@@ -31,6 +32,9 @@ public class OrdineServiceImpl implements IOrdineService  {
 
     @Autowired
     IUtenteService utenteS;
+
+    @Autowired
+    IUtenteRepository utenteR;
 
     @Autowired
     IMessaggioService msgS;
@@ -106,8 +110,9 @@ public class OrdineServiceImpl implements IOrdineService  {
     }
 
     @Override
-    public List<OrdineDTO> listAll() {
-        return transformInDTO(ordineR.findAll());
+    public List<OrdineDTO> list(Integer id, String stato) {
+        List<Ordine> ord = ordineR.findByParam(id, stato);
+        return transformInDTO(ord);
     }
 
     private List<OrdineDTO> transformInDTO(List<Ordine> resp){
@@ -181,12 +186,5 @@ public class OrdineServiceImpl implements IOrdineService  {
             throw new AcademyException(msgS.getMessaggio("ordine-ntexist"));
         }
     }
-
-    // private void checkProdotto(ProdottiOrdiniReq req) throws AcademyException {
-    //     Optional<Prodotto> optional = prodottoS.searchById(req.getProdotto().getId());
-    //     if (optional.isEmpty()) {
-    //         throw new AcademyException(msgS.getMessaggio("prodotto-ntexist"));
-    //     }
-    // }
 
 }

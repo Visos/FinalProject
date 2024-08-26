@@ -255,6 +255,16 @@ public class ProdottoServiceImpl implements IProdottoService {
 				);
 	}
 
+	@Override
+    public Prodotto getProdotto(Integer id) throws AcademyException {
+       
+        Optional<Prodotto> optional = prodottoR.findById(id);
+        
+        if (optional.isEmpty()) {
+            throw new AcademyException(msgS.getMessaggio("prodotto-ntexist"));
+        } else
+            return optional.get();
+    }
 	
 
 }

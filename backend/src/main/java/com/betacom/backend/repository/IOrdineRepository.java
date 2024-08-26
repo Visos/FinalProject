@@ -1,11 +1,25 @@
 package com.betacom.backend.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.jpa.repository.Query;
 
 import com.betacom.backend.pojo.Ordine;
 
 @Repository
 public interface IOrdineRepository extends JpaRepository<Ordine, Integer>  {
 
+    List<Ordine> findByUtente(Integer id);
+    List<Ordine> findByStato(String stato);
+
+    @Query("SELECT o FROM Ordine o " + 
+        "WHERE (:id IS NULL OR o.id = :id) " +
+        "AND (:stato IS NULL OR o.stato = :stato)") 
+    List<Ordine> findByParam(
+        @Param("id") Integer id,
+        @Param("stato") String stato);
+    
 }

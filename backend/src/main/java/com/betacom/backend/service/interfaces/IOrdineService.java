@@ -12,7 +12,7 @@ public interface IOrdineService {
 
     void createOrUpdate(OrdineReq req) throws AcademyException;
     OrdineReq searchById(Integer id) throws AcademyException;
-    List<OrdineDTO> listAll();
+    List<OrdineDTO> list(Integer id, String stato);
     Ordine getOrdine(Integer id) throws AcademyException;
     void remove(Integer id) throws AcademyException;
     List<ProdottiOrdini> listAllByOrdine(Integer id) throws AcademyException;
