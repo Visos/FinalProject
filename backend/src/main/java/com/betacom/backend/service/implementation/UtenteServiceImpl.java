@@ -119,12 +119,9 @@ public class UtenteServiceImpl implements IUtenteService {
 
     @Override
     public List<UtenteDTO> listAll() {
-        return trasformInDTO(utenteR.findAll());
-    }
-
-    private List<UtenteDTO> trasformInDTO(List<Utente> resp){
-		return resp.stream()
-				.map(a -> new UtenteDTO(
+       List<Utente> utenti = utenteR.findAll();
+       return utenti.stream()
+               .map(a -> new UtenteDTO(
                         a.getId(),
                         a.getNome(),
                         a.getCognome(),
@@ -135,11 +132,9 @@ public class UtenteServiceImpl implements IUtenteService {
                         a.getCitta(),
                         a.getStrada(),
                         a.getCivico(),
-                        a.getCap()
-						)
-					)
-				.collect(Collectors.toList());
-	}
+                        a.getCap()))
+                    .collect(Collectors.toList());
+    }
 
     @Override
     public Utente getUtente(Integer id) throws AcademyException {
