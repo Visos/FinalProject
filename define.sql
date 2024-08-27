@@ -68,7 +68,8 @@
     create table ordine (
         id integer not null auto_increment,
         id_utente integer,
-        prezzo_totale integer not null,
+        prezzo_totale float(53) not null,
+        qty integer not null,
         stato tinyint not null check (stato between 0 and 3),
         data varchar(255),
         primary key (id)
@@ -101,9 +102,10 @@
         id_pantalone integer,
         id_scarpa integer,
         id_vestito integer,
-        prezzo integer not null,
+        prezzo float(53) not null,
         qty integer not null,
         sesso tinyint not null check (sesso between 0 and 2),
+        img varchar(255) not null,
         primary key (id)
     ) engine=InnoDB;
 

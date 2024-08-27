@@ -14,13 +14,10 @@ import com.betacom.backend.exception.AcademyException;
 import com.betacom.backend.pojo.Ordine;
 import com.betacom.backend.pojo.ProdottiOrdini;
 import com.betacom.backend.repository.IOrdineRepository;
-import com.betacom.backend.repository.IUtenteRepository;
 import com.betacom.backend.request.OrdineReq;
 import com.betacom.backend.request.ProdottiOrdiniReq;
 import com.betacom.backend.service.interfaces.IMessaggioService;
 import com.betacom.backend.service.interfaces.IOrdineService;
-import com.betacom.backend.service.interfaces.IProdottiOrdiniService;
-import com.betacom.backend.service.interfaces.IProdottoService;
 import com.betacom.backend.service.interfaces.IUtenteService;
 import com.betacom.backend.util.Stato;
 
@@ -34,16 +31,7 @@ public class OrdineServiceImpl implements IOrdineService  {
     IUtenteService utenteS;
 
     @Autowired
-    IUtenteRepository utenteR;
-
-    @Autowired
     IMessaggioService msgS;
-
-    @Autowired
-    IProdottoService prodottoS;
-
-    @Autowired
-    IProdottiOrdiniService prodOrdS;
 
     @Override
     @Transactional(rollbackFor = Exception.class)

@@ -12,9 +12,6 @@ import com.betacom.backend.pojo.Ordine;
 @Repository
 public interface IOrdineRepository extends JpaRepository<Ordine, Integer>  {
 
-    List<Ordine> findByUtente(Integer id);
-    List<Ordine> findByStato(String stato);
-
     @Query("SELECT o FROM Ordine o " + 
         "WHERE (:id IS NULL OR o.id = :id) " +
         "AND (:stato IS NULL OR o.stato = :stato)") 
