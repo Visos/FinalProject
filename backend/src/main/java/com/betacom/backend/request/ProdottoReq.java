@@ -7,6 +7,7 @@ public class ProdottoReq {
 	private Integer id;
 	private Integer qty;
 	private String sesso;
+	private String img;
 	private String colore;
 	private String marca;
 	private String materiale;
@@ -23,12 +24,13 @@ public class ProdottoReq {
 	public ProdottoReq() {
 	}
 
-	public ProdottoReq(Integer id, Integer qty, String sesso, String colore, String marca, String materiale,
+	public ProdottoReq(Integer id, Integer qty, String sesso, String img, String colore, String marca, String materiale,
 			String fantasia, MagliettaReq magliettaReq, PantaloneReq pantaloneReq, VestitoReq vestitoReq,
 			ScarpaReq scarpaReq, CamiciaReq camiciaReq, Double prezzo) {
 		this.id = id;
 		this.qty = qty;
 		this.sesso = sesso;
+		this.img = img;
 		this.colore = colore;
 		this.marca = marca;
 		this.materiale = materiale;
@@ -72,6 +74,14 @@ public class ProdottoReq {
 	public void setSesso(String sesso) {
 		this.sesso = sesso;
 	}
+
+	public String getImg() {
+        return img;
+    }
+
+	public void setImg(String img) {
+        this.img = img;
+    }
 
 	public String getColore() {
 		return colore;

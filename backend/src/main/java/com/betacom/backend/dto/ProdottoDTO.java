@@ -7,6 +7,7 @@ public class ProdottoDTO {
 	  private Integer id;
 	  private Integer qty;
 	  private String sesso;
+	  private String img;
 	  private String colore;
 	  private String marca;
 	  private String materiale;
@@ -23,13 +24,14 @@ public class ProdottoDTO {
 	  public ProdottoDTO() {
 		super();
 	}
-	public ProdottoDTO(Integer id, Integer qty, String sesso, String colore, String marca, String materiale,
+	public ProdottoDTO(Integer id, Integer qty, String sesso, String img, String colore, String marca, String materiale,
 			String fantasia, MagliettaDTO magliettaDto, PantaloneDTO pantaloneDto, VestitoDTO vestitoDto,
 			ScarpaDTO scarpaDto, CamiciaDTO camiciaDto, Double prezzo) {
 		super();
 		this.id = id;
 		this.qty = qty;
 		this.sesso = sesso;
+		this.img = img;
 		this.colore = colore;
 		this.marca = marca;
 		this.materiale = materiale;
@@ -59,6 +61,12 @@ public class ProdottoDTO {
 	public void setSesso(String sesso) {
 		this.sesso = sesso;
 	}
+	public String getImg() {
+        return img;
+    }
+	public void setImg(String img) {
+        this.img = img;
+    }
 	public String getColore() {
 		return colore;
 	}

@@ -28,6 +28,9 @@ public class Prodotto {
     @Column(nullable = false)
     private Sesso sesso;
 
+    @Column(nullable = false)
+    private String img;
+
     @ManyToOne
     @JoinColumn(name = "id_colore")
     private Colore colore;
@@ -73,15 +76,14 @@ public class Prodotto {
     public Prodotto() {
     }
 
-
-
-    public Prodotto(Integer id, Integer qty, Sesso sesso, Colore colore, Marca marca, Materiale materiale,
+    public Prodotto(Integer id, Integer qty, Sesso sesso, String img, Colore colore, Marca marca, Materiale materiale,
 			Fantasia fantasia, Maglietta maglietta, Pantalone pantalone, Vestito vestito, Scarpa scarpa,
 			Camicia camicia, List<ProdottiOrdini> prodOrdini, Double prezzo) {
 		super();
 		this.id = id;
 		this.qty = qty;
 		this.sesso = sesso;
+        this.img = img;
 		this.colore = colore;
 		this.marca = marca;
 		this.materiale = materiale;
@@ -119,6 +121,14 @@ public class Prodotto {
 
     public void setSesso(Sesso sesso) {
         this.sesso = sesso;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public Colore getColore() {
@@ -201,13 +211,9 @@ public class Prodotto {
         this.prodOrdini = prodOrdini;
     }
 
-
-
 	public Double getPrezzo() {
 		return prezzo;
 	}
-
-
 
 	public void setPrezzo(Double prezzo) {
 		this.prezzo = prezzo;
