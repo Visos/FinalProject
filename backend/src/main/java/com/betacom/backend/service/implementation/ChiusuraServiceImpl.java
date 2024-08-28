@@ -2,6 +2,7 @@ package com.betacom.backend.service.implementation;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -78,5 +79,20 @@ public class ChiusuraServiceImpl implements IChiusuraService {
         
         return new ChiusuraReq(id, chi.get().getDesc());
     }
+
+	@Override
+	public List<ChiusuraReq> listAll() {
+	      return trasformInReq(chiusuraR.findAll());
+	    }
+
+	    private List<ChiusuraReq> trasformInReq(List<Chiusura> resp) {
+	        return resp.stream()
+	                .map(k -> new ChiusuraReq(
+	                        k.getId(),
+	                        k.getDesc()
+	                )).collect(Collectors.toList());
+	    
+
+	    }
 
 }

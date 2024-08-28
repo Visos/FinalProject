@@ -2,6 +2,7 @@ package com.betacom.backend.service.implementation;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -78,5 +79,19 @@ public class FantasiaServiceImpl implements IFantasiaService {
         
         return new FantasiaReq(id, fan.get().getDesc());
     }
+    
+    @Override
+    public List<FantasiaReq> listAll() {
+        return trasformInReq(fantasiaR.findAll());
+    }
+
+    private List<FantasiaReq> trasformInReq(List<Fantasia> resp) {
+        return resp.stream()
+                .map(k -> new FantasiaReq(
+                        k.getId(),
+                        k.getDesc()
+                )).collect(Collectors.toList());
+    }
+
 
 }

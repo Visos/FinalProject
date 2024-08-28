@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.betacom.backend.dto.ColoreDTO;
 import com.betacom.backend.exception.AcademyException;
 import com.betacom.backend.pojo.Colore;
 import com.betacom.backend.repository.IColoreRepository;
@@ -68,32 +67,32 @@ public class ColoreServiceImpl implements IColoreService{
 	}
 
 	@Override
-	public ColoreDTO searchByDesc(String desc) throws AcademyException {
+	public ColoreReq searchByDesc(String desc) throws AcademyException {
 		Optional<Colore> col = colR.findByDesc(desc);
 		if(col.isEmpty())
 			throw new AcademyException("colore-ntexist");
 		
-		return new ColoreDTO(col.get().getId(), desc);
+		return new ColoreReq(col.get().getId(), desc,  prodS.trasformInDTO(col.get().getProdotti()));
 	}
 
 	@Override
-	public ColoreDTO searchById(Integer id) throws AcademyException {
+	public ColoreReq searchById(Integer id) throws AcademyException {
 		Optional<Colore> col = colR.findById(id);
 		if(col.isEmpty())
 			throw new AcademyException("colore-ntexist");
 		
-		return new ColoreDTO(id, col.get().getDesc());
+		return new ColoreReq(id, col.get().getDesc(), prodS.trasformInDTO(col.get().getProdotti()));
 	}
 	
 	
 	  @Override
-	    public List<ColoreDTO> listAll() {
-	      return trasformInDTO(colR.findAll());
+	    public List<ColoreReq> listAll() {
+	      return trasformInReq(colR.findAll());
 	    }
 
-	    private List<ColoreDTO> trasformInDTO(List<Colore> resp) {
+	    private List<ColoreReq> trasformInReq(List<Colore> resp) {
 	        return resp.stream()
-	                .map(k -> new ColoreDTO(
+	                .map(k -> new ColoreReq(
 	                        k.getId(),
 	                        k.getDesc(),
 	                        prodS.trasformInDTO(k.getProdotti())

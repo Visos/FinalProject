@@ -1,34 +1,36 @@
 package com.betacom.backend.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.betacom.backend.exception.AcademyException;
-import com.betacom.backend.request.ColoreReq;
+import com.betacom.backend.request.FantasiaReq;
 import com.betacom.backend.response.Response;
 import com.betacom.backend.response.ResponseBase;
 import com.betacom.backend.response.ResponseObject;
-import com.betacom.backend.service.implementation.ColoreServiceImpl;
+import com.betacom.backend.service.interfaces.IFantasiaService;
 
-@RestController
-@RequestMapping(value = "/rest/colore")
-public class ColoreController {
+@Controller
+@RequestMapping("/rest/fantasia")
+
+public class FantasiaController {
 	
 	@Autowired
-	ColoreServiceImpl coloreS;
+	IFantasiaService fantasiaS;
 
+	
 	@PostMapping("/createOrUpdate")
-	public ResponseBase createOrUpdate(@RequestBody(required = true) ColoreReq req) {
+	public ResponseBase createOrUpdate(@RequestBody(required = true) FantasiaReq req) {
 	    ResponseBase resp = new ResponseBase();
 	    resp.setRc(true);
 
 	    try {
-	        coloreS.createOrUpdate(req);
+	        fantasiaS.createOrUpdate(req);
 	    } catch (Exception e) {
 	        resp.setRc(false);
 	        resp.setMsg(e.getMessage());
@@ -38,12 +40,12 @@ public class ColoreController {
 	}
 
 	@GetMapping("/searchById")
-	public ResponseObject<ColoreReq> searchById(@RequestParam Integer id) {
+	public ResponseObject<FantasiaReq> searchById(@RequestParam Integer id) {
 
-	    ResponseObject<ColoreReq> resp = new ResponseObject<ColoreReq>();
+	    ResponseObject<FantasiaReq> resp = new ResponseObject<FantasiaReq>();
 	    resp.setRc(true);
 	    try {
-	        resp.setDati(coloreS.searchById(id));
+	        resp.setDati(fantasiaS.searchById(id));
 	    } catch (AcademyException e) {
 	        resp.setRc(false);
 	        resp.setMsg(e.getMessage());
@@ -53,14 +55,13 @@ public class ColoreController {
 	}
 
 	@GetMapping("/listAll")
-	public Response<ColoreReq> listAll() {
+	public Response<FantasiaReq> listAll() {
 
-	    Response<ColoreReq> resp = new Response<ColoreReq>();
+	    Response<FantasiaReq> resp = new Response<FantasiaReq>();
 	    resp.setRc(true);
-	    resp.setDati(coloreS.listAll());
+	    resp.setDati(fantasiaS.listAll());
 
 	    return resp;
 	}
 
-	
 }
