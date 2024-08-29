@@ -4,12 +4,12 @@ public class PantaloneReq {
 	private Integer id;
     private String taglia;
     private String vestibilita;
-    private Integer lunghezza;
+    private String lunghezza;
 
     public PantaloneReq() {
     }
 
-    public PantaloneReq(Integer id, String taglia, String vestibilita, Integer lunghezza) {
+    public PantaloneReq(Integer id, String taglia, String vestibilita, String lunghezza) {
         this.id = id;
         this.taglia = taglia;
         this.vestibilita = vestibilita;
@@ -40,11 +40,11 @@ public class PantaloneReq {
 		this.vestibilita = vestibilita;
 	}
 
-	public Integer getLunghezza() {
+	public String getLunghezza() {
 		return lunghezza;
 	}
 
-	public void setLunghezza(Integer lunghezza) {
+	public void setLunghezza(String lunghezza) {
 		this.lunghezza = lunghezza;
 	}
 }

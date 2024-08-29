@@ -22,7 +22,7 @@ public class TagliaController {
 	@Autowired
 	ITagliaService tagliaS;
 	
-	 @PostMapping("create")
+	 @PostMapping("createOrUpdate")
     public ResponseBase create(@RequestBody (required = true) TagliaReq req) {
         
         ResponseBase resp = new ResponseBase();

@@ -91,6 +91,10 @@ public class ProdottoServiceImpl implements IProdottoService {
 			throw new AcademyException(msgS.getMessaggio("prodotto-prezzo-null"));
 		prodotto.setPrezzo(req.getPrezzo());
 		
+		if(req.getImg()==null)
+			throw new AcademyException(msgS.getMessaggio("prodotto-img-null"));
+		prodotto.setImg(req.getImg());
+		
 		if(req.getColore()==null)
 			throw new AcademyException(msgS.getMessaggio("prodotto-colore-null"));
 		Colore colore = coloreR.findByDesc(req.getColore())	
@@ -153,7 +157,7 @@ public class ProdottoServiceImpl implements IProdottoService {
 	try {
 		prodottoR.save(prodotto);
 	} catch (Exception e) {
-		throw new AcademyException(msgS.getMessaggio("prodotto-generic"));
+		throw new AcademyException(msgS.getMessaggio("prodotto-generic") + e.getMessage());
 	}
 	}
 	

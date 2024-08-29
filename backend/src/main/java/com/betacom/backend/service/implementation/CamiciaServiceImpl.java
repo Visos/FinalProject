@@ -82,7 +82,7 @@ public class CamiciaServiceImpl implements ICamiciaService {
             throw new AcademyException(msgS.getMessaggio("vestibilita-ntexist"));
         camicia.setVestibilita(vestibilita.get());
 
-        Optional<LunghezzaManica> lunghezzaManica = lunghezzaManicaR.findById(req.getLunghezzaManica());
+        Optional<LunghezzaManica> lunghezzaManica = lunghezzaManicaR.findByDesc(req.getLunghezzaManica());
         if (lunghezzaManica.isEmpty())
             throw new AcademyException(msgS.getMessaggio("lunghezzaManica-ntexist"));
         camicia.setLunghezzaManica(lunghezzaManica.get());

@@ -74,7 +74,7 @@ public class PantaloneServiceImpl implements IPantaloneService {
             throw new AcademyException(msgS.getMessaggio("vestibilita-ntexist"));
         pantalone.setVestibilita(vestibilita.get());
 
-        Optional<Lunghezza> lunghezza = lunghezzaR.findById(req.getLunghezza());
+        Optional<Lunghezza> lunghezza = lunghezzaR.findByDesc(req.getLunghezza());
         if (lunghezza.isEmpty())
             throw new AcademyException(msgS.getMessaggio("lunghezza-ntexist"));
         pantalone.setLunghezza(lunghezza.get());
