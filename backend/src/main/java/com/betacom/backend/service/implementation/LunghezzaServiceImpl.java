@@ -63,7 +63,7 @@ public class LunghezzaServiceImpl implements ILunghezzaService  {
         
         Optional<Lunghezza> optional = lunghezzaR.findByDesc(desc);
         if (optional.isEmpty()) 
-            throw new AcademyException(msgS.getMessaggio("lunghezza-no-desc"));
+            throw new AcademyException(msgS.getMessaggio("lunghezza-ntexist"));
         
         return new LunghezzaReq(
             optional.get().getId(),

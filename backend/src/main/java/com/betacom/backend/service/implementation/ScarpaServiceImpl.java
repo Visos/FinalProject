@@ -73,7 +73,7 @@ public class ScarpaServiceImpl implements IScarpaService {
 		try {
 			scarpaR.save(scarpa);
 		} catch (Exception e) {
-			throw new AcademyException(msgS.getMessaggio("tipo-scarpa-generic"));
+			throw new AcademyException(msgS.getMessaggio("scarpa-generic"));
 		}
 
 	}

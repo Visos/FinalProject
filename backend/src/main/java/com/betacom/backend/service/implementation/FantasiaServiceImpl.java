@@ -55,7 +55,7 @@ public class FantasiaServiceImpl implements IFantasiaService {
         try {
             fantasiaR.save(fantasia);
         } catch (Exception e) {
-            throw new AcademyException(msgS.getMessaggio("lunghezza-generic") + e.getMessage());
+            throw new AcademyException(msgS.getMessaggio("fantasia-generic") + e.getMessage());
         }
 
     }

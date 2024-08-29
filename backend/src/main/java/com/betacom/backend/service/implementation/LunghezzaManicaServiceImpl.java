@@ -33,7 +33,7 @@ public class LunghezzaManicaServiceImpl implements ILunghezzaManicaService{
             if (optional.isPresent()) {
                 lManica = optional.get();
             } else {
-                throw new AcademyException(msgS.getMessaggio("lManica-ntexist"));
+                throw new AcademyException(msgS.getMessaggio("lunghezzaManica-ntexist"));
             }
         } else {
             lManica = new LunghezzaManica();
@@ -43,17 +43,17 @@ public class LunghezzaManicaServiceImpl implements ILunghezzaManicaService{
             List<LunghezzaManica> lLM = lManicaR.findAll();
             for (LunghezzaManica l:lLM) {
                 if(req.getDescrizione().equalsIgnoreCase(l.getDesc()))
-                    throw new AcademyException(msgS.getMessaggio("lManica-exist"));
+                    throw new AcademyException(msgS.getMessaggio("lunghezzaManica-exist"));
             }
         } else 
-            throw new AcademyException(msgS.getMessaggio("lManica-desc-null"));
+            throw new AcademyException(msgS.getMessaggio("lunghezzaManica-desc-null"));
             
         lManica.setDesc(req.getDescrizione());
 
         try {
             lManicaR.save(lManica); 
         } catch (Exception e) {
-            throw new AcademyException(msgS.getMessaggio("lManica-generic") + e.getMessage());
+            throw new AcademyException(msgS.getMessaggio("lunghezzaManica-generic") + e.getMessage());
         }
 
     }
@@ -63,7 +63,7 @@ public class LunghezzaManicaServiceImpl implements ILunghezzaManicaService{
         
         Optional<LunghezzaManica> optional = lManicaR.findByDesc(desc);
         if (optional.isEmpty()) 
-            throw new AcademyException(msgS.getMessaggio("lManica-no-desc"));
+            throw new AcademyException(msgS.getMessaggio("lunghezzaManica-ntexist"));
         
         return new LunghezzaManicaReq(
             optional.get().getId(),
@@ -75,7 +75,7 @@ public class LunghezzaManicaServiceImpl implements ILunghezzaManicaService{
 
         Optional<LunghezzaManica> optional = lManicaR.findById(id);
         if (optional.isEmpty()) 
-            throw new AcademyException(msgS.getMessaggio("lManica-ntexist"));
+            throw new AcademyException(msgS.getMessaggio("lunghezzaManica-ntexist"));
         
         return new LunghezzaManicaReq(
             optional.get().getId(),
