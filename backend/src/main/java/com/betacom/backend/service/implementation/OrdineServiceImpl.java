@@ -38,16 +38,14 @@ public class OrdineServiceImpl implements IOrdineService  {
     public void createOrUpdate(OrdineReq req) throws AcademyException {
         
         Ordine ordine = null;
-
-        if (req.getId() != null) {
+        if (newOrdine(req.getIdUtente())) {
+            ordine = new Ordine();
+            ordine.setStato(Stato.valueOf("CARRELLO"));
+        } else {
             Optional<Ordine> optional = ordineR.findById(req.getId());
             if (optional.isPresent()) {
                 ordine = optional.get();
-            } else {
-                throw new AcademyException(msgS.getMessaggio("ordine-ntexist"));
             }
-        } else {
-            ordine = new Ordine();
         }
 
         ordine.setStato(Stato.valueOf(req.getStato()));
@@ -78,6 +76,12 @@ public class OrdineServiceImpl implements IOrdineService  {
         } catch (Exception e) {
             throw new AcademyException(msgS.getMessaggio("ordine-generic") + e.getMessage());
         }
+    }
+
+    public Boolean newOrdine(Integer id){
+        if (list(id, "CARRELLO").isEmpty()){
+            return true;
+        } else return false;
     }
 
     @Override
@@ -174,5 +178,4 @@ public class OrdineServiceImpl implements IOrdineService  {
             throw new AcademyException(msgS.getMessaggio("ordine-ntexist"));
         }
     }
-
 }
