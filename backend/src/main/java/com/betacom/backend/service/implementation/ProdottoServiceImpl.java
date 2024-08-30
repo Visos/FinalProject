@@ -35,8 +35,13 @@ import com.betacom.backend.repository.IProdottoRepository;
 import com.betacom.backend.repository.IScarpaRepository;
 import com.betacom.backend.repository.IVestitoRepository;
 import com.betacom.backend.request.ProdottoReq;
+import com.betacom.backend.service.interfaces.ICamiciaService;
+import com.betacom.backend.service.interfaces.IMagliettaService;
 import com.betacom.backend.service.interfaces.IMessaggioService;
+import com.betacom.backend.service.interfaces.IPantaloneService;
 import com.betacom.backend.service.interfaces.IProdottoService;
+import com.betacom.backend.service.interfaces.IScarpaService;
+import com.betacom.backend.service.interfaces.IVestitoService;
 import com.betacom.backend.util.Sesso;
 
 @Service
@@ -64,6 +69,21 @@ public class ProdottoServiceImpl implements IProdottoService {
 	IScarpaRepository scarpaR;
 	@Autowired
 	ICamiciaRepository camiciaR;
+	
+	@Autowired
+	IPantaloneService pantaloneS;
+	
+	@Autowired
+	IMagliettaService magliettaS;
+	
+	@Autowired
+	ICamiciaService camiciaS;
+	
+	@Autowired
+	IScarpaService scarpaS;
+	
+	@Autowired
+	IVestitoService vestitoS;
 	
 	@Override
 	public void create(ProdottoReq req) throws AcademyException {
@@ -118,47 +138,95 @@ public class ProdottoServiceImpl implements IProdottoService {
 		Fantasia fantasia = fantasiaR.findByDesc(req.getFantasia())
 				.orElseThrow(()-> new AcademyException(msgS.getMessaggio("fantasia-ntexist")));
 		prodotto.setFantasia(fantasia);
+
 		
 		if (req.getMagliettaReq() != null) {
-			Maglietta maglietta = magliettaR.findById(req.getMagliettaReq().getId())
-					.orElseThrow(() -> new AcademyException(msgS.getMessaggio("maglietta-ntexist")));
-			prodotto.setMaglietta(maglietta);
-		} else
-			prodotto.setMaglietta(null);
+		    Optional<Maglietta> maglietta = null;
+		    if(req.getMagliettaReq().getId() != null) {
+		        maglietta = magliettaR.findById(req.getMagliettaReq().getId());
+		        if(maglietta.isEmpty()) {
+		            throw new AcademyException(msgS.getMessaggio("maglietta-ntexist"));
+		        }
+		    } else {
+		        prodotto.setMaglietta(magliettaS.createOrUpdate(req.getMagliettaReq()));
+		    }
 
+		} else
+		    prodotto.setMaglietta(null);
+
+		
+		
 		if (req.getPantaloneReq() != null) {
-			Pantalone pantalone = pantaloneR.findById(req.getPantaloneReq().getId())
-					.orElseThrow(() -> new AcademyException(msgS.getMessaggio("pantalone-ntexist")));
-			prodotto.setPantalone(pantalone);
+			Optional<Pantalone> pantalone = null;
+			if(req.getPantaloneReq().getId() != null) {
+				pantalone = pantaloneR.findById(req.getPantaloneReq().getId());
+				if(pantalone.isEmpty()) {
+					throw new AcademyException(msgS.getMessaggio("pantalone-ntexist"));
+				}
+			}else {
+				prodotto.setPantalone(pantaloneS.createOrUpdate(req.getPantaloneReq()));
+			}
+
 		} else
 			prodotto.setPantalone(null);
 		
+		
+		
+		
+		
 		if (req.getVestitoReq() != null) {
-			Vestito vestito = vestitoR.findById(req.getVestitoReq().getId())
-					.orElseThrow(() -> new AcademyException(msgS.getMessaggio("vestito-ntexist")));
-			prodotto.setVestito(vestito);
+		    Optional<Vestito> vestito = null;
+		    if(req.getVestitoReq().getId() != null) {
+		        vestito = vestitoR.findById(req.getVestitoReq().getId());
+		        if(vestito.isEmpty()) {
+		            throw new AcademyException(msgS.getMessaggio("vestito-ntexist"));
+		        }
+		    } else {
+		        prodotto.setVestito(vestitoS.createOrUpdate(req.getVestitoReq()));
+		    }
+
 		} else
-			prodotto.setVestito(null);
+		    prodotto.setVestito(null);
+
 		
 		if (req.getScarpaReq() != null) {
-			Scarpa scarpa = scarpaR.findById(req.getScarpaReq().getId())
-					.orElseThrow(() -> new AcademyException(msgS.getMessaggio("scarpa-ntexist")));
-			prodotto.setScarpa(scarpa);
+		    Optional<Scarpa> scarpa = null;
+		    if(req.getScarpaReq().getId() != null) {
+		        scarpa = scarpaR.findById(req.getScarpaReq().getId());
+		        if(scarpa.isEmpty()) {
+		            throw new AcademyException(msgS.getMessaggio("scarpa-ntexist"));
+		        }
+		    } else {
+		        prodotto.setScarpa(scarpaS.createOrUpdate(req.getScarpaReq()));
+		    }
+
 		} else
-			prodotto.setScarpa(null);
+		    prodotto.setScarpa(null);
+
 		
 		if (req.getCamiciaReq() != null) {
-			Camicia camicia = camiciaR.findById(req.getCamiciaReq().getId())
-					.orElseThrow(() -> new AcademyException(msgS.getMessaggio("camicia-ntexist")));
-			prodotto.setCamicia(camicia);
+		    Optional<Camicia> camicia = null;
+		    if(req.getCamiciaReq().getId() != null) {
+		        camicia = camiciaR.findById(req.getCamiciaReq().getId());
+		        if(camicia.isEmpty()) {
+		            throw new AcademyException(msgS.getMessaggio("camicia-ntexist"));
+		        }
+		    } else {
+		        prodotto.setCamicia(camiciaS.createOrUpdate(req.getCamiciaReq()));
+		    }
+
 		} else
-			prodotto.setCamicia(null);
+		    prodotto.setCamicia(null);
+
 	
 	try {
 		prodottoR.save(prodotto);
 	} catch (Exception e) {
 		throw new AcademyException(msgS.getMessaggio("prodotto-generic") + e.getMessage());
-	}
+		}
+	System.out.println(req.getPantaloneReq());
+
+	System.out.println(prodotto.getPantalone());
 	}
 	
 	@Override

@@ -45,7 +45,7 @@ public class CamiciaServiceImpl implements ICamiciaService {
     ITipoCollettoRepository tipoCollettoR;
 
     @Override
-    public void createOrUpdate(CamiciaReq req) throws AcademyException {
+    public Camicia createOrUpdate(CamiciaReq req) throws AcademyException {
 
         Camicia camicia = new Camicia();
 
@@ -97,6 +97,8 @@ public class CamiciaServiceImpl implements ICamiciaService {
         } catch (Exception e) {
             throw new AcademyException(msgS.getMessaggio("camicia-generic"));
         }
+        
+        return camicia;
 
     }
 

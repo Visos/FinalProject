@@ -36,7 +36,7 @@ public class ScarpaServiceImpl implements IScarpaService {
 	ITipoScarpaRepository tipoScarpaR;
 
 	@Override
-	public void createOrUpdate(ScarpaReq req) throws AcademyException {
+	public Scarpa createOrUpdate(ScarpaReq req) throws AcademyException {
 		
 		Scarpa scarpa = new Scarpa();
 		
@@ -75,6 +75,8 @@ public class ScarpaServiceImpl implements IScarpaService {
 		} catch (Exception e) {
 			throw new AcademyException(msgS.getMessaggio("scarpa-generic"));
 		}
+		
+		return scarpa;
 
 	}
 

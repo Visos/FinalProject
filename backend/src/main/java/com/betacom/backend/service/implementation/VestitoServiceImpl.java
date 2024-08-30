@@ -45,7 +45,7 @@ public class VestitoServiceImpl implements IVestitoService {
 	IVestibilitaRepository vestibilitaR;
 
 	@Override
-	public void createOrUpdate(VestitoReq req) throws AcademyException {
+	public Vestito createOrUpdate(VestitoReq req) throws AcademyException {
 		
 		Vestito vestito = new Vestito();
 		 
@@ -97,6 +97,8 @@ public class VestitoServiceImpl implements IVestitoService {
 		} catch (Exception e) {
 			throw new AcademyException(msgS.getMessaggio("vestito-generic"));
 		}
+		
+		return vestito;
 		
 	}
 

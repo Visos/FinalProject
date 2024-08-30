@@ -45,7 +45,7 @@ public class MagliettaServiceImpl implements IMagliettaService {
     ITipoCollettoRepository tipoCollettoR;
 
     @Override
-    public void createOrUpdate(MagliettaReq req) throws AcademyException {
+    public Maglietta createOrUpdate(MagliettaReq req) throws AcademyException {
 
         Maglietta maglietta = new Maglietta();
 
@@ -97,6 +97,8 @@ public class MagliettaServiceImpl implements IMagliettaService {
         } catch (Exception e) {
             throw new AcademyException(msgS.getMessaggio("maglietta-generic"));
         }
+        
+        return maglietta;
 
     }
 

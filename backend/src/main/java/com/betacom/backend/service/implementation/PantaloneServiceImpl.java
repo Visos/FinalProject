@@ -40,7 +40,7 @@ public class PantaloneServiceImpl implements IPantaloneService {
     ILunghezzaRepository lunghezzaR;
 
     @Override
-    public void createOrUpdate(PantaloneReq req) throws AcademyException {
+    public Pantalone createOrUpdate(PantaloneReq req) throws AcademyException {
 
         Pantalone pantalone = new Pantalone();
 
@@ -81,10 +81,13 @@ public class PantaloneServiceImpl implements IPantaloneService {
 
         try {
             pantaloneR.save(pantalone);
+            
+            return pantalone;
+
         } catch (Exception e) {
             throw new AcademyException(msgS.getMessaggio("pantalone-generic"));
         }
-
+        
     }
 
     @Override
