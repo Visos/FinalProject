@@ -163,4 +163,15 @@ public class ProdottoReq {
 		this.prezzo = prezzo;
 	}
 
+	@Override
+	public String toString() {
+		return "ProdottoReq [id=" + id + ", qty=" + qty + ", sesso=" + sesso + ", img=" + img + ", colore=" + colore
+				+ ", marca=" + marca + ", materiale=" + materiale + ", fantasia=" + fantasia + ", magliettaReq="
+				+ magliettaReq + ", pantaloneReq=" + pantaloneReq + ", vestitoReq=" + vestitoReq + ", scarpaReq="
+				+ scarpaReq + ", camiciaReq=" + camiciaReq + ", prezzo=" + prezzo + ", listProdOrdiniReq="
+				+ listProdOrdiniReq + "]";
+	}
+	
+	
+
 }

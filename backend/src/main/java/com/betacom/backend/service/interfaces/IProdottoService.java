@@ -15,4 +15,13 @@ public interface IProdottoService {
 	List<ProdottoDTO> trasformInDTO(List<Prodotto> resp);
 	Prodotto getProdotto(Integer id) throws AcademyException;
 
+	List<ProdottoDTO> listByParam(ProdottoReq req);
+	List<ProdottoDTO> findMaglietteByParam(ProdottoReq req);
+	List<ProdottoDTO> findPantaloneByParam(ProdottoReq req);
+	List<ProdottoDTO> findVestitoByParam(ProdottoReq req);
+	List<ProdottoDTO> findScarpaByParam(ProdottoReq req);
+	List<ProdottoDTO> findCamiciaByParam(ProdottoReq req);
+
+
+
 }

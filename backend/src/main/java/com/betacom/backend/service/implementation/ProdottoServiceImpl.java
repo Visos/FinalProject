@@ -258,6 +258,69 @@ public class ProdottoServiceImpl implements IProdottoService {
 	public List<ProdottoDTO> listAll() {
 		return trasformInDTO(prodottoR.findAll());
 	}
+	
+	@Override
+	public List<ProdottoDTO> listByParam(ProdottoReq req){
+		Integer idMaglietta = null;
+		Integer idPantalone= null;
+		Integer idVestito= null;
+		Integer idScarpa= null;
+		Integer idCamicia= null;
+		
+		checkTipoReq(req, idMaglietta, idPantalone, idVestito, idScarpa, idCamicia);
+		
+		return trasformInDTO(prodottoR.findByParam(req.getId(), req.getSesso(), req.getColore(), req.getMarca(), req.getMateriale(), req.getFantasia(), idMaglietta, idPantalone, idVestito, idScarpa, idCamicia, req.getPrezzo()));
+	}
+	
+
+	
+	@Override
+	public List<ProdottoDTO> findMaglietteByParam(ProdottoReq req){
+			
+		return trasformInDTO(prodottoR.findMagliettaByParam(req.getId(), req.getSesso(), req.getColore(), req.getMarca(), req.getMateriale(), req.getFantasia(), req.getMagliettaReq().getId(), req.getPrezzo(), req.getMagliettaReq().getTaglia(), req.getMagliettaReq().getVestibilita(), req.getMagliettaReq().getLunghezzaManica(), req.getMagliettaReq().getTipoColletto()));
+	}
+	
+	@Override
+	public List<ProdottoDTO> findPantaloneByParam(ProdottoReq req){
+			
+		return trasformInDTO(prodottoR.findPantaloneByParam(req.getId(), req.getSesso(), req.getColore(), req.getMarca(), req.getMateriale(), req.getFantasia(), req.getPantaloneReq().getId(), req.getPrezzo(), req.getPantaloneReq().getTaglia(), req.getPantaloneReq().getVestibilita(), req.getPantaloneReq().getLunghezza()));
+	}
+	
+	@Override
+	public List<ProdottoDTO> findVestitoByParam(ProdottoReq req){
+			
+		return trasformInDTO(prodottoR.findVestitoByParam(req.getId(), req.getSesso(), req.getColore(), req.getMarca(), req.getMateriale(), req.getFantasia(), req.getVestitoReq().getId(), req.getPrezzo(), req.getVestitoReq().getTaglia(), req.getVestitoReq().getVestibilita(), req.getVestitoReq().getLunghezza(), req.getVestitoReq().getLunghezzaManica()));
+	}
+	
+	@Override
+	public List<ProdottoDTO> findScarpaByParam(ProdottoReq req){
+			
+		return trasformInDTO(prodottoR.findScarpaByParam(req.getId(), req.getSesso(), req.getColore(), req.getMarca(), req.getMateriale(), req.getFantasia(), req.getScarpaReq().getId(), req.getPrezzo(), req.getScarpaReq().getTagliaScarpe(), req.getScarpaReq().getChiusura(), req.getScarpaReq().getTipoScarpa()));
+	}
+	
+	@Override
+	public List<ProdottoDTO> findCamiciaByParam(ProdottoReq req){
+			
+		return trasformInDTO(prodottoR.findCamiciaByParam(req.getId(), req.getSesso(), req.getColore(), req.getMarca(), req.getMateriale(), req.getFantasia(), req.getCamiciaReq().getId(), req.getPrezzo(), req.getCamiciaReq().getTaglia(), req.getCamiciaReq().getVestibilita(), req.getCamiciaReq().getLunghezzaManica(), req.getCamiciaReq().getTipoColletto()));
+	}
+	
+	public void checkTipoReq( ProdottoReq req, Integer idMaglietta, Integer idPantalone, Integer idVestito, Integer idScarpa, Integer idCamicia) {
+		if(req.getCamiciaReq() !=null && req.getCamiciaReq().getId() != null) {
+			idCamicia = req.getCamiciaReq().getId();
+		}
+		if(req.getPantaloneReq() !=null && req.getPantaloneReq().getId() != null) {
+			idPantalone = req.getPantaloneReq().getId();
+		}
+		if(req.getVestitoReq() !=null && req.getVestitoReq().getId() != null) {
+			idVestito = req.getVestitoReq().getId();
+		}
+		if(req.getScarpaReq() !=null && req.getScarpaReq().getId() != null) {
+			idScarpa = req.getScarpaReq().getId();
+		}
+		if(req.getMagliettaReq() !=null && req.getMagliettaReq().getId() != null) {
+			idMaglietta = req.getMagliettaReq().getId();
+		}
+	}
 
 	@Override
 	public List<ProdottoDTO> trasformInDTO(List<Prodotto> resp) {
@@ -339,6 +402,8 @@ public class ProdottoServiceImpl implements IProdottoService {
         } else
             return optional.get();
     }
+
+
 	
 
 }
