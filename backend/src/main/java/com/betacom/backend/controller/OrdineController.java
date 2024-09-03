@@ -15,6 +15,7 @@ import com.betacom.backend.response.Response;
 import com.betacom.backend.response.ResponseBase;
 import com.betacom.backend.response.ResponseObject;
 import com.betacom.backend.service.interfaces.IOrdineService;
+import com.betacom.backend.util.Stato;
 
 
 @RestController
@@ -56,7 +57,7 @@ public class OrdineController {
 	}
 
     @GetMapping("/list")
-	public Response<OrdineDTO> list(Integer id, String stato){
+	public Response<OrdineDTO> list(Integer id, Stato stato){
 		Response<OrdineDTO> resp = new Response<OrdineDTO>();
 		resp.setRc(true);
 		resp.setDati(ordineS.list(id, stato));

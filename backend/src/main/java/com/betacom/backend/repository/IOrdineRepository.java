@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.jpa.repository.Query;
 
 import com.betacom.backend.pojo.Ordine;
+import com.betacom.backend.util.Stato;
 
 @Repository
 public interface IOrdineRepository extends JpaRepository<Ordine, Integer>  {
@@ -17,6 +18,6 @@ public interface IOrdineRepository extends JpaRepository<Ordine, Integer>  {
         "AND (:stato IS NULL OR o.stato = :stato)") 
     List<Ordine> findByParam(
         @Param("id") Integer id,
-        @Param("stato") String stato);
+        @Param("stato") Stato stato);
     
 }

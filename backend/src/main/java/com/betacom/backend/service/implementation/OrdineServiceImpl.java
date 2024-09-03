@@ -40,7 +40,6 @@ public class OrdineServiceImpl implements IOrdineService  {
         Ordine ordine = null;
         if (newOrdine(req.getIdUtente())) {
             ordine = new Ordine();
-            ordine.setStato(Stato.valueOf("CARRELLO"));
         } else {
             Optional<Ordine> optional = ordineR.findById(req.getId());
             if (optional.isPresent()) {
@@ -48,13 +47,7 @@ public class OrdineServiceImpl implements IOrdineService  {
             }
         }
 
-        ordine.setStato(Stato.valueOf(req.getStato()));
-
-        if (req.getStato().equals(Stato.CARRELLO.name()) || req.getStato() == null) {
-            ordine.setData(null);
-        } else {
-            ordine.setData(req.getData());
-        }
+        ordine.setStato(Stato.CARRELLO);
 
         ordine.setUtente(utenteS.getUtente(req.getIdUtente()));
         ordine.setProdOrdini(listAllByOrdine(ordine.getId()));
@@ -79,7 +72,7 @@ public class OrdineServiceImpl implements IOrdineService  {
     }
 
     public Boolean newOrdine(Integer id){
-        if (list(id, "CARRELLO").isEmpty()){
+        if (list(id, Stato.CARRELLO).isEmpty()){
             return true;
         } else return false;
     }
@@ -102,7 +95,7 @@ public class OrdineServiceImpl implements IOrdineService  {
     }
 
     @Override
-    public List<OrdineDTO> list(Integer id, String stato) {
+    public List<OrdineDTO> list(Integer id, Stato stato) {
         List<Ordine> ord = ordineR.findByParam(id, stato);
         return transformInDTO(ord);
     }
