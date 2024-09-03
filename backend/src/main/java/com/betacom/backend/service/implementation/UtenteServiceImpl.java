@@ -75,12 +75,12 @@ public class UtenteServiceImpl implements IUtenteService {
     }
 
     @Override
-    public UtenteDTO searchById(Integer id) throws AcademyException {
+    public UtenteReq searchById(Integer id) throws AcademyException {
         Optional<Utente> optional = utenteR.findById(id);
         if (optional.isEmpty())
             throw new AcademyException(msgS.getMessaggio("utente-ntexist"));
         
-        return new UtenteDTO(
+        return new UtenteReq(
             optional.get().getId(),
             optional.get().getNome(),
             optional.get().getCognome(),
@@ -96,13 +96,13 @@ public class UtenteServiceImpl implements IUtenteService {
     }
 
     @Override
-    public UtenteDTO searchByMail(String mail) throws AcademyException {
+    public UtenteReq searchByMail(String mail) throws AcademyException {
         
         Optional<Utente> optional = utenteR.findByMail(mail);
         if (optional.isEmpty())
             throw new AcademyException(msgS.getMessaggio("utente-no-mail"));
         
-        return new UtenteDTO(
+        return new UtenteReq(
             optional.get().getId(),
             optional.get().getNome(),
             optional.get().getCognome(),

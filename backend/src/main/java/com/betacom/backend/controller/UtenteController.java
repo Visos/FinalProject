@@ -41,9 +41,9 @@ public class UtenteController {
     }
 
     @GetMapping("searchByMail")
-    public ResponseObject<UtenteDTO> searchByDesc(@RequestParam String mail) {
+    public ResponseObject<UtenteReq> searchByDesc(@RequestParam String mail) {
 
-        ResponseObject<UtenteDTO> resp = new ResponseObject<UtenteDTO>();
+        ResponseObject<UtenteReq> resp = new ResponseObject<UtenteReq>();
         resp.setRc(true);
         try {
             resp.setDati(utenteS.searchByMail(mail));
@@ -56,9 +56,9 @@ public class UtenteController {
     }
 
     @GetMapping("searchById")
-    public ResponseObject<UtenteDTO> searchById(@RequestParam Integer id) {
+    public ResponseObject<UtenteReq> searchById(@RequestParam Integer id) {
 
-        ResponseObject<UtenteDTO> resp = new ResponseObject<UtenteDTO>();
+        ResponseObject<UtenteReq> resp = new ResponseObject<UtenteReq>();
         resp.setRc(true);
         try {
             resp.setDati(utenteS.searchById(id));

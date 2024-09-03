@@ -10,8 +10,8 @@ import com.betacom.backend.request.UtenteReq;
 public interface IUtenteService {
 
     void createOrUpdate(UtenteReq req) throws AcademyException;
-    UtenteDTO searchById(Integer id) throws AcademyException;
-    UtenteDTO searchByMail(String mail) throws AcademyException;
+    UtenteReq searchById(Integer id) throws AcademyException;
+    UtenteReq searchByMail(String mail) throws AcademyException;
     List<UtenteDTO> listAll();
     Utente getUtente(Integer id) throws AcademyException;
 }
