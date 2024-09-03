@@ -7,5 +7,7 @@ import com.betacom.backend.pojo.Maglietta;
 
 @Repository
 public interface IMagliettaRepository extends JpaRepository<Maglietta, Integer>{
+	
+	
 
 }

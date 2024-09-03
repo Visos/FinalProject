@@ -9,12 +9,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.betacom.backend.dto.CamiciaDTO;
+import com.betacom.backend.dto.ProdottoDTO;
 import com.betacom.backend.exception.AcademyException;
 import com.betacom.backend.request.CamiciaReq;
+import com.betacom.backend.request.ProdottoReq;
 import com.betacom.backend.response.Response;
 import com.betacom.backend.response.ResponseBase;
 import com.betacom.backend.response.ResponseObject;
 import com.betacom.backend.service.interfaces.ICamiciaService;
+import com.betacom.backend.service.interfaces.IProdottoService;
 
 @RestController
 @RequestMapping("/rest/camicia")
@@ -22,6 +25,9 @@ public class CamiciaController {
 	
 	@Autowired
 	ICamiciaService camiciaS;
+	
+	@Autowired
+	IProdottoService prodottoS;
 	
 	@PostMapping("/createOrUpdate")
 	public ResponseBase createOrUpdate(@RequestBody(required = true) CamiciaReq req) {
@@ -54,11 +60,11 @@ public class CamiciaController {
 	}
 
 	@GetMapping("/listAll")
-	public Response<CamiciaDTO> listAll() {
+	public Response<ProdottoDTO> listAll(@RequestBody ProdottoReq req) {
 
-	    Response<CamiciaDTO> resp = new Response<CamiciaDTO>();
+	    Response<ProdottoDTO> resp = new Response<ProdottoDTO>();
 	    resp.setRc(true);
-	    resp.setDati(camiciaS.listAll());
+	    resp.setDati(prodottoS.findCamiciaByParam(req));
 
 	    return resp;
 	}
