@@ -58,4 +58,12 @@ public class CamiciaReq {
 	public void setTipoColletto(String tipoColletto) {
 		this.tipoColletto = tipoColletto;
 	}
+
+	@Override
+	public String toString() {
+		return "CamiciaReq [id=" + id + ", taglia=" + taglia + ", vestibilita=" + vestibilita + ", lunghezzaManica="
+				+ lunghezzaManica + ", tipoColletto=" + tipoColletto + "]";
+	}
+	
+	
 }

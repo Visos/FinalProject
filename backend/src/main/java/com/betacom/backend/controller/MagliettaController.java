@@ -9,12 +9,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.betacom.backend.dto.MagliettaDTO;
+import com.betacom.backend.dto.ProdottoDTO;
 import com.betacom.backend.exception.AcademyException;
 import com.betacom.backend.request.MagliettaReq;
+import com.betacom.backend.request.ProdottoReq;
 import com.betacom.backend.response.Response;
 import com.betacom.backend.response.ResponseBase;
 import com.betacom.backend.response.ResponseObject;
 import com.betacom.backend.service.interfaces.IMagliettaService;
+import com.betacom.backend.service.interfaces.IProdottoService;
 
 @RestController
 @RequestMapping("/rest/maglietta")
@@ -22,6 +25,9 @@ public class MagliettaController {
     
     @Autowired
     IMagliettaService magliettaS;
+    
+    @Autowired
+    IProdottoService prodoS;
     
     @PostMapping("/createOrUpdate")
     public ResponseBase createOrUpdate(@RequestBody(required = true) MagliettaReq req) {
@@ -54,11 +60,11 @@ public class MagliettaController {
     }
 
     @GetMapping("/listAll")
-    public Response<MagliettaDTO> listAll() {
+    public Response<ProdottoDTO> listAll(@RequestBody ProdottoReq req) {
 
-        Response<MagliettaDTO> resp = new Response<MagliettaDTO>();
+        Response<ProdottoDTO> resp = new Response<ProdottoDTO>();
         resp.setRc(true);
-        resp.setDati(magliettaS.listAll());
+        resp.setDati(prodoS.findMaglietteByParam(req));
 
         return resp;
     }

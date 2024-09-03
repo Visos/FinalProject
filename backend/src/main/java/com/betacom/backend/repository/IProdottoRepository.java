@@ -79,7 +79,7 @@ public interface IProdottoRepository extends JpaRepository<Prodotto, Integer> {
 	       "(:marca IS NULL OR p.marca.desc = :marca) AND " +
 	       "(:materiale IS NULL OR p.materiale.desc = :materiale) AND " +
 	       "(:fantasia IS NULL OR p.fantasia.desc = :fantasia) AND " +
-	       "(:idMaglietta IS NULL OR p.pantalone.id = :idPantalone) AND " +
+	       "(:idPantalone IS NULL OR p.pantalone.id = :idPantalone) AND " +
 	       "(:prezzo IS NULL OR p.prezzo = :prezzo) AND " +
 	       "(:vestibilita IS NULL OR m.vestibilita.desc = :vestibilita) AND " + 
 	       "(:taglia IS NULL OR m.taglia.desc = :taglia) AND " + 
@@ -107,7 +107,7 @@ List<Prodotto> findPantaloneByParam(
 	       "(:marca IS NULL OR p.marca.desc = :marca) AND " +
 	       "(:materiale IS NULL OR p.materiale.desc = :materiale) AND " +
 	       "(:fantasia IS NULL OR p.fantasia.desc = :fantasia) AND " +
-	       "(:idMaglietta IS NULL OR p.vestito.id = :idVestito) AND " +
+	       "(:idVestito IS NULL OR p.vestito.id = :idVestito) AND " +
 	       "(:prezzo IS NULL OR p.prezzo = :prezzo) AND " +
 	       "(:vestibilita IS NULL OR m.vestibilita = :vestibilita) AND " + 
 	       "(:taglia IS NULL OR m.taglia.desc = :taglia) AND " + 
@@ -138,12 +138,12 @@ List<Prodotto> findVestitoByParam(
 	       "(:marca IS NULL OR p.marca.desc = :marca) AND " +
 	       "(:materiale IS NULL OR p.materiale.desc = :materiale) AND " +
 	       "(:fantasia IS NULL OR p.fantasia.desc = :fantasia) AND " +
-	       "(:idMaglietta IS NULL OR p.camicia.id = :idCamicia) AND " +
+	       "(:idCamicia IS NULL OR p.camicia.id = :idCamicia) AND " +
 	       "(:prezzo IS NULL OR p.prezzo = :prezzo) AND " +
 	       "(:vestibilita IS NULL OR m.vestibilita.desc = :vestibilita) AND " + 
 	       "(:taglia IS NULL OR m.taglia.desc = :taglia) AND " + 
-	       "(:lunghezza IS NULL OR m.lunghezzaManica.desc = :lunghezzaManica) AND " + 
-	       "(:lunghezzaManica IS NULL OR m.tipoColletto.desc = :tipoColletto)"
+	       "(:lunghezzaManica IS NULL OR m.lunghezzaManica.desc = :lunghezzaManica) AND " + 
+	       "(:tipoColletto IS NULL OR m.tipoColletto.desc = :tipoColletto)"
 	)
 List<Prodotto> findCamiciaByParam(
 		@Param("id") Integer id,
@@ -169,7 +169,7 @@ List<Prodotto> findCamiciaByParam(
 	       "(:marca IS NULL OR p.marca.desc = :marca) AND " +
 	       "(:materiale IS NULL OR p.materiale.desc = :materiale) AND " +
 	       "(:fantasia IS NULL OR p.fantasia.desc = :fantasia) AND " +
-	       "(:idMaglietta IS NULL OR p.scarpa.id = :idScarpa) AND " +
+	       "(:idScarpa IS NULL OR p.scarpa.id = :idScarpa) AND " +
 	       "(:prezzo IS NULL OR p.prezzo = :prezzo) AND " +
 	       "(:vestibilita IS NULL OR m.tagliaScarpe = :tagliaScarpe) AND " + 
 	       "(:taglia IS NULL OR m.chiusura.desc = :chiusura) AND " + 

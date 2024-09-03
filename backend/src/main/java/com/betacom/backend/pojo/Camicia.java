@@ -83,4 +83,6 @@ public class Camicia {
     public void setTipoColletto(TipoColletto tipoColletto) {
         this.tipoColletto = tipoColletto;
     }
+    
+    
 }
