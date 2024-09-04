@@ -3,6 +3,7 @@ package com.betacom.backend.service.interfaces;
 import java.util.List;
 
 import com.betacom.backend.dto.OrdineDTO;
+import com.betacom.backend.dto.ProdottiOrdiniDTO;
 import com.betacom.backend.exception.AcademyException;
 import com.betacom.backend.pojo.Ordine;
 import com.betacom.backend.pojo.ProdottiOrdini;
@@ -17,4 +18,5 @@ public interface IOrdineService {
     Ordine getOrdine(Integer id) throws AcademyException;
     void remove(Integer id) throws AcademyException;
     List<ProdottiOrdini> listAllByOrdine(Integer id) throws AcademyException;
+    List<ProdottiOrdiniDTO> transformProdottiOrdiniInDTO(List<ProdottiOrdini> resp);
 }

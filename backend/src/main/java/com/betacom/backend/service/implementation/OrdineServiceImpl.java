@@ -115,7 +115,7 @@ public class OrdineServiceImpl implements IOrdineService  {
 				.collect(Collectors.toList());
 	}
 
-    private List<ProdottiOrdiniDTO> transformProdottiOrdiniInDTO(List<ProdottiOrdini> resp){
+    public List<ProdottiOrdiniDTO> transformProdottiOrdiniInDTO(List<ProdottiOrdini> resp){
 		return resp.stream()
 				.map(a -> new ProdottiOrdiniDTO(
 						a.getId(),

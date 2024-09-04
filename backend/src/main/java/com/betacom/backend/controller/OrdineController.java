@@ -1,5 +1,7 @@
 package com.betacom.backend.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.betacom.backend.dto.OrdineDTO;
+import com.betacom.backend.dto.ProdottiOrdiniDTO;
 import com.betacom.backend.exception.AcademyException;
+import com.betacom.backend.pojo.ProdottiOrdini;
 import com.betacom.backend.request.OrdineReq;
 import com.betacom.backend.response.Response;
 import com.betacom.backend.response.ResponseBase;
@@ -64,6 +68,21 @@ public class OrdineController {
 		
 		return resp;
 	}
+    
+    @GetMapping("/listProdOrd")
+    public Response<ProdottiOrdiniDTO> listAllByOrdine(Integer idOrd){
+    	Response<ProdottiOrdiniDTO> resp = new Response<ProdottiOrdiniDTO>();
+    	resp.setRc(true);
+    	try {
+    		List<ProdottiOrdini> l = ordineS.listAllByOrdine(idOrd);
+    		resp.setDati(ordineS.transformProdottiOrdiniInDTO(l));
+    	} catch (Exception e) {
+    		resp.setRc(false);
+    		resp.setMsg(e.getMessage());
+    	}
+    	
+    	return resp;
+    }
 
     @GetMapping("/findById")
     public ResponseObject<OrdineReq> findById(@RequestParam (required = true) Integer id) {
