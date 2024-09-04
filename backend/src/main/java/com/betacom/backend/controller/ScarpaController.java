@@ -16,7 +16,6 @@ import com.betacom.backend.request.ScarpaReq;
 import com.betacom.backend.response.Response;
 import com.betacom.backend.response.ResponseBase;
 import com.betacom.backend.response.ResponseObject;
-import com.betacom.backend.service.implementation.ScarpaServiceImpl;
 import com.betacom.backend.service.interfaces.IProdottoService;
 import com.betacom.backend.service.interfaces.IScarpaService;
 

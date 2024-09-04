@@ -16,7 +16,6 @@ import com.betacom.backend.request.VestitoReq;
 import com.betacom.backend.response.Response;
 import com.betacom.backend.response.ResponseBase;
 import com.betacom.backend.response.ResponseObject;
-import com.betacom.backend.service.implementation.VestitoServiceImpl;
 import com.betacom.backend.service.interfaces.IProdottoService;
 import com.betacom.backend.service.interfaces.IVestitoService;
 
