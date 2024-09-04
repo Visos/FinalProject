@@ -142,8 +142,11 @@ public class UtenteServiceImpl implements IUtenteService {
         
         if (optional.isEmpty()) {
             throw new AcademyException(msgS.getMessaggio("utente-ntexist"));
-        } else
+        } else {
+            System.out.println(optional.get().toString());
             return optional.get();
+        }
+            
     }
 
 }

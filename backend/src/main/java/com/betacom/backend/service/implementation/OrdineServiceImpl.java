@@ -57,7 +57,49 @@ public class OrdineServiceImpl implements IOrdineService  {
         }
     }
     
-    
+    @Override
+    public void update(OrdineReq req) throws AcademyException {
+
+        Ordine ordine = null;
+        if (newOrdine(req.getIdUtente())) {
+            throw new AcademyException("nessun carrello associato a questo utente");
+        } else {
+            Optional<Ordine> opt = ordineR.findByUtente(utenteS.getUtente(req.getIdUtente()));
+            if (opt.isEmpty()) {
+                throw new AcademyException("ordine not exist");
+            } else {
+                ordine = opt.get();
+            }
+        }
+
+        ordine.setProdOrdini(listAllByOrdine(ordine.getId()));
+
+        ordine.setStato(Stato.valueOf(req.getStato()));
+        if (ordine.getStato() != Stato.CARRELLO || ordine.getStato() == null) {
+            ordine.setData(req.getData());
+        } else {
+            ordine.setData(null);
+        }
+
+        Double prezzo = 0.0;
+        for (ProdottiOrdini ordini : ordine.getProdOrdini()) {
+            prezzo += ordini.getProdotto().getPrezzo() * ordini.getQty();
+        }
+        ordine.setPrezzoTotale(prezzo);
+
+        Integer quantita = 0;
+        for (ProdottiOrdini ordini : ordine.getProdOrdini()) {
+            quantita += ordini.getQty();
+        }
+        ordine.setQty(quantita);
+
+        try {
+            ordineR.save(ordine);
+        } catch (Exception e) {
+            throw new AcademyException(msgS.getMessaggio("ordine-generic") + e.getMessage());
+        }
+
+    }
 
     public Boolean newOrdine(Integer id){
         if (list(id, Stato.CARRELLO).isEmpty()){

@@ -165,4 +165,13 @@ public class Utente {
         this.ordini = ordini;
     }
 
+    @Override
+    public String toString() {
+        return "Utente [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", mail=" + mail + ", password="
+                + password + ", ruolo=" + ruolo + ", paese=" + paese + ", citta=" + citta + ", strada=" + strada
+                + ", civico=" + civico + ", cap=" + cap + ", ordini=" + ordini + "]";
+    }
+
+    
+
 }

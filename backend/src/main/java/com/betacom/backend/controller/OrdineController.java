@@ -49,6 +49,23 @@ public class OrdineController {
 
         return resp;
     }
+
+    @PostMapping("/update")
+    public ResponseBase update(@RequestBody (required = true) OrdineReq req) {
+        
+        ResponseBase resp = new ResponseBase();
+        resp.setRc(true);
+
+        try {
+            ordineS.update(req);
+        } catch (Exception e) {
+            resp.setRc(false);
+            e.printStackTrace();
+            resp.setMsg(e.getMessage());
+        }
+
+        return resp;
+    }
     
     @PostMapping("/addProd")
     public ResponseBase addProd(@RequestBody (required = true) ProdottiOrdiniReq req) {
@@ -65,6 +82,21 @@ public class OrdineController {
 
         return resp;
     }
+
+    @PostMapping("/removeProd")
+    public ResponseBase removeProd(@RequestParam (required = true) Integer id){
+        ResponseBase res = new ResponseBase();
+		res.setRc(true);
+		
+		try {
+            prodOrdS.remove(id);
+            } catch (AcademyException e) {
+			res.setRc(false);
+			res.setMsg(e.getMessage());
+		}
+		
+		return res;
+	}
 
     @PostMapping("/remove")
     public ResponseBase remove(@RequestParam (required = true) Integer id){
