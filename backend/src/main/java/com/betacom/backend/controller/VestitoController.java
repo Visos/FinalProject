@@ -60,7 +60,7 @@ public class VestitoController {
    }
 	
 	 @GetMapping("/listAll")
-	    public Response<ProdottoDTO> listAll(@RequestBody ProdottoReq req) {
+	    public Response<ProdottoDTO> listAll(@RequestBody (required = false)ProdottoReq req) {
 
 	        Response<ProdottoDTO> resp = new Response<ProdottoDTO>();
 	        resp.setRc(true);

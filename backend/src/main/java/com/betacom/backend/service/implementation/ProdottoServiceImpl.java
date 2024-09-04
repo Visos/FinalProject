@@ -1,5 +1,6 @@
 package com.betacom.backend.service.implementation;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -261,6 +262,9 @@ public class ProdottoServiceImpl implements IProdottoService {
 	
 	@Override
 	public List<ProdottoDTO> listByParam(ProdottoReq req){
+		if(req == null) {
+			return listAll();
+		}
 		Integer idMaglietta = null;
 		Integer idPantalone= null;
 		Integer idVestito= null;
@@ -276,6 +280,15 @@ public class ProdottoServiceImpl implements IProdottoService {
 	
 	@Override
 	public List<ProdottoDTO> findMaglietteByParam(ProdottoReq req){
+		if(req == null) {
+			List<ProdottoDTO> ret = new ArrayList<ProdottoDTO>();
+			for (ProdottoDTO p : listAll()) {
+				if(p.getMagliettaDto() != null)
+					ret.add(p);
+			}
+			return ret;
+		}
+		
 		Integer idMaglietta= null;
 		String taglia = null;
 		String vestibilita = null;
@@ -294,6 +307,14 @@ public class ProdottoServiceImpl implements IProdottoService {
 	
 	@Override
 	public List<ProdottoDTO> findPantaloneByParam(ProdottoReq req){
+		if(req == null) {
+			List<ProdottoDTO> ret = new ArrayList<ProdottoDTO>();
+			for (ProdottoDTO p : listAll()) {
+				if(p.getPantaloneDto() != null)
+					ret.add(p);
+			}
+			return ret;
+		}
 		
 		Integer idPantalone = null;
 		String lunghezza = null;
@@ -313,12 +334,33 @@ public class ProdottoServiceImpl implements IProdottoService {
 	
 	@Override
 	public List<ProdottoDTO> findVestitoByParam(ProdottoReq req){
+		if(req == null) {
+			List<ProdottoDTO> ret = new ArrayList<ProdottoDTO>();
+			for (ProdottoDTO p : listAll()) {
+				if(p.getVestitoDto() != null)
+					ret.add(p);
+			}
+			return ret;
+		}
+			Integer idVestito = null;
+			String taglia = null;
+			String lunghezza = null;
+			String lunghezzamanica = null;
+			String vestibilita = null;
 			
-		return trasformInDTO(prodottoR.findVestitoByParam(req.getId(), req.getSesso(), req.getColore(), req.getMarca(), req.getMateriale(), req.getFantasia(), req.getVestitoReq().getId(), req.getPrezzo(), req.getVestitoReq().getTaglia(), req.getVestitoReq().getVestibilita(), req.getVestitoReq().getLunghezza(), req.getVestitoReq().getLunghezzaManica()));
+		return trasformInDTO(prodottoR.findVestitoByParam(req.getId(), req.getSesso(), req.getColore(), req.getMarca(), req.getMateriale(), req.getFantasia(), idVestito, req.getPrezzo(), taglia, vestibilita,  lunghezza,  lunghezzamanica));
 	}
 	
 	@Override
 	public List<ProdottoDTO> findScarpaByParam(ProdottoReq req){
+		if(req == null) {
+			List<ProdottoDTO> ret = new ArrayList<ProdottoDTO>();
+			for (ProdottoDTO p : listAll()) {
+				if(p.getScarpaDto() != null)
+					ret.add(p);
+			}
+			return ret;
+		}
 		Integer idScarpa = null;
 		Integer tagliaScarpe = null;
 		String chiusura = null;
@@ -338,6 +380,14 @@ public class ProdottoServiceImpl implements IProdottoService {
 	
 	@Override
 	public List<ProdottoDTO> findCamiciaByParam(ProdottoReq req){
+		if(req == null) {
+			List<ProdottoDTO> ret = new ArrayList<ProdottoDTO>();
+			for (ProdottoDTO p : listAll()) {
+				if(p.getCamiciaDto() != null)
+					ret.add(p);
+			}
+			return ret;
+		}
 		Integer idCamicia= null;
 		String taglia = null;
 		String vestibilita = null;

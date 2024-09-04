@@ -54,11 +54,11 @@ public class ProdottoController {
   }
 	
 	 @GetMapping("/listAll")
-     public Response<ProdottoDTO> listAll() {
+	    public Response<ProdottoDTO> listAll(@RequestBody (required = false)ProdottoReq req) {
 
 	        Response<ProdottoDTO> resp = new Response<ProdottoDTO>();
 	        resp.setRc(true);
-            resp.setDati(prodottoS.listAll());
+            resp.setDati(prodottoS.listByParam(req));
 
 	        return resp;
 	    }
