@@ -12,7 +12,8 @@ import com.betacom.backend.util.Stato;
 
 public interface IOrdineService {
 
-    void createOrUpdate(OrdineReq req) throws AcademyException;
+    void create(OrdineReq req) throws AcademyException;
+    void update(OrdineReq req) throws AcademyException;
     OrdineReq searchById(Integer id) throws AcademyException;
     List<OrdineDTO> list(Integer id, Stato stato);
     Ordine getOrdine(Integer id) throws AcademyException;

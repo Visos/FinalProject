@@ -15,10 +15,12 @@ import com.betacom.backend.dto.ProdottiOrdiniDTO;
 import com.betacom.backend.exception.AcademyException;
 import com.betacom.backend.pojo.ProdottiOrdini;
 import com.betacom.backend.request.OrdineReq;
+import com.betacom.backend.request.ProdottiOrdiniReq;
 import com.betacom.backend.response.Response;
 import com.betacom.backend.response.ResponseBase;
 import com.betacom.backend.response.ResponseObject;
 import com.betacom.backend.service.interfaces.IOrdineService;
+import com.betacom.backend.service.interfaces.IProdottiOrdiniService;
 import com.betacom.backend.util.Stato;
 
 
@@ -28,16 +30,35 @@ public class OrdineController {
 
     @Autowired
     IOrdineService ordineS;
+    
+    @Autowired
+    IProdottiOrdiniService prodOrdS;
 
-    @PostMapping("/createOrUpdate")
-    public ResponseBase createOrUpdate(@RequestBody (required = true) OrdineReq req) {
+    @PostMapping("/create")
+    public ResponseBase create(@RequestBody (required = true) OrdineReq req) {
         
         ResponseBase resp = new ResponseBase();
         resp.setRc(true);
 
         try {
-            ordineS.createOrUpdate(req);
+            ordineS.create(req);
         } catch (Exception e) {
+            resp.setRc(false);
+            resp.setMsg(e.getMessage());
+        }
+
+        return resp;
+    }
+    
+    @PostMapping("/addProd")
+    public ResponseBase addProd(@RequestBody (required = true) ProdottiOrdiniReq req) {
+        
+        ResponseBase resp = new ResponseBase();
+        resp.setRc(true);
+
+        try {
+        	prodOrdS.addProdToCarrello(req);
+        } catch (AcademyException e) {
             resp.setRc(false);
             resp.setMsg(e.getMessage());
         }

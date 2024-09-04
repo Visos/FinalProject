@@ -35,34 +35,20 @@ public class OrdineServiceImpl implements IOrdineService  {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void createOrUpdate(OrdineReq req) throws AcademyException {
+    public void create(OrdineReq req) throws AcademyException {
         
         Ordine ordine = null;
         if (newOrdine(req.getIdUtente())) {
             ordine = new Ordine();
         } else {
-            Optional<Ordine> optional = ordineR.findById(req.getId());
-            if (optional.isPresent()) {
-                ordine = optional.get();
-            }
+        	throw new AcademyException("Impossibile creare nuovo carrello: già esiste");
         }
 
         ordine.setStato(Stato.CARRELLO);
-
+        ordine.setData(null);
         ordine.setUtente(utenteS.getUtente(req.getIdUtente()));
-        ordine.setProdOrdini(listAllByOrdine(ordine.getId()));
-
-        Double prezzo = 0.0;
-        for (ProdottiOrdini ordini : ordine.getProdOrdini()) {
-            prezzo += ordini.getProdotto().getPrezzo() * ordini.getQty();
-        }
-        ordine.setPrezzoTotale(prezzo);
-
-        Integer quantita = 0;
-        for (ProdottiOrdini ordini : ordine.getProdOrdini()) {
-            quantita += ordini.getProdotto().getQty();
-        }
-        ordine.setQty(quantita);
+        ordine.setPrezzoTotale(0.0);
+        ordine.setQty(0);
         
         try {
             ordineR.save(ordine);
@@ -70,6 +56,8 @@ public class OrdineServiceImpl implements IOrdineService  {
             throw new AcademyException(msgS.getMessaggio("ordine-generic") + e.getMessage());
         }
     }
+    
+    
 
     public Boolean newOrdine(Integer id){
         if (list(id, Stato.CARRELLO).isEmpty()){
@@ -171,4 +159,6 @@ public class OrdineServiceImpl implements IOrdineService  {
             throw new AcademyException(msgS.getMessaggio("ordine-ntexist"));
         }
     }
+
+	
 }
