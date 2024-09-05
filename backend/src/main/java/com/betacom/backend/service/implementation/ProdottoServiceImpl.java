@@ -87,7 +87,7 @@ public class ProdottoServiceImpl implements IProdottoService {
 	IVestitoService vestitoS;
 	
 	@Override
-	public void create(ProdottoReq req) throws AcademyException {
+	public void createOrUpdate(ProdottoReq req) throws AcademyException {
 		
 		Prodotto prodotto = null;
 		
@@ -228,6 +228,16 @@ public class ProdottoServiceImpl implements IProdottoService {
 	System.out.println(req.getPantaloneReq());
 
 	System.out.println(prodotto.getPantalone());
+	}
+
+	@Override
+	public void remove(ProdottoReq req) throws AcademyException {
+
+		Optional<Prodotto> optional = prodottoR.findById(req.getId());
+        if (optional.isEmpty())
+            throw new AcademyException(msgS.getMessaggio("prodotto-ntexist"));
+        
+        prodottoR.delete(optional.get());
 	}
 	
 	@Override

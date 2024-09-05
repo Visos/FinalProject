@@ -1,7 +1,6 @@
 package com.betacom.backend;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +44,7 @@ public class ProdottoServiceTest {
 		p.setPantaloneReq(new PantaloneReq(1, "s", "aderente", "Normale" ));
 		
 		try {
-			prodottoS.create(p);
+			prodottoS.createOrUpdate(p);
 		} catch (AcademyException e) {
 			System.out.println(e.getMessage());
 		}

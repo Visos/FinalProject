@@ -9,12 +9,12 @@ import com.betacom.backend.request.ProdottoReq;
 
 public interface IProdottoService {
 	
-	void create(ProdottoReq req) throws AcademyException;
+	void createOrUpdate(ProdottoReq req) throws AcademyException;
+	void remove(ProdottoReq req) throws AcademyException;
 	List<ProdottoDTO> listAll();
 	ProdottoDTO searchById(Integer id) throws AcademyException;
 	List<ProdottoDTO> trasformInDTO(List<Prodotto> resp);
 	Prodotto getProdotto(Integer id) throws AcademyException;
-
 	List<ProdottoDTO> listByParam(ProdottoReq req);
 	List<ProdottoDTO> findMaglietteByParam(ProdottoReq req);
 	List<ProdottoDTO> findPantaloneByParam(ProdottoReq req);

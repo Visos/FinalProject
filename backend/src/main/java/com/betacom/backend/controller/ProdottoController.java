@@ -29,7 +29,22 @@ public class ProdottoController {
         resp.setRc(true);
 
         try {
-        	prodottoS.create(req);
+        	prodottoS.createOrUpdate(req);
+        } catch (Exception e) {
+            resp.setRc(false);
+            resp.setMsg(e.getMessage());
+        }
+
+        return resp;
+	}
+
+    @PostMapping("/remove")
+    public ResponseBase remove(@RequestBody (required = true) ProdottoReq req) {
+		ResponseBase resp = new ResponseBase();
+        resp.setRc(true);
+
+        try {
+        	prodottoS.remove(req);
         } catch (Exception e) {
             resp.setRc(false);
             resp.setMsg(e.getMessage());
