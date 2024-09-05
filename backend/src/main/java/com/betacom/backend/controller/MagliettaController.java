@@ -59,8 +59,9 @@ public class MagliettaController {
         return resp;
     }
 
-    @GetMapping("/listAll")
+    @PostMapping("/listAll")
     public Response<ProdottoDTO> listAll(@RequestBody (required = false)ProdottoReq req) {
+		 System.out.println("------------------" + req + "-----------------------");
 
         Response<ProdottoDTO> resp = new Response<ProdottoDTO>();
         resp.setRc(true);

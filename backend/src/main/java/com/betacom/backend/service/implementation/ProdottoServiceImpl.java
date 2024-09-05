@@ -310,9 +310,26 @@ public class ProdottoServiceImpl implements IProdottoService {
 			taglia = req.getMagliettaReq().getTaglia();
 			vestibilita = req.getMagliettaReq().getVestibilita();
 			lunghezzaManica = req.getMagliettaReq().getLunghezzaManica();
+			colletto = req.getMagliettaReq().getTipoColletto();
 		}
+		checkCampiProdotto(req);		
+		
+		
+
 			
-		return trasformInDTO(prodottoR.findMagliettaByParam(req.getId(), req.getSesso(), req.getColore(), req.getMarca(), req.getMateriale(), req.getFantasia(), idMaglietta, req.getPrezzo(), taglia, vestibilita, lunghezzaManica, colletto));
+		return trasformInDTO(prodottoR.findMagliettaByParam(req.getId(),
+				null , //req.getSesso().equalsIgnoreCase("nullo") ? null : req.getSesso(),
+				req.getColore(),
+				req.getMarca(),
+				req.getMateriale(),
+				req.getFantasia(),
+				idMaglietta,
+				null, 		//req.getPrezzo() == "nullo" ? null : req.getPrezzo(),
+				taglia == null ? null : (taglia.equalsIgnoreCase("nullo") ? null : taglia),
+				vestibilita == null ? null : (vestibilita.equalsIgnoreCase("nullo") ? null : vestibilita),
+				lunghezzaManica == null ? null : (lunghezzaManica.equalsIgnoreCase("nullo") ? null : lunghezzaManica),
+				colletto == null ? null : (colletto.equalsIgnoreCase("nullo") ? null : colletto)
+						));
 	}
 	
 	@Override
@@ -409,6 +426,8 @@ public class ProdottoServiceImpl implements IProdottoService {
 			taglia = req.getCamiciaReq().getTaglia();
 			vestibilita = req.getCamiciaReq().getVestibilita();
 			lunghezzaManica = req.getCamiciaReq().getLunghezzaManica();
+			colletto = req.getCamiciaReq().getTipoColletto();
+
 		}
 		
 		return trasformInDTO(prodottoR.findCamiciaByParam(req.getId(), req.getSesso(), req.getColore(), req.getMarca(), req.getMateriale(), req.getFantasia(), idCamicia, req.getPrezzo(), taglia, vestibilita, lunghezzaManica, colletto));
@@ -431,6 +450,17 @@ public class ProdottoServiceImpl implements IProdottoService {
 			idMaglietta = req.getMagliettaReq().getId();
 		}
 	}
+	
+	public void checkCampiProdotto(ProdottoReq req){
+		req.setColore(req.getColore() != null ? (req.getColore().equalsIgnoreCase("nullo") ? null : req.getColore()) : null);
+		req.setFantasia(req.getFantasia() != null ? (req.getFantasia().equalsIgnoreCase("nullo") ? null : req.getFantasia()) : null);
+		req.setMarca(req.getMarca() != null ? (req.getMarca().equalsIgnoreCase("nullo") ? null : req.getMarca()) : null);
+		req.setMateriale(req.getMateriale() != null ? (req.getMateriale().equalsIgnoreCase("nullo") ? null : req.getMateriale()) : null);
+		req.setSesso(req.getSesso() != null ? (req.getSesso().equalsIgnoreCase("nullo") ? null : req.getSesso()) : null);
+	
+	}
+		
+
 
 	@Override
 	public List<ProdottoDTO> trasformInDTO(List<Prodotto> resp) {

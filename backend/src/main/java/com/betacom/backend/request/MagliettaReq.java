@@ -18,6 +18,13 @@ public class MagliettaReq {
         this.lunghezzaManica = lunghezzaManica;
         this.tipoColletto = tipoColletto;
     }
+    
+
+	@Override
+	public String toString() {
+		return "MagliettaReq [id=" + id + ", taglia=" + taglia + ", vestibilita=" + vestibilita + ", lunghezzaManica="
+				+ lunghezzaManica + ", tipoColletto=" + tipoColletto + "]";
+	}
 
 	public Integer getId() {
 		return id;
