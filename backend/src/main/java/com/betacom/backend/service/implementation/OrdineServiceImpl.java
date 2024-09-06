@@ -64,7 +64,7 @@ public class OrdineServiceImpl implements IOrdineService  {
         if (newOrdine(req.getIdUtente())) {
             throw new AcademyException("nessun carrello associato a questo utente");
         } else {
-            Optional<Ordine> opt = ordineR.findByUtente(utenteS.getUtente(req.getIdUtente()));
+            Optional<Ordine> opt = ordineR.findCarrello(req.getIdUtente());
             if (opt.isEmpty()) {
                 throw new AcademyException("ordine not exist");
             } else {

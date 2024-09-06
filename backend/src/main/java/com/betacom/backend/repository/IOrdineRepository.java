@@ -22,5 +22,11 @@ public interface IOrdineRepository extends JpaRepository<Ordine, Integer>  {
         @Param("id") Integer id,
         @Param("stato") Stato stato);
     
+    @Query("SELECT o FROM Ordine o " + 
+            "WHERE (:id IS NULL OR o.utente.id = :id) " +
+            "AND (o.stato = CARRELLO)") 
+        Optional<Ordine> findCarrello(
+            @Param("id") Integer id);
+    
     Optional<Ordine> findByUtente(Utente utente);
 }
