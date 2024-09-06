@@ -313,12 +313,9 @@ public class ProdottoServiceImpl implements IProdottoService {
 			colletto = req.getMagliettaReq().getTipoColletto();
 		}
 		checkCampiProdotto(req);		
-		
-		
-
 			
 		return trasformInDTO(prodottoR.findMagliettaByParam(req.getId(),
-				null , //req.getSesso().equalsIgnoreCase("nullo") ? null : req.getSesso(),
+				req.getSesso(),
 				req.getColore(),
 				req.getMarca(),
 				req.getMateriale(),
@@ -355,8 +352,20 @@ public class ProdottoServiceImpl implements IProdottoService {
 			taglia = req.getPantaloneReq().getTaglia();
 			vestibilita = req.getPantaloneReq().getVestibilita();
 		}
+		checkCampiProdotto(req);		
 			
-		return trasformInDTO(prodottoR.findPantaloneByParam(req.getId(), req.getSesso(), req.getColore(), req.getMarca(), req.getMateriale(), req.getFantasia(), idPantalone, req.getPrezzo(), taglia, vestibilita, lunghezza));
+		return trasformInDTO(prodottoR.findPantaloneByParam(req.getId(),
+				req.getSesso(),
+				req.getColore(),
+				req.getMarca(),
+				req.getMateriale(),
+				req.getFantasia(),
+				idPantalone,
+				null,//req.getPrezzo(),
+				taglia == null ? null : (taglia.equalsIgnoreCase("nullo") ? null : taglia),
+				vestibilita == null ? null : (vestibilita.equalsIgnoreCase("nullo") ? null : vestibilita),
+				lunghezza == null ? null : (lunghezza.equalsIgnoreCase("nullo") ? null : lunghezza)
+						));
 	}
 	
 	@Override
@@ -375,7 +384,22 @@ public class ProdottoServiceImpl implements IProdottoService {
 			String lunghezzamanica = null;
 			String vestibilita = null;
 			
-		return trasformInDTO(prodottoR.findVestitoByParam(req.getId(), req.getSesso(), req.getColore(), req.getMarca(), req.getMateriale(), req.getFantasia(), idVestito, req.getPrezzo(), taglia, vestibilita,  lunghezza,  lunghezzamanica));
+			checkCampiProdotto(req);		
+
+			
+		return trasformInDTO(prodottoR.findVestitoByParam(req.getId(),
+				req.getSesso(),
+				req.getColore(),
+				req.getMarca(),
+				req.getMateriale(),
+				req.getFantasia(),
+				idVestito,
+				null, //req.getPrezzo(),
+				taglia == null ? null : (taglia.equalsIgnoreCase("nullo") ? null : taglia),
+				vestibilita == null ? null : (vestibilita.equalsIgnoreCase("nullo") ? null : vestibilita),
+				lunghezza == null ? null : (lunghezza.equalsIgnoreCase("nullo") ? null : lunghezza),
+				lunghezzamanica == null ? null : (lunghezzamanica.equalsIgnoreCase("nullo") ? null : lunghezzamanica)
+				));
 	}
 	
 	@Override
@@ -401,8 +425,20 @@ public class ProdottoServiceImpl implements IProdottoService {
 			tipoScarpa = req.getScarpaReq().getTipoScarpa();
 		}
 		
+		checkCampiProdotto(req);				
 			
-		return trasformInDTO(prodottoR.findScarpaByParam(req.getId(), req.getSesso(), req.getColore(), req.getMarca(), req.getMateriale(), req.getFantasia(), idScarpa, req.getPrezzo(), tagliaScarpe, chiusura, tipoScarpa ));
+		return trasformInDTO(prodottoR.findScarpaByParam(req.getId(),
+				req.getSesso(),
+				req.getColore(),
+				req.getMarca(),
+				req.getMateriale(),
+				req.getFantasia(), 
+				idScarpa,
+				null, //req.getPrezzo(),
+				tagliaScarpe == null ? null : (tagliaScarpe.toString().equalsIgnoreCase("nullo") ? null : tagliaScarpe),
+				chiusura == null ? null : (chiusura.toString().equalsIgnoreCase("nullo") ? null : chiusura),
+				tipoScarpa == null ? null : (tipoScarpa.toString().equalsIgnoreCase("nullo") ? null : tipoScarpa)
+				));
 	}
 	
 	@Override
@@ -419,18 +455,33 @@ public class ProdottoServiceImpl implements IProdottoService {
 		String taglia = null;
 		String vestibilita = null;
 		String colletto =null ;
-		String lunghezzaManica = null;
+		String lunghezzamanica = null;
 		
 		if(req.getCamiciaReq()!=null) {
 			idCamicia = req.getCamiciaReq().getId();
 			taglia = req.getCamiciaReq().getTaglia();
 			vestibilita = req.getCamiciaReq().getVestibilita();
-			lunghezzaManica = req.getCamiciaReq().getLunghezzaManica();
+			lunghezzamanica = req.getCamiciaReq().getLunghezzaManica();
 			colletto = req.getCamiciaReq().getTipoColletto();
 
 		}
 		
-		return trasformInDTO(prodottoR.findCamiciaByParam(req.getId(), req.getSesso(), req.getColore(), req.getMarca(), req.getMateriale(), req.getFantasia(), idCamicia, req.getPrezzo(), taglia, vestibilita, lunghezzaManica, colletto));
+		checkCampiProdotto(req);				
+
+		
+		return trasformInDTO(prodottoR.findCamiciaByParam(req.getId(),
+				req.getSesso(),
+				req.getColore(),
+				req.getMarca(),
+				req.getMateriale(),
+				req.getFantasia(),
+				idCamicia,
+				null, //req.getPrezzo(),
+				taglia == null ? null : (taglia.equalsIgnoreCase("nullo") ? null : taglia),
+				vestibilita == null ? null : (vestibilita.equalsIgnoreCase("nullo") ? null : vestibilita),
+				lunghezzamanica == null ? null : (lunghezzamanica.equalsIgnoreCase("nullo") ? null : lunghezzamanica),
+				colletto == null ? null : (colletto.equalsIgnoreCase("nullo") ? null : colletto)
+));
 	}
 	
 	public void checkTipoReq( ProdottoReq req, Integer idMaglietta, Integer idPantalone, Integer idVestito, Integer idScarpa, Integer idCamicia) {

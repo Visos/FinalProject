@@ -59,7 +59,7 @@ public class PantaloneController {
 	    return resp;
 	}
 
-	@GetMapping("/listAll")
+	@PostMapping("/listAll")
 	public Response<ProdottoDTO> listAll(@RequestBody (required = false)ProdottoReq req) {
 
 	    Response<ProdottoDTO> resp = new Response<ProdottoDTO>();

@@ -171,9 +171,9 @@ List<Prodotto> findCamiciaByParam(
 	       "(:fantasia IS NULL OR p.fantasia.desc = :fantasia) AND " +
 	       "(:idScarpa IS NULL OR p.scarpa.id = :idScarpa) AND " +
 	       "(:prezzo IS NULL OR p.prezzo = :prezzo) AND " +
-	       "(:vestibilita IS NULL OR m.tagliaScarpe = :tagliaScarpe) AND " + 
-	       "(:taglia IS NULL OR m.chiusura.desc = :chiusura) AND " + 
-	       "(:lunghezza IS NULL OR m.tipoScarpa = :tipoScarpa) "
+	       "(:tagliaScarpe IS NULL OR m.tagliaScarpe = :tagliaScarpe) AND " + 
+	       "(:chiusura IS NULL OR m.chiusura.desc = :chiusura) AND " + 
+	       "(:tipoScarpa IS NULL OR m.tipoScarpa = :tipoScarpa) "
 	)
 List<Prodotto> findScarpaByParam(
 		@Param("id") Integer id,
