@@ -149,4 +149,26 @@ public class UtenteServiceImpl implements IUtenteService {
             
     }
 
+    @Override
+    public UtenteDTO signIn(String mail, String password) throws AcademyException {
+        Optional<Utente> optional = utenteR.findByMailAndPassword(mail, password);
+        if (optional.isEmpty()) {
+            throw new AcademyException(msgS.getMessaggio("utente-ntexist"));
+        } else {
+            return new UtenteDTO(
+                    optional.get().getId(),
+                    optional.get().getNome(),
+                    optional.get().getCognome(),
+                    optional.get().getMail(),
+                    optional.get().getPassword(),
+                    optional.get().getRuolo().name(),
+                    optional.get().getPaese(),
+                    optional.get().getCitta(),
+                    optional.get().getStrada(),
+                    optional.get().getCivico(),
+                    optional.get().getCap()
+            );
+        }
+    }
+
 }

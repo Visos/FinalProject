@@ -14,4 +14,5 @@ public interface IUtenteService {
     UtenteReq searchByMail(String mail) throws AcademyException;
     List<UtenteDTO> listAll();
     Utente getUtente(Integer id) throws AcademyException;
+    UtenteDTO signIn(String mail, String password) throws AcademyException;
 }

@@ -11,4 +11,5 @@ import com.betacom.backend.pojo.Utente;
 public interface IUtenteRepository extends JpaRepository<Utente, Integer>  {
 
     Optional<Utente> findByMail(String mail);
+    Optional<Utente> findByMailAndPassword(String mail, String password);
 }

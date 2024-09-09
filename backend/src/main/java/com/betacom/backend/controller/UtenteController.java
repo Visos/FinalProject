@@ -75,5 +75,18 @@ public class UtenteController {
 
         return utenteS.listAll();
     }
+
+    @GetMapping("/signIn")
+    public ResponseObject<UtenteDTO> signIn(@RequestParam String mail, @RequestParam String password) {
+        ResponseObject<UtenteDTO> resp = new ResponseObject<UtenteDTO>();
+        resp.setRc(true);
+        try {
+            resp.setDati(utenteS.signIn(mail, password));
+        } catch (Exception e) {
+            resp.setRc(false);
+            resp.setMsg(e.getMessage());
+        }
+        return resp;
+    }
     
 }
