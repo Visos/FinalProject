@@ -1,5 +1,7 @@
 package com.betacom.backend.service.implementation;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -93,6 +95,58 @@ public class OrdineServiceImpl implements IOrdineService  {
         }
         ordine.setQty(quantita);
 
+        try {
+            ordineR.save(ordine);
+        } catch (Exception e) {
+            throw new AcademyException(msgS.getMessaggio("ordine-generic") + e.getMessage());
+        }
+
+    }
+    
+    @Override
+    public void acquista(Integer id) throws AcademyException {
+
+    	Ordine ordine = null;
+        Optional<Ordine> optional = ordineR.findById(id);
+        if (optional.isEmpty()) {
+            throw new AcademyException(msgS.getMessaggio("prodOrdini-ntexist"));
+        } else {
+        	ordine = optional.get();
+        }
+        
+        if (ordine.getStato() == Stato.valueOf("CARRELLO")) {
+        	ordine.setStato(Stato.ELABORAZIONE);
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            ordine.setData(sdf.format(new Date()));
+        } else {
+        	throw new AcademyException("Ordine non trovato nel carrello");
+        }
+        
+        try {
+            ordineR.save(ordine);
+        } catch (Exception e) {
+            throw new AcademyException(msgS.getMessaggio("ordine-generic") + e.getMessage());
+        }
+
+    }
+    
+    @Override
+    public void spedizione(Integer id) throws AcademyException {
+
+    	Ordine ordine = null;
+        Optional<Ordine> optional = ordineR.findById(id);
+        if (optional.isEmpty()) {
+            throw new AcademyException(msgS.getMessaggio("prodOrdini-ntexist"));
+        } else {
+        	ordine = optional.get();
+        }
+        
+        if (ordine.getStato() == Stato.valueOf("ELABORAZIONE")) {
+        	ordine.setStato(Stato.SPEDIZIONE);
+        } else {
+        	throw new AcademyException("Ordine non trovato in elaborazione");
+        }
+        
         try {
             ordineR.save(ordine);
         } catch (Exception e) {

@@ -151,4 +151,32 @@ public class OrdineController {
         
         return resp;
     }
+    
+    @GetMapping("/acquista")
+    public ResponseObject<OrdineReq> acquista(@RequestParam (required = true) Integer id){
+    	  ResponseObject<OrdineReq> resp = new ResponseObject<OrdineReq>();
+          resp.setRc(true);
+          try {
+              ordineS.acquista(id);
+          } catch (Exception e) {
+             resp.setRc(false);
+             resp.setMsg(e.getMessage());
+          }
+          
+          return resp;
+    }
+    
+    @GetMapping("/spedizione")
+    public ResponseObject<OrdineReq> spedizione(@RequestParam (required = true) Integer id){
+    	  ResponseObject<OrdineReq> resp = new ResponseObject<OrdineReq>();
+          resp.setRc(true);
+          try {
+              ordineS.spedizione(id);
+          } catch (Exception e) {
+             resp.setRc(false);
+             resp.setMsg(e.getMessage());
+          }
+          
+          return resp;
+    }
 }
