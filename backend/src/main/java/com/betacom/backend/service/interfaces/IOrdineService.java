@@ -20,4 +20,6 @@ public interface IOrdineService {
     void remove(Integer id) throws AcademyException;
     List<ProdottiOrdini> listAllByOrdine(Integer id) throws AcademyException;
     List<ProdottiOrdiniDTO> transformProdottiOrdiniInDTO(List<ProdottiOrdini> resp);
+	void acquista(Integer id) throws AcademyException;
+	void spedizione(Integer id) throws AcademyException;
 }
