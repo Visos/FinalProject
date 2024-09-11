@@ -79,7 +79,10 @@ public class ProdottiOrdiniServiceImpl implements IProdottiOrdiniService {
 	public void remove(Integer id) throws AcademyException {
 		Optional<ProdottiOrdini> optional = prodOrdR.findById(id);
 		if (optional.isPresent()) {
+			Prodotto p = optional.get().getProdotto();
+			p.setQty(p.getQty() + optional.get().getQty());
 			prodOrdR.delete(optional.get());
+			
 		} else {
 			throw new AcademyException(msgS.getMessaggio("prodOrdini-ntexist"));
 		}
@@ -103,9 +106,15 @@ public class ProdottiOrdiniServiceImpl implements IProdottiOrdiniService {
 				ProdottiOrdini p = opt.get();
 				Integer newQty = p.getQty() + req.getQty();
 				p.setQty(newQty);
+				Prodotto prod = p.getProdotto();
+				prod.setQty(prodotto.getQty() - req.getQty());	
+				
+				System.out.println(prodotto.getQty() - req.getQty());
 			} else {
 				ProdottiOrdini prodOrd = createOrUpdate(req);
 				list.add(prodOrd);
+				Prodotto prod = prodOrd.getProdotto();
+				prod.setQty(prodotto.getQty() - req.getQty());	
 			}
 		}
 		ordineR.save(ordine);

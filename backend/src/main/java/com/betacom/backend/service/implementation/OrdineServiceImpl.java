@@ -107,7 +107,9 @@ public class OrdineServiceImpl implements IOrdineService  {
     public void acquista(Integer id) throws AcademyException {
 
     	Ordine ordine = null;
+    	
         Optional<Ordine> optional = ordineR.findById(id);
+        
         if (optional.isEmpty()) {
             throw new AcademyException(msgS.getMessaggio("prodOrdini-ntexist"));
         } else {
